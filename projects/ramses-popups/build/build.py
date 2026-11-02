@@ -28,9 +28,9 @@ os.makedirs(COMP, exist_ok=True)
 
 W, H = 1080, 1920
 if SHORT:
-    RANGES = [(0.00, 5.95), (12.75, 15.53), (34.72, 40.45), (42.05, 63.30), (93.80, 108.12), (122.75, 126.22), (133.45, 138.95)]
+    RANGES = [(0.00, 5.15), (12.75, 15.53), (34.72, 40.45), (42.05, 63.30), (93.80, 108.12), (123.62, 126.22), (133.45, 138.95)]
 else:
-    RANGES = [(0.00, 5.95), (12.75, 40.45), (42.05, 86.40), (93.85, 109.75), (111.25, 112.10), (117.32, 120.20), (122.75, 138.95)]
+    RANGES = [(0.00, 5.15), (12.75, 40.45), (42.05, 86.40), (93.85, 109.75), (111.25, 112.10), (117.32, 120.20), (122.75, 138.95)]
 
 
 def seg_durs():
@@ -576,7 +576,8 @@ def build_captions(sign_t):
         s = w["start"]
         for (a, b) in RANGES:
             if a - 0.02 <= s < b - 0.05:
-                ws.append({"text": w["text"].replace("gemini", "Gemini"), "s": o(max(s, a)), "e": o(min(w["end"], b))})
+                ws.append({"text": w["text"].replace("gemini", "Gemini"), "s": o(max(s, a)), "e": o(min(w["end"], b)),
+                           "seg": RANGES.index((a, b))})
                 break
     ws = [w for w in ws if w["s"] < sign_t - 0.05]  # la firma final va escrita a mano
     groups, cur = [], []
@@ -584,7 +585,7 @@ def build_captions(sign_t):
         cur.append(w)
         nxt = ws[i + 1] if i + 1 < len(ws) else None
         chars = sum(len(x["text"]) + 1 for x in cur)
-        if (nxt is None or nxt["s"] - w["e"] >= 0.15 or w["text"][-1:] in ",.?!" or len(cur) >= 3 or
+        if (nxt is None or nxt["seg"] != w["seg"] or nxt["s"] - w["e"] >= 0.15 or w["text"][-1:] in ",.?!" or len(cur) >= 3 or
                 chars + len(nxt["text"]) > 20):
             groups.append(cur)
             cur = []
@@ -592,7 +593,7 @@ def build_captions(sign_t):
     merged = []
     for g in groups:
         d = g[-1]["e"] - g[0]["s"]
-        if merged and d < 0.5 and g[0]["s"] - merged[-1][-1]["e"] < 0.3 and \
+        if merged and d < 0.5 and g[0]["s"] - merged[-1][-1]["e"] < 0.3 and g[0]["seg"] == merged[-1][-1]["seg"] and \
                 sum(len(x["text"]) + 1 for x in merged[-1] + g) <= 26:
             merged[-1] = merged[-1] + g
         else:
@@ -752,7 +753,7 @@ def main():
     if has(77.40):
         p0, p1 = build_pesos()
         splits.append((p0 - 0.6, min(p1 - 0.1, STARTS[3] - 0.75)))
-    board_t = o(123.13) - 0.12
+    board_t = (o(123.13) if has(123.13) else o(123.62)) - 0.12
     if SHORT:
         # la burbuja se queda hasta el corte y la foto pasa directo del split al tablero
         i0, i1 = build_ia(None, bubble_until=STARTS[5] - 0.05)

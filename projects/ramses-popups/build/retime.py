@@ -4,6 +4,9 @@ Uso: python3 build/retime.py   (reescribe transcript.clean.json)"""
 import json
 
 SPANS = [  # (primera palabra, n palabras, inicio, fin) — tramos con voz medidos en analysis/voice16k.wav
+    ("cuando", 2, 34.81, 35.53),       # cuando ustedes (Whisper iba ~1.2 s adelantado)
+    ("compran", 2, 36.49, 36.88),      # compran aquí
+    ("ya", 11, 37.33, 40.42),          # ya sea jamón o queso les va a salir más barato,
     ("y", 4, 108.16, 108.74),          # y de esta manera,
     ("por", 2, 111.30, 111.95),        # por ejemplo
     ("yo", 12, 117.51, 120.08),        # yo tengo una, ya si puedes mejorar la posibilidad de vivir una
@@ -12,7 +15,7 @@ SPANS = [  # (primera palabra, n palabras, inicio, fin) — tramos con voz medid
 ]
 w = json.load(open("transcript.clean.json", encoding="utf-8"))
 for first, n, a, b in SPANS:
-    i = next(k for k, x in enumerate(w) if x["text"].lower().startswith(first) and a - 12 < x["start"] < b + 3
+    i = next(k for k, x in enumerate(w) if x["text"].lower().rstrip(",.") == first and a - 12 < x["start"] < b + 3
              and (first != "por" or w[k + 1]["text"].startswith("ejemplo")))
     grp = w[i:i + n]
     total = sum(len(x["text"]) for x in grp)
