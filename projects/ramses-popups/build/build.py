@@ -28,7 +28,7 @@ os.makedirs(COMP, exist_ok=True)
 
 W, H = 1080, 1920
 if SHORT:
-    RANGES = [(0.00, 5.15), (12.75, 15.53), (34.72, 40.45), (42.05, 63.30), (93.80, 108.12), (123.62, 126.22), (133.45, 138.95)]
+    RANGES = [(0.00, 5.15), (12.75, 15.53), (34.72, 40.45), (42.05, 63.30), (93.80, 108.12), (123.62, 125.92), (133.45, 138.95)]
 else:
     RANGES = [(0.00, 5.15), (12.75, 40.45), (42.05, 86.40), (93.85, 109.75), (111.25, 112.10), (117.32, 120.20), (122.75, 138.95)]
 
@@ -134,8 +134,9 @@ def add_host(name, start, dur, z=30):
 
 # ---------------------------------------------------------------- movimientos (JS)
 def stick(sel, t, rot0=8, rot1=-2, dur=0.42):
-    return (f'    tl.fromTo("{sel}", {{ opacity: 0, scale: 1.16, rotation: {rot0}, y: -18 }}, '
-            f'{{ opacity: 1, scale: 1, rotation: {rot1}, y: 0, duration: {dur}, ease: "expo.out" }}, {t:.3f});\n')
+    return (f'    tl.fromTo("{sel}", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.05 }}, {t:.3f});\n'
+            f'    tl.fromTo("{sel}", {{ scale: 1.16, rotation: {rot0}, y: -18 }}, '
+            f'{{ scale: 1, rotation: {rot1}, y: 0, duration: {dur}, ease: "expo.out" }}, {t:.3f});\n')
 
 
 def leave(sel, t, dur=0.22, stagger=0.04):
@@ -146,7 +147,8 @@ def leave(sel, t, dur=0.22, stagger=0.04):
 def pin_away(sel, t, dx, dy, rot=0, scale=0.8, dur=0.45):
     """Sale 'volando' hacia su lugar en el tablero (fuera de cuadro): la pieza se va a pegar, no se borra."""
     return (f'    tl.to("{sel}", {{ x: "+={dx}", y: "+={dy}", rotation: {rot}, scale: {scale}, duration: {dur}, '
-            f'ease: "power3.in" }}, {t:.3f});\n')
+            f'ease: "power3.in" }}, {t:.3f});\n'
+            f'    tl.to("{sel}", {{ opacity: 0, duration: {dur * 0.45:.3f}, ease: "power2.in" }}, {t + dur * 0.55:.3f});\n')
 
 
 def draw(sel, t, dur=0.45, ease="power1.inOut", stagger=0.0):
@@ -368,6 +370,23 @@ def build_chiste():
     cue("marker", o(60.40), 0.16)
 
 
+def build_queso_jamon():
+    """Tira corta sobre 'como mucho queso y mucho jamón' (rompe el tramo sin gráficos)."""
+    t0 = o(73.55)
+    dur = round(o(76.10) - t0, 3)
+    body = f"""
+    <div id="qj" class="pc paper marker lbl" style="left:120px;top:300px;font-size:58px;transform:rotate(-3deg);clip-path:{torn(91, 6)};">
+      mucho <span style="color:{RED_TXT}">queso</span> + mucho <span style="color:{RED_TXT}">jamón</span></div>
+    <div class="tape" id="qj-t" style="left:470px;top:282px;transform:rotate(4deg);"></div>
+"""
+    js = stick("#qj", 0.0, 6, -3, 0.42)
+    js += '    tl.fromTo("#qj-t", { opacity: 0 }, { opacity: 1, duration: 0.08 }, 0.22);\n'
+    js += pin_away("#qj, #qj-t", dur - 0.45, -900, -260, -8, 0.7, 0.42)
+    scene("quesojamon", body, "", js)
+    add_host("quesojamon", t0, dur)
+    cue("paper-slap", t0, 0.26)
+
+
 def build_pesos():
     """Split: la foto ya está encogida cuando la etiqueta se pega."""
     t0 = o(77.40) - 0.08
@@ -451,7 +470,7 @@ def build_ia(end_src, bubble_until=None):
         js += stick(f"#ia-n{i}", tt, rot * 2, rot, 0.38)
         js += f'    tl.fromTo("#ia-t{i}", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.08 }}, {tt + 0.18:.3f});\n'
     # el diagrama se va a pegar a la columna derecha del tablero; luego entra el globo
-    js += pin_away("#ia-net", bro - 0.5, 760, 120, 3, 0.6, 0.45)
+    js += pin_away("#ia-net", bro - 0.5, 1050, 120, 3, 0.6, 0.45)
     js += (f'    tl.fromTo("#ia-bro", {{ opacity: 0, scale: 0.6, rotation: -6 }}, {{ opacity: 1, scale: 1, rotation: -2, duration: 0.5, '
            f'ease: "back.out(1.4)" }}, {bro:.3f});\n')
     js += leave("#ia-bro", dur - 0.3, 0.22, 0)
@@ -502,7 +521,7 @@ def build_board(t_start, pans):
         <img src="assets/img/cheese_36_bw.jpg" style="display:block;width:188px;height:220px;object-fit:cover;object-position:60% 52%;" />
         <svg viewBox="0 0 188 220" style="position:absolute;left:12px;top:12px;width:188px;height:220px;">
           <ellipse cx="132" cy="120" rx="34" ry="22" fill="none" stroke="{RED}" stroke-width="5"/></svg>
-        <div class="marker" style="position:absolute;left:0;right:0;bottom:6px;text-align:center;font-size:30px;color:{RED_TXT};">empaquetado</div>
+        <div class="marker" style="position:absolute;left:0;right:0;bottom:6px;text-align:center;font-size:30px;color:{RED_TXT};">$255 · $359</div>
       </div>
       <div class="pc mcard" style="left:28px;top:856px;transform:rotate(8deg);">
         <div class="corner anton" data-layout-ignore style="color:{RED_TXT}">A<span>&#9830;</span></div>
@@ -594,7 +613,7 @@ def build_captions(sign_t):
     for g in groups:
         d = g[-1]["e"] - g[0]["s"]
         if merged and d < 0.5 and g[0]["s"] - merged[-1][-1]["e"] < 0.3 and g[0]["seg"] == merged[-1][-1]["seg"] and \
-                sum(len(x["text"]) + 1 for x in merged[-1] + g) <= 26:
+                len(merged[-1] + g) <= 3 and sum(len(x["text"]) + 1 for x in merged[-1] + g) <= 24:
             merged[-1] = merged[-1] + g
         else:
             merged.append(g)
@@ -689,7 +708,6 @@ def build_root(splits, board_t, pans):
         hosts += (f'      <div id="{name}" data-composition-id="{name}" data-composition-src="compositions/{name}.html" '
                   f'data-start="{s}" data-duration="{d}" data-track-index="{track}" data-track-kind="{kind}" '
                   f'data-width="{W}" data-height="{H}" style="z-index:{z};"></div>\n')
-    open_end = o(1.40)
     html = f"""<!doctype html>
 <html lang="es">
   <head>
@@ -718,7 +736,6 @@ def build_root(splits, board_t, pans):
           <div id="layout">
             <div id="cam">
               <video id="take" class="clip" src="assets/cut.mp4" muted data-start="0" data-duration="{VIDEO_END}" data-track-index="1"></video>
-              <img id="open" class="clip" src="assets/img/open.jpg" data-start="0" data-duration="{open_end}" data-track-index="2" />
               <img id="hold" class="clip" src="assets/img/last.jpg" data-start="{round(VIDEO_END - 0.04, 3)}" data-duration="{round(TOTAL - VIDEO_END + 0.04, 3)}" data-track-index="3" />
             </div>
           </div>
@@ -738,9 +755,6 @@ def build_root(splits, board_t, pans):
 
 
 def main():
-    # cuadro de apertura: su cara (src 1.40) para que el cuadro 0 ya tenga cara + título
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "1.40", "-i", os.path.join(EDIT, "assets", "cut.mp4"), "-frames:v", "1",
-                    "-q:v", "2", os.path.join(EDIT, "assets", "img", "open.jpg")], check=True)
     build_hook()
     if has(16.92):
         build_mama()
@@ -750,6 +764,8 @@ def main():
     build_cartas()
     build_chiste()
     splits = []
+    if has(73.55) and has(76.10):
+        build_queso_jamon()
     if has(77.40):
         p0, p1 = build_pesos()
         splits.append((p0 - 0.6, min(p1 - 0.1, STARTS[3] - 0.75)))

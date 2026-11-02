@@ -5,7 +5,7 @@ cd "$(dirname "$0")/.."
 SRC=assets/source_1080.mp4
 if [ "${VARIANT:-long}" = short ]; then
   OUT=edit-short/assets/cut.mp4; TMP=build/segs-short
-  RANGES="0.00-5.15 12.75-15.53 34.72-40.45 42.05-63.30 93.80-108.12 123.62-126.22 133.45-138.95"
+  RANGES="0.00-5.15 12.75-15.53 34.72-40.45 42.05-63.30 93.80-108.12 123.62-125.92 133.45-138.95"
 else
   OUT=edit/assets/cut.mp4; TMP=build/segs
   RANGES="0.00-5.15 12.75-40.45 42.05-86.40 93.85-109.75 111.25-112.10 117.32-120.20 122.75-138.95"

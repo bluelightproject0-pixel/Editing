@@ -62,7 +62,7 @@ def facets(w, h, n=420, seed=5):
     return shade - edge * 7 + r.normal(0, 1.6, (h, w)).astype(np.float32)
 
 
-def folds(w, h, n=260, seed=9):
+def folds(w, h, n=520, seed=9):
     """Papel arrugado de verdad: mapa de alturas con dobleces locales (líneas de pliegue con ventana
     gaussiana) iluminado de lado. Devuelve un sombreado aditivo en niveles de gris."""
     r = np.random.default_rng(seed)
@@ -74,8 +74,8 @@ def folds(w, h, n=260, seed=9):
         nx, ny = math.cos(ang), math.sin(ang)
         d = (xx - cx) * nx + (yy - cy) * ny
         along = -(xx - cx) * ny + (yy - cy) * nx
-        L = r.uniform(50, 200)           # largo del pliegue
-        Wd = r.uniform(70, 220)          # alcance a los lados
+        L = r.uniform(25, 110)           # largo del pliegue
+        Wd = r.uniform(40, 140)          # alcance a los lados
         win = np.exp(-(along / L) ** 2 - (d / Wd) ** 2)
         amp = r.uniform(4, 13) * (1 if r.random() < 0.5 else -1)
         hgt += amp * np.abs(np.tanh(d / r.uniform(6, 18))) * win
