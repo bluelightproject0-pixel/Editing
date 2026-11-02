@@ -1,0 +1,8 @@
+# Defaults del workspace para la skill video-director.
+# brand: id de una marca en director.yaml (se crea con brand.py import). Vacío hasta importar la primera.
+# platform: instagram_reels | tiktok | youtube_shorts | youtube | generic
+workspace:
+  brand: null
+  platform: instagram_reels
+overrides: {}
+created: '2026-11-02'
