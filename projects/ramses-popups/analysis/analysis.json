@@ -1,0 +1,51 @@
+{
+ "input": "/home/user/Editing/projects/ramses-popups/assets/source_1080.mp4",
+ "probe": {
+  "duration": 140.158,
+  "streams": [
+   {
+    "index": 0,
+    "codec_name": "h264",
+    "codec_type": "video",
+    "width": 1080,
+    "height": 1920,
+    "r_frame_rate": "30000/1001"
+   },
+   {
+    "index": 1,
+    "codec_name": "aac",
+    "codec_type": "audio",
+    "sample_rate": "48000",
+    "channels": 2,
+    "r_frame_rate": "0/0"
+   }
+  ],
+  "width": 1080,
+  "height": 1920,
+  "fps": 29.97,
+  "has_audio": true
+ },
+ "canvas": [
+  1080,
+  1920
+ ],
+ "loudness": {
+  "integrated_lufs": -18.3,
+  "lra": 6.4,
+  "true_peak_dbtp": -0.6
+ },
+ "silences": [],
+ "removable_pauses": [],
+ "scene_cuts": [
+  33.8
+ ],
+ "sheets": [
+  "sheet_01.jpg",
+  "sheet_02.jpg",
+  "sheet_03.jpg",
+  "sheet_04.jpg",
+  "sheet_05.jpg",
+  "sheet_06.jpg"
+ ],
+ "sheet_every_s": 2.0
+}
