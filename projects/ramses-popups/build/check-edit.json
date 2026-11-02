@@ -1,0 +1,329 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 370 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Editing/projects/ramses-popups/edit/compositions/captions.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split this sub-composition further into smaller .html files, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      },
+      {
+        "code": "composition_heavy_overlay_count_high",
+        "severity": "warning",
+        "message": "This composition has 117 elements carrying \"heavy overlay\" CSS (filter:blur, radial-gradient, or clip-path). Field signal: a composition with ~40 such elements (including opacity:0 / visibility:hidden ones) captures solid-black for the first ~half of the render, recovering near the end. Reproduces identically via drawElement, forced screenshot capture, and snapshot, so the capture layer itself is the offender (not encoder/mux). Independent of duration. Presence alone matters; only display:none elements are excluded here.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Editing/projects/ramses-popups/edit/compositions/captions.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split this sub-composition further into per-transition mini-compositions and concat the pieces (FFmpeg or the runtime's slideshow) so each capture only sees a small subset of heavy overlays at once. Even hidden overlays (opacity:0 / visibility:hidden) contribute: either remove truly unused ones from the source or scope them into their own per-transition sub-composition. If an overlay is genuinely inert for the whole clip, use display:none so it never enters the render tree. Field ref ts=1784040753 (#hyperframes-cli-feedback)."
+      }
+    ],
+    "filesScanned": 11
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 5,
+    "findings": [
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 6.399,
+        "selector": "#cam",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -21.6,
+          "top": -34.56,
+          "right": 1101.6,
+          "bottom": 1962.24,
+          "width": 1123.2,
+          "height": 1996.8
+        },
+        "containerSelector": "#layout",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 21.6,
+          "right": 21.6,
+          "top": 34.56,
+          "bottom": 42.24
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -21.6,
+          "y": -34.56,
+          "width": 1123.2,
+          "height": 1996.8
+        },
+        "firstSeen": 6.399,
+        "lastSeen": 95.983,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          6.399,
+          44.792,
+          57.59,
+          70.388,
+          83.186,
+          95.983
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 70.388,
+        "selector": "#p-tag > div:nth-of-type(3)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 158.31,
+          "top": 294.03,
+          "right": 473.34,
+          "bottom": 370.29,
+          "width": 315.02,
+          "height": 76.26
+        },
+        "containerSelector": "#p-tag > div:nth-of-type(2)",
+        "text": "Ahorro en el súper",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.3,
+        "dataAttributes": {},
+        "sourceFile": "compositions/pesos.html",
+        "bbox": {
+          "x": 158.31,
+          "y": 294.03,
+          "width": 315.02,
+          "height": 76.26
+        },
+        "firstSeen": 70.388,
+        "lastSeen": 70.388,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          70.388
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 108.781,
+        "selector": "#bw > div:nth-of-type(7)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 726.75,
+          "top": 287.88,
+          "right": 752.15,
+          "bottom": 349.44,
+          "width": 25.39,
+          "height": 61.55
+        },
+        "containerSelector": "#bw > div:nth-of-type(8)",
+        "text": "D",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.04,
+        "dataAttributes": {},
+        "sourceFile": "compositions/board.html",
+        "bbox": {
+          "x": 726.75,
+          "y": 287.88,
+          "width": 25.39,
+          "height": 61.55
+        },
+        "firstSeen": 108.781,
+        "lastSeen": 108.781,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          108.781
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 108.781,
+        "selector": "#bw > div:nth-of-type(11)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 861.15,
+          "top": 287.73,
+          "right": 887.38,
+          "bottom": 349.58,
+          "width": 26.23,
+          "height": 61.85
+        },
+        "containerSelector": "#bw > div:nth-of-type(12)",
+        "text": "Ú",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.04,
+        "dataAttributes": {},
+        "sourceFile": "compositions/board.html",
+        "bbox": {
+          "x": 861.15,
+          "y": 287.73,
+          "width": 26.23,
+          "height": 61.85
+        },
+        "firstSeen": 108.781,
+        "lastSeen": 108.781,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          108.781
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 108.781,
+        "selector": "#bw > div:nth-of-type(16) > div:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 85.64,
+          "top": 720.8,
+          "right": 277.53,
+          "bottom": 783.26,
+          "width": 191.88,
+          "height": 62.46
+        },
+        "containerSelector": "#bw > div:nth-of-type(16) > img:nth-of-type(1)",
+        "text": "empaquetado",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.07,
+        "dataAttributes": {},
+        "sourceFile": "compositions/board.html",
+        "bbox": {
+          "x": 85.64,
+          "y": 720.8,
+          "width": 191.88,
+          "height": 62.46
+        },
+        "firstSeen": 108.781,
+        "lastSeen": 108.781,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          108.781
+        ]
+      }
+    ],
+    "duration": 115.18,
+    "samples": [
+      6.399,
+      19.197,
+      31.994,
+      44.792,
+      57.59,
+      70.388,
+      83.186,
+      95.983,
+      108.781
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 5,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      6.399,
+      31.994,
+      57.59,
+      83.186,
+      108.781
+    ],
+    "checked": 36,
+    "passed": 36
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "step": 0.19200000000000017,
+    "samples": 599
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "saved": {
+    "id": "7f456c53-cd2b-46b3-b2a3-ecbabbf26615",
+    "revision": "ccbe209c-cc5e-4438-8074-c1f68b7da39a",
+    "report": "/home/user/Editing/projects/ramses-popups/edit/.hyperframes/artifacts/checks/7f456c53-cd2b-46b3-b2a3-ecbabbf26615.json",
+    "attribution": "recorded-revision"
+  },
+  "_meta": {
+    "version": "0.9.5",
+    "latestVersion": "0.9.5",
+    "updateAvailable": false
+  }
+}

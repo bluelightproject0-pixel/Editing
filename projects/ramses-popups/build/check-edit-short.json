@@ -38,21 +38,21 @@
     "ok": true,
     "errorCount": 0,
     "warningCount": 0,
-    "infoCount": 14,
+    "infoCount": 19,
     "findings": [
       {
         "code": "container_overflow",
         "severity": "info",
-        "time": 3.394,
+        "time": 3.301,
         "selector": "#cam",
         "message": "Element extends outside a clipping layout container.",
         "rect": {
-          "left": -9.02,
-          "top": -14.43,
-          "right": 1089.02,
-          "bottom": 1937.64,
-          "width": 1098.04,
-          "height": 1952.06
+          "left": -8.48,
+          "top": -13.56,
+          "right": 1088.48,
+          "bottom": 1936.58,
+          "width": 1096.96,
+          "height": 1950.14
         },
         "containerSelector": "#layout",
         "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
@@ -65,44 +65,44 @@
           "height": 1920
         },
         "overflow": {
-          "left": 9.02,
-          "right": 9.02,
-          "top": 14.43,
-          "bottom": 17.64
+          "left": 8.48,
+          "right": 8.48,
+          "top": 13.56,
+          "bottom": 16.58
         },
         "dataAttributes": {},
         "sourceFile": "index.html",
         "bbox": {
-          "x": -9.02,
-          "y": -14.43,
-          "width": 1098.04,
-          "height": 1952.06
+          "x": -8.48,
+          "y": -13.56,
+          "width": 1096.96,
+          "height": 1950.14
         },
-        "firstSeen": 3.394,
-        "lastSeen": 50.908,
+        "firstSeen": 3.301,
+        "lastSeen": 49.517,
         "occurrences": 5,
         "heldMs": 0,
         "times": [
-          3.394,
-          16.969,
-          23.757,
-          30.545,
-          50.908
+          3.301,
+          16.506,
+          23.108,
+          29.71,
+          49.517
         ]
       },
       {
         "code": "canvas_overflow",
         "severity": "info",
-        "time": 50.908,
+        "time": 49.517,
         "selector": "#bw > div:nth-of-type(2) > div:nth-of-type(1)",
         "message": "Text extends outside the composition canvas.",
         "rect": {
-          "left": -257.44,
-          "top": 609.76,
-          "right": 62.79,
-          "bottom": 714,
-          "width": 320.23,
-          "height": 104.24
+          "left": -384.59,
+          "top": 553.91,
+          "right": -13.29,
+          "bottom": 674.77,
+          "width": 371.3,
+          "height": 120.86
         },
         "containerSelector": "#root",
         "text": "empaquetado",
@@ -116,37 +116,37 @@
           "height": 1920
         },
         "overflow": {
-          "left": 257.44
+          "left": 384.59
         },
         "dataAttributes": {},
         "sourceFile": "compositions/board.html",
         "bbox": {
-          "x": -257.44,
-          "y": 609.76,
-          "width": 320.23,
-          "height": 104.24
+          "x": -384.59,
+          "y": 553.91,
+          "width": 371.3,
+          "height": 120.86
         },
-        "firstSeen": 50.908,
-        "lastSeen": 50.908,
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          50.908
+          49.517
         ]
       },
       {
         "code": "canvas_overflow",
         "severity": "info",
-        "time": 50.908,
+        "time": 49.517,
         "selector": "#bw > div:nth-of-type(3) > div:nth-of-type(2)",
         "message": "Text extends outside the composition canvas.",
         "rect": {
-          "left": -266.65,
-          "top": 771.21,
-          "right": 69.4,
-          "bottom": 905.91,
-          "width": 336.05,
-          "height": 134.7
+          "left": -367.87,
+          "top": 791.36,
+          "right": 0.12,
+          "bottom": 938.87,
+          "width": 367.99,
+          "height": 147.51
         },
         "containerSelector": "#root",
         "text": "Empaquetado",
@@ -160,37 +160,37 @@
           "height": 1920
         },
         "overflow": {
-          "left": 266.65
+          "left": 367.87
         },
         "dataAttributes": {},
         "sourceFile": "compositions/board.html",
         "bbox": {
-          "x": -266.65,
-          "y": 771.21,
-          "width": 336.05,
-          "height": 134.7
+          "x": -367.87,
+          "y": 791.36,
+          "width": 367.99,
+          "height": 147.51
         },
-        "firstSeen": 50.908,
-        "lastSeen": 50.908,
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          50.908
+          49.517
         ]
       },
       {
         "code": "canvas_overflow",
         "severity": "info",
-        "time": 50.908,
+        "time": 49.517,
         "selector": "#bw > div:nth-of-type(3) > div:nth-of-type(3)",
         "message": "Text extends outside the composition canvas.",
         "rect": {
-          "left": -175.07,
-          "top": 865.36,
-          "right": -47.26,
-          "bottom": 990.25,
-          "width": 127.81,
-          "height": 124.89
+          "left": -289.09,
+          "top": 888.97,
+          "right": -140.89,
+          "bottom": 1033.77,
+          "width": 148.2,
+          "height": 144.8
         },
         "containerSelector": "#root",
         "text": "$$$",
@@ -204,37 +204,37 @@
           "height": 1920
         },
         "overflow": {
-          "left": 175.07
+          "left": 289.09
         },
         "dataAttributes": {},
         "sourceFile": "compositions/board.html",
         "bbox": {
-          "x": -175.07,
-          "y": 865.36,
-          "width": 127.81,
-          "height": 124.89
+          "x": -289.09,
+          "y": 888.97,
+          "width": 148.2,
+          "height": 144.8
         },
-        "firstSeen": 50.908,
-        "lastSeen": 50.908,
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          50.908
+          49.517
         ]
       },
       {
         "code": "canvas_overflow",
         "severity": "info",
-        "time": 50.908,
+        "time": 49.517,
         "selector": "#bw > div:nth-of-type(4) > div:nth-of-type(2)",
         "message": "Text extends outside the composition canvas.",
         "rect": {
-          "left": -208,
-          "top": 1059.47,
-          "right": 14.04,
-          "bottom": 1164.46,
-          "width": 222.04,
-          "height": 104.99
+          "left": -302.41,
+          "top": 1117.16,
+          "right": -59.28,
+          "bottom": 1232.12,
+          "width": 243.13,
+          "height": 114.96
         },
         "containerSelector": "#root",
         "text": "La barra",
@@ -248,37 +248,37 @@
           "height": 1920
         },
         "overflow": {
-          "left": 208
+          "left": 302.41
         },
         "dataAttributes": {},
         "sourceFile": "compositions/board.html",
         "bbox": {
-          "x": -208,
-          "y": 1059.47,
-          "width": 222.04,
-          "height": 104.99
+          "x": -302.41,
+          "y": 1117.16,
+          "width": 243.13,
+          "height": 114.96
         },
-        "firstSeen": 50.908,
-        "lastSeen": 50.908,
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          50.908
+          49.517
         ]
       },
       {
         "code": "canvas_overflow",
         "severity": "info",
-        "time": 50.908,
+        "time": 49.517,
         "selector": "#bw > div:nth-of-type(4) > div:nth-of-type(3)",
         "message": "Text extends outside the composition canvas.",
         "rect": {
-          "left": -113.42,
-          "top": 1145.61,
-          "right": -67.96,
-          "bottom": 1258.13,
-          "width": 45.46,
-          "height": 112.52
+          "left": -217.6,
+          "top": 1210.03,
+          "right": -164.9,
+          "bottom": 1340.49,
+          "width": 52.7,
+          "height": 130.46
         },
         "containerSelector": "#root",
         "text": "$",
@@ -292,37 +292,81 @@
           "height": 1920
         },
         "overflow": {
-          "left": 113.42
+          "left": 217.6
         },
         "dataAttributes": {},
         "sourceFile": "compositions/board.html",
         "bbox": {
-          "x": -113.42,
-          "y": 1145.61,
-          "width": 45.46,
-          "height": 112.52
+          "x": -217.6,
+          "y": 1210.03,
+          "width": 52.7,
+          "height": 130.46
         },
-        "firstSeen": 50.908,
-        "lastSeen": 50.908,
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          50.908
+          49.517
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 49.517,
+        "selector": "#bw > div:nth-of-type(5) > div:nth-of-type(2)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 1062.95,
+          "top": 206.86,
+          "right": 1284.01,
+          "bottom": 312.87,
+          "width": 221.06,
+          "height": 106.01
+        },
+        "containerSelector": "#bw > div:nth-of-type(5) > div:nth-of-type(2)",
+        "text": "Claude",
+        "fixHint": "Text is 221px x 106px inside 267px x 94px and overflows by up to 7px; increase the container height to at least ~101px or shrink font-size from 34px to ~30px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 1040.2,
+          "top": 211.44,
+          "right": 1306.89,
+          "bottom": 305.75,
+          "width": 266.69,
+          "height": 94.31
+        },
+        "overflow": {
+          "bottom": 7.12
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/board.html",
+        "bbox": {
+          "x": 1062.95,
+          "y": 206.86,
+          "width": 221.06,
+          "height": 106.01
+        },
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          49.517
         ]
       },
       {
         "code": "canvas_overflow",
         "severity": "info",
-        "time": 50.908,
+        "time": 49.517,
         "selector": "#bw > div:nth-of-type(5) > div:nth-of-type(2)",
         "message": "Text extends outside the composition canvas.",
         "rect": {
-          "left": 991.04,
-          "top": 310.43,
-          "right": 1181.69,
-          "bottom": 401.86,
-          "width": 190.65,
-          "height": 91.43
+          "left": 1062.95,
+          "top": 206.86,
+          "right": 1284.01,
+          "bottom": 312.87,
+          "width": 221.06,
+          "height": 106.01
         },
         "containerSelector": "#root",
         "text": "Claude",
@@ -336,37 +380,81 @@
           "height": 1920
         },
         "overflow": {
-          "right": 101.69
+          "right": 204.01
         },
         "dataAttributes": {},
         "sourceFile": "compositions/board.html",
         "bbox": {
-          "x": 991.04,
-          "y": 310.43,
-          "width": 190.65,
-          "height": 91.43
+          "x": 1062.95,
+          "y": 206.86,
+          "width": 221.06,
+          "height": 106.01
         },
-        "firstSeen": 50.908,
-        "lastSeen": 50.908,
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          50.908
+          49.517
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 49.517,
+        "selector": "#bw > div:nth-of-type(5) > div:nth-of-type(3)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 1076.6,
+          "top": 316.08,
+          "right": 1358.16,
+          "bottom": 425.26,
+          "width": 281.56,
+          "height": 109.18
+        },
+        "containerSelector": "#bw > div:nth-of-type(5) > div:nth-of-type(3)",
+        "text": "ChatGPT",
+        "fixHint": "Text is 282px x 109px inside 327px x 97px and overflows by up to 7px; increase the container height to at least ~105px or shrink font-size from 34px to ~30px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 1053.85,
+          "top": 320.66,
+          "right": 1381.05,
+          "bottom": 418.15,
+          "width": 327.2,
+          "height": 97.48
+        },
+        "overflow": {
+          "bottom": 7.11
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/board.html",
+        "bbox": {
+          "x": 1076.6,
+          "y": 316.08,
+          "width": 281.56,
+          "height": 109.18
+        },
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          49.517
         ]
       },
       {
         "code": "canvas_overflow",
         "severity": "info",
-        "time": 50.908,
+        "time": 49.517,
         "selector": "#bw > div:nth-of-type(5) > div:nth-of-type(3)",
         "message": "Text extends outside the composition canvas.",
         "rect": {
-          "left": 1002.81,
-          "top": 404.63,
-          "right": 1245.65,
-          "bottom": 498.8,
-          "width": 242.84,
-          "height": 94.17
+          "left": 1076.6,
+          "top": 316.08,
+          "right": 1358.16,
+          "bottom": 425.26,
+          "width": 281.56,
+          "height": 109.18
         },
         "containerSelector": "#root",
         "text": "ChatGPT",
@@ -380,37 +468,81 @@
           "height": 1920
         },
         "overflow": {
-          "right": 165.65
+          "right": 278.16
         },
         "dataAttributes": {},
         "sourceFile": "compositions/board.html",
         "bbox": {
-          "x": 1002.81,
-          "y": 404.63,
-          "width": 242.84,
-          "height": 94.17
+          "x": 1076.6,
+          "y": 316.08,
+          "width": 281.56,
+          "height": 109.18
         },
-        "firstSeen": 50.908,
-        "lastSeen": 50.908,
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          50.908
+          49.517
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 49.517,
+        "selector": "#bw > div:nth-of-type(5) > div:nth-of-type(4)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 1051.61,
+          "top": 423.28,
+          "right": 1275.38,
+          "bottom": 529.43,
+          "width": 223.77,
+          "height": 106.15
+        },
+        "containerSelector": "#bw > div:nth-of-type(5) > div:nth-of-type(4)",
+        "text": "Gemini",
+        "fixHint": "Text is 224px x 106px inside 269px x 94px and overflows by up to 7px; increase the container height to at least ~102px or shrink font-size from 34px to ~30px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 1028.86,
+          "top": 427.86,
+          "right": 1298.26,
+          "bottom": 522.32,
+          "width": 269.41,
+          "height": 94.45
+        },
+        "overflow": {
+          "bottom": 7.11
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/board.html",
+        "bbox": {
+          "x": 1051.61,
+          "y": 423.28,
+          "width": 223.77,
+          "height": 106.15
+        },
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          49.517
         ]
       },
       {
         "code": "canvas_overflow",
         "severity": "info",
-        "time": 50.908,
+        "time": 49.517,
         "selector": "#bw > div:nth-of-type(5) > div:nth-of-type(4)",
         "message": "Text extends outside the composition canvas.",
         "rect": {
-          "left": 981.25,
-          "top": 497.09,
-          "right": 1174.25,
-          "bottom": 588.64,
-          "width": 193,
-          "height": 91.55
+          "left": 1051.61,
+          "top": 423.28,
+          "right": 1275.38,
+          "bottom": 529.43,
+          "width": 223.77,
+          "height": 106.15
         },
         "containerSelector": "#root",
         "text": "Gemini",
@@ -424,37 +556,81 @@
           "height": 1920
         },
         "overflow": {
-          "right": 94.25
+          "right": 195.38
         },
         "dataAttributes": {},
         "sourceFile": "compositions/board.html",
         "bbox": {
-          "x": 981.25,
-          "y": 497.09,
-          "width": 193,
-          "height": 91.55
+          "x": 1051.61,
+          "y": 423.28,
+          "width": 223.77,
+          "height": 106.15
         },
-        "firstSeen": 50.908,
-        "lastSeen": 50.908,
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          50.908
+          49.517
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 49.517,
+        "selector": "#bw > div:nth-of-type(5) > div:nth-of-type(5)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 1103.91,
+          "top": 534.53,
+          "right": 1280.01,
+          "bottom": 638.18,
+          "width": 176.1,
+          "height": 103.65
+        },
+        "containerSelector": "#bw > div:nth-of-type(5) > div:nth-of-type(5)",
+        "text": "Grok",
+        "fixHint": "Text is 176px x 104px inside 222px x 92px and overflows by up to 7px; increase the container height to at least ~99px or shrink font-size from 34px to ~30px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 1081.16,
+          "top": 539.11,
+          "right": 1302.89,
+          "bottom": 631.07,
+          "width": 221.73,
+          "height": 91.95
+        },
+        "overflow": {
+          "bottom": 7.11
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/board.html",
+        "bbox": {
+          "x": 1103.91,
+          "y": 534.53,
+          "width": 176.1,
+          "height": 103.65
+        },
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          49.517
         ]
       },
       {
         "code": "canvas_overflow",
         "severity": "info",
-        "time": 50.908,
+        "time": 49.517,
         "selector": "#bw > div:nth-of-type(5) > div:nth-of-type(5)",
         "message": "Text extends outside the composition canvas.",
         "rect": {
-          "left": 1026.36,
-          "top": 593.04,
-          "right": 1178.24,
-          "bottom": 682.44,
-          "width": 151.88,
-          "height": 89.4
+          "left": 1103.91,
+          "top": 534.53,
+          "right": 1280.01,
+          "bottom": 638.18,
+          "width": 176.1,
+          "height": 103.65
         },
         "containerSelector": "#root",
         "text": "Grok",
@@ -468,37 +644,78 @@
           "height": 1920
         },
         "overflow": {
-          "right": 98.24
+          "right": 200.01
         },
         "dataAttributes": {},
         "sourceFile": "compositions/board.html",
         "bbox": {
-          "x": 1026.36,
-          "y": 593.04,
-          "width": 151.88,
-          "height": 89.4
+          "x": 1103.91,
+          "y": 534.53,
+          "width": 176.1,
+          "height": 103.65
         },
-        "firstSeen": 50.908,
-        "lastSeen": 50.908,
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          50.908
+          49.517
+        ]
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 49.517,
+        "selector": "#bw",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": -504.9,
+          "top": -897.6,
+          "right": 1584.9,
+          "bottom": 2817.6,
+          "width": 2089.8,
+          "height": 3715.2
+        },
+        "containerSelector": "#board > div:nth-of-type(1)",
+        "text": "El chiste no es ahorrar por ahorrar empaquetado A ♦ EMPAQUETADO $$$ A ♣ LA BARRA $ AUTOMATIZACIÓN Claude ChatGPT Gemini Grok Dios te bendiga.",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/board.html",
+        "bbox": {
+          "x": -504.9,
+          "y": -897.6,
+          "width": 2089.8,
+          "height": 3715.2
+        },
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          49.517
         ]
       },
       {
         "code": "panel_out_of_canvas",
         "severity": "info",
-        "time": 50.908,
+        "time": 49.517,
         "selector": "#bw > div:nth-of-type(2)",
         "message": "Painted panel extends outside the composition canvas.",
         "rect": {
-          "left": -317.55,
-          "top": 221.81,
-          "right": 82.46,
-          "bottom": 716.88,
-          "width": 400.02,
-          "height": 495.08
+          "left": -454.29,
+          "top": 104.1,
+          "right": 9.51,
+          "bottom": 678.12,
+          "width": 463.8,
+          "height": 574.01
         },
         "containerSelector": "#root",
         "text": "empaquetado",
@@ -512,37 +729,37 @@
           "height": 1920
         },
         "overflow": {
-          "left": 317.55
+          "left": 454.29
         },
         "dataAttributes": {},
         "sourceFile": "compositions/board.html",
         "bbox": {
-          "x": -317.55,
-          "y": 221.81,
-          "width": 400.02,
-          "height": 495.08
+          "x": -454.29,
+          "y": 104.1,
+          "width": 463.8,
+          "height": 574.01
         },
-        "firstSeen": 50.908,
-        "lastSeen": 50.908,
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          50.908
+          49.517
         ]
       },
       {
         "code": "panel_out_of_canvas",
         "severity": "info",
-        "time": 50.908,
+        "time": 49.517,
         "selector": "#bw > div:nth-of-type(3)",
         "message": "Painted panel extends outside the composition canvas.",
         "rect": {
-          "left": -329.85,
-          "top": 725.01,
-          "right": 121.46,
-          "bottom": 1031.44,
-          "width": 451.31,
-          "height": 306.43
+          "left": -468.54,
+          "top": 726.24,
+          "right": 54.72,
+          "bottom": 1081.53,
+          "width": 523.27,
+          "height": 355.29
         },
         "containerSelector": "#root",
         "text": "A ♦ EMPAQUETADO $$$",
@@ -556,37 +773,37 @@
           "height": 1920
         },
         "overflow": {
-          "left": 329.85
+          "left": 468.54
         },
         "dataAttributes": {},
         "sourceFile": "compositions/board.html",
         "bbox": {
-          "x": -329.85,
-          "y": 725.01,
-          "width": 451.31,
-          "height": 306.43
+          "x": -468.54,
+          "y": 726.24,
+          "width": 523.27,
+          "height": 355.29
         },
-        "firstSeen": 50.908,
-        "lastSeen": 50.908,
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          50.908
+          49.517
         ]
       },
       {
         "code": "panel_out_of_canvas",
         "severity": "info",
-        "time": 50.908,
+        "time": 49.517,
         "selector": "#bw > div:nth-of-type(4)",
         "message": "Painted panel extends outside the composition canvas.",
         "rect": {
-          "left": -312.68,
-          "top": 1012.39,
-          "right": 124.32,
-          "bottom": 1291.45,
-          "width": 437,
-          "height": 279.06
+          "left": -448.64,
+          "top": 1055.58,
+          "right": 58.04,
+          "bottom": 1379.13,
+          "width": 506.68,
+          "height": 323.56
         },
         "containerSelector": "#root",
         "text": "A ♣ LA BARRA $",
@@ -600,28 +817,28 @@
           "height": 1920
         },
         "overflow": {
-          "left": 312.68
+          "left": 448.64
         },
         "dataAttributes": {},
         "sourceFile": "compositions/board.html",
         "bbox": {
-          "x": -312.68,
-          "y": 1012.39,
-          "width": 437,
-          "height": 279.06
+          "x": -448.64,
+          "y": 1055.58,
+          "width": 506.68,
+          "height": 323.56
         },
-        "firstSeen": 50.908,
-        "lastSeen": 50.908,
+        "firstSeen": 49.517,
+        "lastSeen": 49.517,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          50.908
+          49.517
         ]
       },
       {
         "code": "text_occluded",
         "severity": "info",
-        "time": 57.696,
+        "time": 56.119,
         "selector": "#bw > div:nth-of-type(2) > div:nth-of-type(1)",
         "message": "Text is hidden beneath an opaque element.",
         "rect": {
@@ -644,31 +861,31 @@
           "width": 191.88,
           "height": 62.46
         },
-        "firstSeen": 57.696,
-        "lastSeen": 57.696,
+        "firstSeen": 56.119,
+        "lastSeen": 56.119,
         "occurrences": 1,
         "heldMs": 0,
         "times": [
-          57.696
+          56.119
         ]
       }
     ],
-    "duration": 61.09,
+    "duration": 59.42,
     "samples": [
-      3.394,
-      10.182,
-      16.969,
-      23.757,
-      30.545,
-      37.333,
-      44.121,
-      50.908,
-      57.696
+      3.301,
+      9.903,
+      16.506,
+      23.108,
+      29.71,
+      36.312,
+      42.914,
+      49.517,
+      56.119
     ],
     "transitionSamples": [],
     "transitionSamplesDropped": 0,
     "tolerance": 2,
-    "totalIssueCount": 14,
+    "totalIssueCount": 19,
     "truncated": false
   },
   "motion": {
@@ -688,14 +905,14 @@
     "findings": [],
     "enabled": true,
     "samples": [
-      3.394,
-      16.969,
-      30.545,
-      44.121,
-      57.696
+      3.301,
+      16.506,
+      29.71,
+      42.914,
+      56.119
     ],
-    "checked": 26,
-    "passed": 26
+    "checked": 25,
+    "passed": 25
   },
   "craft": {
     "ok": true,
@@ -705,7 +922,7 @@
     "findings": [],
     "enabled": true,
     "step": 0.125,
-    "samples": 489
+    "samples": 476
   },
   "audio": {
     "ok": true,
@@ -725,10 +942,10 @@
     "findingFiles": []
   },
   "saved": {
-    "id": "0e10a252-ef4b-4c46-bd27-d3d040f69049",
-    "revision": null,
-    "report": "/home/user/Editing/projects/ramses-popups/edit-short/.hyperframes/artifacts/checks/0e10a252-ef4b-4c46-bd27-d3d040f69049.json",
-    "attribution": "unversioned"
+    "id": "49ee632a-7823-4709-a47a-0db3aa3f507d",
+    "revision": "bd8d4cae-04ba-43b4-b68a-265e28a4ba0b",
+    "report": "/home/user/Editing/projects/ramses-popups/edit-short/.hyperframes/artifacts/checks/49ee632a-7823-4709-a47a-0db3aa3f507d.json",
+    "attribution": "recorded-revision"
   },
   "_meta": {
     "version": "0.9.5",
