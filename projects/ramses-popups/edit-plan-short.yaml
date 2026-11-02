@@ -1,0 +1,762 @@
+job: ramses-popups-corto
+version: 1
+platform: instagram_reels
+profile: talking_head_edu
+brand: ramses
+canvas:
+- 1080
+- 1920
+duration: 59.12
+source: projects/ramses-popups/assets/source_1080.mp4
+style_suffix: cut-out paper collage, single-colour cobalt halftone print, white paper border, flat light, no text
+taste:
+  dials:
+    energy: 6
+    motion: 5
+    density: 6
+  direction: whiteboard-builder
+  reason: 'su propio tablero de Pinterest (INSPO ESTILO) se vuelve el tablero que crece: cada idea pega un recorte de papel y al final la cámara
+    se aleja y revela el collage completo'
+  redraws: []
+  inventory:
+  - la palabra 'fresas' (la dice 4 veces; fresa = fresa la fruta)
+  - 'letreros del súper detrás: FRESCURA, QUESOS, CARNES'
+  - su mamá 'del rancho' que cocina increíble
+  - 'etiquetas reales del queso empaquetado: $239 $230 $276 $255 $236 $222 $235 $359, que dicen ''PRECIO BAJO'''
+  - la barra de salchichonería con el personal de blanco, en el mismo cuadro que el queso empaquetado (36.0 s)
+  - '''jamón o queso'''
+  - '''mil pesos extra, dos mil pesos extra'''
+  - '''libros que me van a ayudar a hacer más dinero'''
+  - '''Claude, ChatGPT, Gemini o Grok'''
+  - '''oye bro, tú puedes conseguir estas cosas más baratas aquí'''
+  - sus 'gems'
+  - su suéter guinda (casa con el rojo de su tablero)
+  idea: En este video, la palabra 'fresa' (y cada truco que dice) se vuelve un recorte de papel que se pega en su propio tablero de inspiración,
+    que crece hasta revelarse completo al final
+  live_thing: la fresa recortada del gancho regresa al final y se tacha con marcador rojo justo cuando dice 'que no son para nada fresas'
+story:
+- id: s0
+  start: 0
+  end: 10.0
+  beat: hook
+  summary: Mis seguidores son bien fresas y no saben trucos del súper
+- id: s1
+  start: 10.0
+  end: 20.7
+  beat: setup
+  summary: Mi mamá es del rancho, cocina increíble y sabe comprar
+- id: s2
+  start: 20.7
+  end: 43.2
+  beat: claim
+  summary: 'El truco: jamón y queso en la barra, no empaquetado, sale mucho más barato'
+- id: s3
+  start: 43.2
+  end: 78.0
+  beat: cause_effect
+  summary: 'Ahorrar no es por ahorrar: lo ahorrado ($1,000-$2,000) se invierte en libros que hacen más dinero'
+- id: s4
+  start: 78.0
+  end: 97.6
+  beat: tip
+  summary: Hazte una automatización con Claude/ChatGPT/Gemini/Grok que te diga dónde está más barato
+- id: s5
+  start: 97.6
+  end: 114.6
+  beat: ending
+  summary: 'Para mis seguidores que no son nada fresas: ayudarnos, aquí están mis gems, Dios te bendiga'
+keepout:
+- start: 1.35
+  end: 27.1
+  box:
+  - 60
+  - 560
+  - 860
+  - 900
+  what: cara + pelo (peor caso)
+- start: 33.65
+  end: 69.0
+  box:
+  - 60
+  - 560
+  - 860
+  - 900
+  what: cara + pelo (peor caso)
+- start: 69.0
+  end: 76.4
+  box:
+  - 166
+  - 863
+  - 671
+  - 702
+  what: cara en split (video a 0.78, anclado abajo)
+- start: 76.4
+  end: 81.0
+  box:
+  - 60
+  - 560
+  - 860
+  - 900
+  what: cara + pelo (peor caso)
+- start: 81.0
+  end: 93.0
+  box:
+  - 166
+  - 863
+  - 671
+  - 702
+  what: cara en split (video a 0.78, anclado abajo)
+- start: 93.0
+  end: 98.0
+  box:
+  - 60
+  - 560
+  - 860
+  - 900
+  what: cara + pelo (peor caso)
+- start: 98.0
+  end: 114.6
+  box:
+  - 300
+  - 760
+  - 400
+  - 450
+  what: cara dentro del video encogido a 0.5 (tablero)
+cuts:
+- id: c1
+  src_start: 0.0
+  src_end: 5.15
+- id: c2
+  src_start: 12.75
+  src_end: 15.53
+- id: c3
+  src_start: 34.72
+  src_end: 40.45
+- id: c4
+  src_start: 42.05
+  src_end: 63.3
+- id: c5
+  src_start: 93.8
+  src_end: 108.12
+- id: c6
+  src_start: 123.62
+  src_end: 125.92
+- id: c7
+  src_start: 133.45
+  src_end: 138.95
+cut_check_note: c1→c2 y c5→c6 quitan habla a propósito (retoma repetida y un murmullo); bordes en silencios 5.91-6.06, 12.69-12.81, 112.08-112.35
+  y 116.64-117.30
+camera:
+- id: k1
+  t: 1.35
+  scale: 1.0
+  to: 1.04
+  dur: 4.4
+  ease: sine.inOut
+  why: 'deriva: el cuadro nunca queda quieto'
+- id: k2
+  t: 5.95
+  scale: 1.1
+  cut: true
+  why: 'corte c1→c2: punch-in duro tapa el salto'
+  rules:
+  - R-motivated-motion
+- id: k3
+  t: 14.2
+  scale: 1.1
+  to: 1.0
+  dur: 1.6
+  ease: sine.inOut
+  why: '''cocina increíble'': suelta el punch del corte'
+- id: k4
+  t: 20.76
+  scale: 1.0
+  to: 1.04
+  dur: 5.0
+  ease: sine.inOut
+  why: '''truco del súper'': deriva lenta bajo la tarjeta de sección'
+- id: k5
+  t: 26.0
+  scale: 1.04
+  to: 1.16
+  dur: 0.6
+  ease: power2.out
+  why: '''ni un huevo'': remate'
+- id: k6
+  t: 27.1
+  scale: 1.0
+  cut: true
+  why: 'toma del queso: plano abierto'
+- id: k7
+  t: 42.6
+  scale: 1.0
+  to: 1.16
+  dur: 0.6
+  ease: power2.out
+  why: '''muchísimo más barato'': remate'
+- id: k8
+  t: 44.4
+  scale: 1.16
+  to: 1.03
+  dur: 1.2
+  ease: sine.inOut
+  why: soltar
+- id: k9
+  t: 58.9
+  scale: 1.03
+  to: 1.09
+  dur: 0.6
+  ease: power2.out
+  why: '''lo uses para algo más'''
+- id: k10
+  t: 60.6
+  scale: 1.09
+  to: 1.02
+  dur: 1.2
+  ease: sine.inOut
+  why: soltar
+- id: k11
+  t: 70.48
+  scale: 1.02
+  to: 1.14
+  dur: 0.6
+  ease: power2.out
+  why: '''dos mil pesos extra'''
+- id: k12
+  t: 72.2
+  scale: 1.14
+  to: 1.02
+  dur: 1.2
+  ease: sine.inOut
+  why: soltar
+- id: k13
+  t: 78.0
+  scale: 1.08
+  cut: true
+  why: 'corte c3→c4: tapa el salto'
+- id: k14
+  t: 93.9
+  scale: 1.0
+  cut: true
+  why: corte c4→c5
+- id: k15
+  t: 94.75
+  scale: 1.08
+  cut: true
+  why: corte c5→c6
+- id: kb1
+  target: board
+  t: 100.2
+  x: -60
+  y: -40
+  dur: 1.0
+  ease: power2.inOut
+  why: la cámara del tablero se acerca a la fresa cuando la tacha ('no son para nada fresas')
+- id: kb2
+  target: board
+  t: 103.0
+  x: 0
+  y: 0
+  dur: 2.5
+  ease: sine.inOut
+  why: regresa a ver el tablero completo
+- id: kb3
+  target: board
+  t: 106.24
+  x: 40
+  y: 60
+  dur: 1.2
+  ease: power2.inOut
+  why: '''ayudarnos entre nosotros'': pan a la nota'
+- id: kb4
+  target: board
+  t: 109.0
+  x: 0
+  y: 0
+  scale: 0.97
+  dur: 2.6
+  ease: sine.inOut
+  why: '''mucho éxito'': se aleja un poco más'
+- id: kb5
+  target: board
+  t: 111.87
+  scale: 0.97
+  to: 1.0
+  dur: 1.8
+  ease: sine.inOut
+  why: '''aquí están mis gems'''
+captions:
+  source: transcript.clean.json
+  style: tira de papel crema rasgada, EB Garamond 600 58 px tinta, palabra clave en itálica roja; 1-3 palabras; y 1462 (bajo la barbilla) en todos
+    los layouts
+  band:
+  - 1450
+  - 1560
+  highlight_words:
+  - fresas
+  - barra
+  - barato
+  - invertir
+  - libros
+  - automatización
+  - fresa
+  placement_note: 'EXCEPCIÓN DOCUMENTADA: en cara completa la banda va bajo la barbilla (1450-1560) porque la cara ocupa toda la zona segura;
+    en los splits (69-76.4 y 81-93) la capa de subtítulos sube a 772-852, entre el tablero y la foto (captions-follow-head). El lint solo ve una
+    banda y lo marca; se pregunta al usuario en el checkpoint A.'
+  split_band:
+  - 772
+  - 852
+  emphasis_chunks:
+  - start: 3.36
+    end: 4.2
+    text: son bien <b>fresas</b>
+  - start: 14.2
+    end: 15.0
+    text: cocina <b>increíble</b>
+  - start: 18.7
+    end: 19.6
+    text: a <b>comprar bien</b>
+  - start: 26.02
+    end: 26.8
+    text: ni un <b>huevo</b>
+  - start: 41.2
+    end: 42.0
+    text: aquí a la <b>barra</b>
+  - start: 50.87
+    end: 52.28
+    text: <b>ahorrar</b> por ahorrar
+  - start: 56.52
+    end: 57.5
+    text: <b>utilizar</b> ese dinero
+  - start: 65.22
+    end: 66.3
+    text: mucho <b>queso</b> y jamón
+  - start: 83.16
+    end: 83.6
+    text: con <b>Claude</b>
+  - start: 85.52
+    end: 86.0
+    text: con <b>Gemini</b>
+  - start: 91.29
+    end: 91.9
+    text: más <b>baratas</b>
+  - start: 97.68
+    end: 98.0
+    text: vida <b>cómoda</b>
+graphics:
+- id: g-hook
+  type: kinetic_title
+  motion: word-stack-build
+  start: 0.0
+  dur: 3.9
+  box:
+  - 90
+  - 290
+  - 900
+  - 260
+  content:
+    lines:
+    - EL TRUCO DEL SÚPER
+    - QUE LOS FRESAS
+    - NO SABEN
+    accent: FRESAS
+    sticker: fresa_recortada
+  layout_note: 0-1.35 s sobre papel cuadriculado arrugado (el video empieza girando hacia el piso); en 1.35 el papel sube y aparece la cara; el
+    texto queda en la franja del techo hasta 3.9
+  sfx:
+  - key: paper-slap
+    at: 0.05
+  - key: paper-slide
+    at: 1.35
+  why: abre el loop (¿cuál truco?) que se paga en 27-43 s; complementa lo que dice, no lo repite
+  rules:
+  - R-hook-text-frame0
+- id: g-mama
+  type: sticker
+  motion: mask-line-reveal
+  start: 10.1
+  dur: 3.4
+  box:
+  - 600
+  - 290
+  - 400
+  - 250
+  content:
+    tag: MAMÁ DEL RANCHO
+    style: etiqueta de papel crema con marcador, cinta adhesiva arriba, garabato rojo de sombrero vaquero
+  sfx:
+  - key: paper-slap
+    at: 10.12
+  why: nombra a la persona de la que sale el truco; pieza 2 del tablero
+- id: g-truco
+  type: section_title
+  motion: custom:ransom-letters
+  start: 20.7
+  dur: 2.6
+  box:
+  - 90
+  - 290
+  - 900
+  - 250
+  content:
+    text: TRUCO DEL SÚPER
+    style: letras recortadas tipo nota de rescate (Anton, papel crema / azul / rojo), cada una cae al decir 'truco del súper'
+  sfx:
+  - key: paper-slap
+    at: 20.76
+  why: cambio de sección al truco; la tipografía recortada del pin 03 (Cutout Chaos)
+- id: g-queso
+  type: callout
+  motion: custom:marker-circle-freeze
+  start: 29.2
+  dur: 2.4
+  box:
+  - 80
+  - 280
+  - 920
+  - 860
+  content:
+    freeze: src 36.0 en blanco y negro (assets/img/cheese_36.jpg)
+    circles:
+    - box:
+      - 840
+      - 990
+      - 180
+      - 110
+      label: $359
+    - box:
+      - 410
+      - 870
+      - 150
+      - 90
+      label: $255
+    tags:
+    - text: EMPAQUETADO
+      box:
+      - 90
+      - 450
+      - 400
+      - 84
+      color: red
+      note: sobre el vidrio, arriba de los quesos
+    - text: LA BARRA
+      box:
+      - 560
+      - 300
+      - 380
+      - 84
+      color: cobalt
+      arrow_to:
+      - 700
+      - 170
+      arrow_note: la punta entra a la zona de UI de arriba; el texto queda dentro de la zona segura
+  sfx:
+  - key: marker-squeak
+    at: 29.35
+  - key: marker-squeak
+    at: 30.2
+  why: 'el único cuadro donde se ven juntos los precios reales del empaquetado y la barra detrás: pinta la comparación con lo que ya grabó (pines
+    23/25: marcador rojo sobre foto en B/N)'
+  rules:
+  - R-no-invented-numbers
+- id: g-cartas
+  type: callout
+  motion: split-compare
+  start: 37.9
+  dur: 5.3
+  box:
+  - 80
+  - 285
+  - 920
+  - 270
+  content:
+    left:
+      card: carta As de diamantes
+      text: EMPAQUETADO
+      mark: $$$
+      strike: tachón rojo a los 41.2
+    right:
+      card: carta As en azul cobalto
+      text: LA BARRA
+      mark: $
+      lands: 41.2
+      scale_up: 1.08
+  sfx:
+  - key: card-flick
+    at: 37.9
+  - key: card-flick
+    at: 41.2
+  why: '''ya empaquetado… y si lo pides en la barra te sale muchísimo más barato'': las cartas escritas a mano de su tablero (pines 20/21)'
+- id: g-chiste
+  type: kinetic_title
+  motion: typewriter-line
+  start: 50.0
+  dur: 4.9
+  box:
+  - 90
+  - 295
+  - 900
+  - 240
+  content:
+    text: EL CHISTE NO ES AHORRAR POR AHORRAR
+    style: tira de papel rasgada, marcador negro escribiéndose al ritmo de la voz; 'AHORRAR POR AHORRAR' subrayado en rojo
+  sfx:
+  - key: marker-squeak
+    at: 50.1
+  why: la frase que resume la parte 2; se escribe a la par de lo que dice
+- id: g-pesos
+  type: callout
+  motion: countup-number
+  start: 69.0
+  dur: 7.4
+  box:
+  - 90
+  - 285
+  - 900
+  - 470
+  content:
+    tag: etiqueta de precio de papel
+    count:
+    - $1,000
+    - $2,000
+    suffix: EXTRA
+    then:
+      at: 75.35
+      arrow: rojo a mano
+      sticker: pila de LIBROS en halftone azul
+  sfx:
+  - key: tick-roll
+    at: 69.0
+  - key: paper-slap
+    at: 75.35
+  why: números reales que dice; 'lo puedo invertir en libros' llega como recorte
+  rules:
+  - R-no-invented-numbers
+- id: g-ia
+  type: step_list
+  motion: hub-constellation
+  start: 81.2
+  dur: 7.0
+  box:
+  - 80
+  - 285
+  - 920
+  - 280
+  content:
+    centre: AUTOMATIZACIÓN
+    satellites:
+    - text: Claude
+      at: 83.16
+    - text: ChatGPT
+      at: 84.04
+    - text: Gemini
+      at: 85.52
+    - text: Grok
+      at: 86.24
+    style: nombres escritos a mano en tiras de cinta, sin logos; líneas de marcador uniendo el centro
+  sfx:
+  - key: pop-soft
+    at: 83.16
+  why: 'el diagrama que crece del whiteboard-builder: una pieza por herramienta que nombra, y el globo es lo que diría la IA'
+- id: g-bro
+  type: callout
+  motion: custom:comic-bubble-stick
+  start: 88.27
+  dur: 4.6
+  box:
+  - 140
+  - 560
+  - 800
+  - 200
+  content:
+    text: OYE BRO, ESTO ESTÁ MÁS BARATO AQUÍ
+    style: globo de cómic recortado con puntos ben-day (pin 43), la colita apunta al centro AUTOMATIZACIÓN
+  sfx:
+  - key: paper-slap
+    at: 88.27
+  why: lo que te diría la automatización, en sus propias palabras ('oye bro…')
+- id: g-board
+  type: callout
+  motion: custom:board-pullback
+  start: 98.0
+  dur: 16.6
+  box:
+  - 0
+  - 0
+  - 1080
+  - 1920
+  allow_unsafe: fondo full-bleed del tablero (papel cuadriculado arrugado); las piezas legibles quedan dentro de la zona segura
+  content:
+    ground: papel cuadriculado arrugado (pin 01)
+    video_card: el video a 0.5 con borde blanco, girado -2°, en el centro (x 270-810, y 480-1440)
+    pieces:
+    - fresa recortada (arriba izq.)
+    - MAMÁ DEL RANCHO
+    - TRUCO DEL SÚPER
+    - polaroid B/N del queso con círculos rojos
+    - cartas EMPAQUETADO / LA BARRA
+    - tira EL CHISTE NO ES AHORRAR POR AHORRAR
+    - etiqueta $2,000 → LIBROS
+    - diagrama AUTOMATIZACIÓN + globo
+    strike_fresa:
+      at: 100.2
+      what: 'tachón rojo de marcador sobre la fresa: ''no son para nada fresas'''
+    note:
+      at: 106.24
+      text: AYUDARNOS ENTRE NOSOTROS
+      style: nota a mano con cinta
+    gems:
+      at: 111.87
+      text: pendiente (respuesta del usuario)
+  sfx:
+  - key: paper-slide
+    at: 98.0
+  - key: marker-squeak
+    at: 100.2
+  - key: chime
+    at: 100.6
+  why: 'firma de la dirección: la cámara se aleja y revela el tablero completo; la fresa del gancho se tacha (live thing)'
+layouts:
+- id: L1
+  kind: text_full
+  start: 0
+  end: 1.35
+  why: gancho sobre papel; el video empieza apuntando al piso
+- id: L2
+  kind: full_speaker
+  start: 1.35
+  end: 27.1
+  why: opinión y anécdota; la cara es el contenido
+- id: L3
+  kind: cutaway
+  start: 27.1
+  end: 33.65
+  items:
+  - b-freeze
+  - g-queso
+  why: su propia toma POV del queso con la barra detrás (no es b-roll; se deja completa)
+- id: L4
+  kind: speaker_overlay
+  start: 37.9
+  end: 43.2
+  items:
+  - g-cartas
+  why: comparación arriba de la cabeza
+- id: L5
+  kind: speaker_overlay
+  start: 50.0
+  end: 54.9
+  items:
+  - g-chiste
+  why: la frase clave
+- id: L6
+  kind: split
+  start: 69.0
+  end: 76.4
+  items:
+  - g-pesos
+  why: 'números reales y libros: el video se encoge a 0.78 como foto pegada abajo; la etiqueta y la pila de libros crecen arriba (primer vistazo
+    al tablero)'
+- id: L7
+  kind: split
+  start: 81.0
+  end: 93.0
+  items:
+  - g-ia
+  - g-bro
+  why: el diagrama necesita ~11 s; el video se encoge a 0.78 como foto pegada abajo y el diagrama crece arriba
+- id: L8
+  kind: full_speaker
+  start: 93.0
+  end: 98.0
+  why: '''yo tengo una… vivir una vida cómoda'''
+- id: L9
+  kind: full_speaker
+  start: 98.0
+  end: 114.6
+  items:
+  - g-board
+  why: 'pull-back final: la cámara se aleja a 0.5 y el video queda como recorte en el centro del tablero completo'
+transitions:
+- id: t1
+  at: 1.35
+  type: paper-slide-up
+  why: el papel del gancho sube y revela la cara
+- id: t1b
+  at: 69.0
+  type: eased-layout-morph
+  dur: 0.7
+  why: a split (pesos → libros)
+- id: t1c
+  at: 76.4
+  type: eased-layout-morph
+  dur: 0.7
+  why: regresa a cara completa
+- id: t2
+  at: 81.0
+  type: eased-layout-morph
+  dur: 0.8
+  why: 'a split: el video se vuelve foto pegada en el tablero'
+- id: t3
+  at: 93.0
+  type: eased-layout-morph
+  dur: 0.7
+  why: regresa a cara completa
+- id: t4
+  at: 98.0
+  type: eased-layout-morph
+  dur: 1.2
+  why: pull-back final que revela el tablero completo
+ending:
+  preserve_source_ending: true
+  gems_note:
+    at: 111.87
+    text: 'pendiente: ¿dónde están sus gems? (bio / comentarios)'
+  hold:
+    start: 113.83
+    dur: 0.8
+    what: último cuadro del tablero completo
+  cta:
+    type: none_yet
+    text: null
+  loop_to_hook: false
+  note: el final es g-board (ver graphics)
+audio:
+  voice:
+    source: take
+    keep: true
+    note: ambiente del súper incluido; integrado -18.3 LUFS → normalizar a -14 en finalize
+  music:
+    asset: null
+    note: sin música por defecto; opcional con catálogo HeyGen (requiere iniciar sesión gratis)
+  sfx_note: SFX de papel/marcador/carta sintetizados con ffmpeg (sin derechos); pop-soft, tick-roll y chime de la librería incluida; máx 3 cada
+    10 s, siempre bajo la voz
+grade:
+  tool: none
+  note: el color de la toma está bien; solo el congelado del queso va en B/N
+cover:
+  t: 2.4
+  why: título del gancho + cara centrada
+cost:
+  free:
+  - SFX sintetizados
+  - librería de SFX incluida
+  - fresa/libros/cartas dibujados en SVG
+  - fuentes Anton y Permanent Marker (Google Fonts)
+  paid: []
+open_questions:
+- ¿Las 'gems' dónde están (link en bio, comentarios, highlights)? Para el texto del final.
+- ¿Quieres CTA al final (guardar / seguir) o termina en 'Dios te bendiga'?
+- ¿Gasto 1-2 créditos de research de Blue Light Project para ver tu Instagram? ¿Y quién es 'esta persona' cuyos videos querías de referencia?
+- 'Transcripción a confirmar: ''no considera ni un huevo'' (26 s) y ''ese peor lo puedo invertir'' (75 s): ¿qué dijiste?'
+broll:
+- id: b-freeze
+  kind: user_clip
+  asset: edit/assets/img/cheese_36.jpg
+  note: congelado de src 36.0 en blanco y negro (su propia toma)
+  start: 29.2
+  dur: 2.2
+  layout: fullframe
+  why: quieto para que se lean los precios reales; la voz sigue debajo
+cut_note: 'Cortes finales (aprobados en checkpoint K). Tiempos exactos de cada pieza: build/build.py, desde tiempos de la fuente.'
+variant_note: 'Versión corta: gancho, queso, cartas, chiste, IA y tablero final. Sin mamá, truco, queso+jamón ni pesos/libros.'

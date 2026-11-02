@@ -701,20 +701,26 @@ rules:
   text: 'Sin CTA de seguir/guardar: el video termina en su despedida hablada (''Dios te bendiga''), como cierre escrito a
     mano'
   source: user
-  confidence: 0.6
+  confidence: 0.7
   evidence:
   - ramses-popups v1 checkpoint A
+  - ramses-popups v1 aprobado en checkpoint K
   created: '2026-11-02'
+  confirmations: 1
+  updated: '2026-11-02'
 - id: R-ramses-captions-chin
   scope: brand:ramses
   status: candidate
   text: 'Subtítulos siempre, justo bajo la barbilla (su cara llena la zona segura en selfies), 1-3 palabras, estilo editorial:
     serif con la palabra clave en itálica'
   source: user
-  confidence: 0.6
+  confidence: 0.7
   evidence:
   - ramses-popups v1 checkpoint A + reels de referencia
+  - ramses-popups v1 aprobado en checkpoint K
   created: '2026-11-02'
+  confirmations: 1
+  updated: '2026-11-02'
 - id: R-ramses-references
   scope: brand:ramses
   status: candidate
@@ -722,10 +728,13 @@ rules:
     recortadas sobre el torso), @joshguvi (tipografía cinética, firma escrita a mano), @artzenmedia (video que se encoge a
     tarjeta con esquinas redondas)'
   source: user
-  confidence: 0.6
+  confidence: 0.7
   evidence:
   - ramses-popups v1 checkpoint A
+  - ramses-popups v1 aprobado en checkpoint K
   created: '2026-11-02'
+  confirmations: 1
+  updated: '2026-11-02'
 feedback_log:
 - id: fb-0001
   date: '2026-11-02'
@@ -761,6 +770,17 @@ feedback_log:
   - taste
   note: 'Referencias de estilo: subtítulos editoriales pequeños (serif con itálica en la palabra clave), etiquetas de papel
     recortado, video que se encoge como tarjeta, cierre escrito a mano'
+- id: fb-0004
+  date: '2026-11-02'
+  job: ramses-popups
+  version: '1'
+  quote: esta bien asu
+  rules: []
+  brand: ramses
+  applies: client
+  items:
+  - checkpoint-K
+  note: Aprobó los cuadros clave de la versión larga y la corta sin cambios
 metrics: []
 tooling:
   whisper: Set the path to your whisper-cli build here (GPU build recommended); the agent records what it finds on first run.

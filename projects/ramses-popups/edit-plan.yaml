@@ -6,7 +6,7 @@ brand: ramses
 canvas:
 - 1080
 - 1920
-duration: 114.6
+duration: 115.18
 source: projects/ramses-popups/assets/source_1080.mp4
 style_suffix: cut-out paper collage, single-colour cobalt halftone print, white paper border, flat light, no text
 taste:
@@ -125,34 +125,25 @@ keepout:
 cuts:
 - id: c1
   src_start: 0.0
-  src_end: 5.95
-  why: gancho completo hasta 'la verdad'
+  src_end: 5.15
 - id: c2
   src_start: 12.75
   src_end: 40.45
-  why: quita la repetición 'o sea la mayoría de ustedes, sí por favor, la mayoría de ustedes son bien fresas' y 2.8 s de silencio
-  rules:
-  - R-change-cadence
 - id: c3
   src_start: 42.05
   src_end: 86.4
-  why: quita 1.6 s de pausa mientras enseña el queso
 - id: c4
   src_start: 93.85
   src_end: 109.75
-  why: quita 7.5 s de pausa (mira a un lado pensando)
 - id: c5
   src_start: 111.25
   src_end: 112.1
-  why: '''por ejemplo'' sin la pausa de 1.5 s antes'
 - id: c6
   src_start: 117.32
   src_end: 120.2
-  why: quita 5.2 s de pausa con un murmullo
 - id: c7
   src_start: 122.75
   src_end: 138.95
-  why: quita 2.5 s de pausa; termina en 'Dios te bendiga'
 cut_check_note: c1→c2 y c5→c6 quitan habla a propósito (retoma repetida y un murmullo); bordes en silencios 5.91-6.06, 12.69-12.81, 112.08-112.35
   y 116.64-117.30
 camera:
@@ -295,8 +286,9 @@ camera:
   ease: sine.inOut
   why: '''aquí están mis gems'''
 captions:
-  source: projects/ramses-popups/transcript.clean.json
-  style: paper_strip
+  source: transcript.clean.json
+  style: tira de papel crema rasgada, EB Garamond 600 58 px tinta, palabra clave en itálica roja; 1-3 palabras; y 1462 (bajo la barbilla) en todos
+    los layouts
   band:
   - 1450
   - 1560
@@ -311,7 +303,10 @@ captions:
   placement_note: 'EXCEPCIÓN DOCUMENTADA: en cara completa la banda va bajo la barbilla (1450-1560) porque la cara ocupa toda la zona segura;
     en los splits (69-76.4 y 81-93) la capa de subtítulos sube a 772-852, entre el tablero y la foto (captions-follow-head). El lint solo ve una
     banda y lo marca; se pregunta al usuario en el checkpoint A.'
-  chunks:
+  split_band:
+  - 772
+  - 852
+  emphasis_chunks:
   - start: 3.36
     end: 4.2
     text: son bien <b>fresas</b>
@@ -348,9 +343,6 @@ captions:
   - start: 97.68
     end: 98.0
     text: vida <b>cómoda</b>
-  split_band:
-  - 772
-  - 852
 graphics:
 - id: g-hook
   type: kinetic_title
@@ -743,8 +735,8 @@ grade:
   tool: none
   note: el color de la toma está bien; solo el congelado del queso va en B/N
 cover:
-  t: 2.6
-  why: texto del gancho visible y cara centrada
+  t: 2.4
+  why: título del gancho + cara centrada
 cost:
   free:
   - SFX sintetizados
@@ -766,3 +758,4 @@ broll:
   dur: 2.2
   layout: fullframe
   why: quieto para que se lean los precios reales; la voz sigue debajo
+cut_note: 'Cortes finales (aprobados en checkpoint K). Tiempos exactos de cada pieza: build/build.py, desde tiempos de la fuente.'
