@@ -49,13 +49,13 @@ svg { overflow: visible; }
   <script>
     const tl = gsap.timeline({ paused: true });
     tl.fromTo("#c-emp", { x: -560, rotation: -24 }, { x: 0, rotation: -6, duration: 0.55, ease: "expo.out" }, 0.0);
-    tl.fromTo("#c-barra", { x: 560, rotation: 26 }, { x: 0, rotation: 5, duration: 0.55, ease: "expo.out" }, 3.301);
-    tl.fromTo("#c-x1", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.22, ease: "power1.inOut", stagger: 0.0 }, 3.731);
-    tl.fromTo("#c-x2", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.22, ease: "power1.inOut", stagger: 0.0 }, 3.931);
-    tl.to("#c-emp", { opacity: 0.6, duration: 0.3, ease: "power2.out" }, 3.951);
-    tl.to("#c-barra", { scale: 1.08, duration: 0.5, ease: "expo.out" }, 3.751);
-    tl.to("#c-emp, #c-svg", { x: "+=-640", y: "+=260", rotation: -14, scale: 0.8, duration: 0.45, ease: "power3.in" }, 5.291);
-    tl.to("#c-barra", { x: "+=-1100", y: "+=300", rotation: -10, scale: 0.8, duration: 0.45, ease: "power3.in" }, 5.331);
+    tl.fromTo("#c-barra", { x: 560, rotation: 26 }, { x: 0, rotation: 5, duration: 0.55, ease: "expo.out" }, 3.300);
+    tl.fromTo("#c-x1", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.22, ease: "power1.inOut", stagger: 0.0 }, 3.730);
+    tl.fromTo("#c-x2", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.22, ease: "power1.inOut", stagger: 0.0 }, 3.930);
+    tl.to("#c-emp", { opacity: 0.6, duration: 0.3, ease: "power2.out" }, 3.950);
+    tl.to("#c-barra", { scale: 1.08, duration: 0.5, ease: "expo.out" }, 3.750);
+    tl.to("#c-emp, #c-svg", { x: "+=-640", y: "+=260", rotation: -14, scale: 0.8, duration: 0.45, ease: "power3.in" }, 5.290);
+    tl.to("#c-barra", { x: "+=-1100", y: "+=300", rotation: -10, scale: 0.8, duration: 0.45, ease: "power3.in" }, 5.330);
 
     window.__timelines["cartas"] = tl;
   </script>
