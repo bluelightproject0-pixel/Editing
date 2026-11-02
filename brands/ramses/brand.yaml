@@ -1,0 +1,41 @@
+# Marca personal de Ramsés (@ramsesramossa). Inferida del tablero de Pinterest "INSPO ESTILO";
+# confirmar con él en el checkpoint A.
+name: ramses
+client: Ramsés Ramos
+aliases: [Ramsés, Ramses, ramsesramossa]
+description: Creador que habla a cámara de dinero, trucos del día a día e IA, en tono casual mexicano.
+handles: {instagram: ramsesramossa, tiktok: , youtube: , website: }
+platform: instagram_reels
+profile: talking_head_edu
+language: {speech: es, captions: es, ui: es}
+palette:
+  primary: '#2B3FE0'           # azul cobalto (halftone, iconos)
+  secondary: '#E3261C'         # rojo señal (garabatos de marcador, palabra clave)
+  light: '#F1EEE6'             # papel crema
+  accent: '#E3261C'
+  ink: '#121212'
+fonts:
+  display: Anton               # condensada gruesa, letras recortadas
+  body: Permanent Marker       # marcador a mano
+logo:
+  file:
+  placement: none
+voice:
+  tone: [casual, directo, chido]
+  use: [bro, súper, la barra]
+  avoid: []
+cta: {follow: , save: , link: }
+visual:
+  do:
+    - collage tipo zine con recortes de papel de borde blanco
+    - halftone en un solo color (azul cobalto)
+    - garabatos de marcador rojo sobre foto en blanco y negro
+    - letra a mano de marcador, en mayúsculas e imperfecta
+    - papel crema o cuadriculado arrugado como fondo
+  dont:
+    - emojis y stickers genéricos
+    - degradados y brillos
+    - sombras suaves de plantilla
+taste: {energy: 6, motion: 5, density: 6}
+ai_media_style: cut-out paper collage, single-colour cobalt halftone print, white paper border, flat light, no text
+footage_notes: Selfie vertical en súper; la cara ocupa x 60-880, y 480-1450. El techo (y 270-560) queda libre.

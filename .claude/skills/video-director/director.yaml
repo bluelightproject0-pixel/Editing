@@ -1,7 +1,6 @@
 # video-director memory - edit via scripts/director_memory.py; reasoning lives in `text`/`quote`/`note` fields.
-# This is the starter memory. Your feedback is logged in feedback_log and turned into rules as you use the skill.
 version: 1
-updated: '2026-10-18'
+updated: '2026-11-02'
 preferences:
   checkpoints: plan_keyframes_final
   paid_generation: always_ask
@@ -386,6 +385,63 @@ brands:
       save: Save this
     footage_notes: anything about the source footage to protect (burned-in text, logos, framing)
     ai_media_style: Photorealistic editorial photo, soft natural daylight, no text, no logos
+  ramses:
+    name: ramses
+    client: Ramsés Ramos
+    aliases:
+    - Ramsés
+    - Ramses
+    - ramsesramossa
+    description: Creador que habla a cámara de dinero, trucos del día a día e IA, en tono casual mexicano.
+    handles:
+      instagram: ramsesramossa
+    platform: instagram_reels
+    profile: talking_head_edu
+    language:
+      speech: es
+      captions: es
+      ui: es
+    palette:
+      primary: '#2b3fe0'
+      secondary: '#e3261c'
+      light: '#f1eee6'
+      accent: '#e3261c'
+      ink: '#121212'
+    fonts:
+      display: Anton
+      body: Permanent Marker
+    logo:
+      placement: none
+    voice:
+      tone:
+      - casual
+      - directo
+      - chido
+      use:
+      - bro
+      - súper
+      - la barra
+    visual:
+      do:
+      - collage tipo zine con recortes de papel de borde blanco
+      - halftone en un solo color (azul cobalto)
+      - garabatos de marcador rojo sobre foto en blanco y negro
+      - letra a mano de marcador, en mayúsculas e imperfecta
+      - papel crema o cuadriculado arrugado como fondo
+      dont:
+      - emojis y stickers genéricos
+      - degradados y brillos
+      - sombras suaves de plantilla
+    taste:
+      energy: 6
+      motion: 5
+      density: 6
+    ai_media_style: cut-out paper collage, single-colour cobalt halftone print, white paper border, flat light, no text
+    footage_notes: Selfie vertical en súper; la cara ocupa x 60-880, y 480-1450. El techo (y 270-560) queda libre.
+    font_files:
+    - Anton.woff2
+    - PermanentMarker.woff2
+    kit: brands/ramses
 rules:
 - id: R-hook-text-frame0
   scope: global
@@ -621,8 +677,8 @@ rules:
 - id: R-factual-claims-in-graphics-are-checked
   scope: global
   status: candidate
-  text: Factual claims in graphics (statistics, legal, financial, scientific) are checked against what the presenter actually said and against
-    both directions of a risk (e.g. too early AND too late); when unsure, ask the presenter.
+  text: Factual claims in graphics (statistics, legal, financial, scientific) are checked against what the presenter actually
+    said and against both directions of a risk (e.g. too early AND too late); when unsure, ask the presenter.
   source: user
   confidence: 0.8
   evidence:
@@ -647,9 +703,9 @@ tooling:
   fal: 'Optional: fal MCP for paid image/video generation; image-to-video at 9:16 needs a 9:16 start image.'
   silence_detect: 'analyze_media silence list is unreliable on quiet phone sources (around -36 LUFS): verify every cut point
     with cut_check.py (50 ms energy envelope) before cutting.'
-  dialect_transcribe: For dialects / code-switched speech the hyperframes wrapper can normalise into the standard
-    language; use whisper-cli -l <lang> -ml 1 -sow with a dialect + domain-terms --prompt, re-run the second language on
-    code-switched spans, snap chunk starts to energy onsets.
-  fal_negative_prompts: image-to-video models may ignore negative prompts ('no text', 'no blood') after ~1 s; use
-    only the first ~1.5 s of a sensitive shot or keep it small.
+  dialect_transcribe: For dialects / code-switched speech the hyperframes wrapper can normalise into the standard language;
+    use whisper-cli -l <lang> -ml 1 -sow with a dialect + domain-terms --prompt, re-run the second language on code-switched
+    spans, snap chunk starts to energy onsets.
+  fal_negative_prompts: image-to-video models may ignore negative prompts ('no text', 'no blood') after ~1 s; use only the
+    first ~1.5 s of a sensitive shot or keep it small.
 param_history: []

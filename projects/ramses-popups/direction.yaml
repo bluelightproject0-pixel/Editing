@@ -1,0 +1,57 @@
+# direction sheet - the art direction for this job. Adopt it; redraw only for a stated reason.
+direction: whiteboard-builder
+name: Whiteboard builder
+seed: 731591
+reason: 'su propio tablero de Pinterest (INSPO ESTILO) se vuelve el tablero que crece: cada idea pega un recorte
+  de papel y al final la cámara se aleja y revela el collage completo'
+dials:
+  energy: 6
+  motion: 5
+  density: 6
+derived:
+  max_static_s: 4.4
+  hook_change_by_s: 2.3
+  remove_silence_over_s: 0.4
+  punch_in_per_30s_max: 3
+  punch_in_scale:
+  - 1.06
+  - 1.26
+  layout_transition_min_s: 0.6
+  camera_drift: true
+  overlays_on_screen_max: 3
+  graphics_per_min: 4.0
+  sfx_per_10s: 3
+  rules: []
+signature_move: a single diagram grows across the whole video, one piece per idea; the camera pulls back at the
+  end to reveal it complete
+layouts:
+- pip_speaker
+- split
+- speaker_cutout
+transitions: camera pans across the growing board instead of cuts
+captions: under the speaker or under the board, never over it
+graphics: one continuous diagram built from the subject's real parts and steps
+type:
+  brand:
+    display: Anton
+    body: Permanent Marker
+  use: 'brand faces in the direction''s roles: one rounded sans for labels, one marker accent'
+sound: marker squeak on draws (quiet), light bed, chime when the board is complete
+palette:
+  brand:
+    primary: '#2b3fe0'
+    secondary: '#e3261c'
+    light: '#f1eee6'
+    accent: '#e3261c'
+    ink: '#121212'
+  use: 'keep the direction''s proportions: board ground, ink, one accent per branch (max 3)'
+avoid:
+- disconnected one-off graphics
+- icon grids
+- emojis y stickers genéricos
+- degradados y brillos
+- sombras suaves de plantilla
+idea: On this video, [something only this subject has] becomes [the device the signature move calls for]  <- fill
+  in
+logo:
+  placement: none
