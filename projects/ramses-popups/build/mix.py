@@ -1,6 +1,6 @@
 """Sintetiza los SFX (sin derechos) y mezcla voz + SFX en una sola pista maestra.
 
-Uso (desde projects/ramses-popups): python3 build/mix.py
+Uso (desde projects/ramses-popups): python3 build/mix.py   (VARIANT=short para la versión corta)
 Lee build/sfx_cues.json (lo escribe build.py) y edit/assets/cut.mp4; escribe edit/assets/audio/master.wav.
 """
 import json
@@ -10,8 +10,11 @@ import shutil
 import subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SFX_DIR = os.path.join(ROOT, "edit", "assets", "sfx")
-OUT = os.path.join(ROOT, "edit", "assets", "audio", "master.wav")
+VARIANT = os.environ.get("VARIANT", "long")
+PROJ = "edit-short" if VARIANT == "short" else "edit"
+CUES = os.path.join(ROOT, "build", "sfx_cues-short.json" if VARIANT == "short" else "sfx_cues.json")
+SFX_DIR = os.path.join(ROOT, PROJ, "assets", "sfx")
+OUT = os.path.join(ROOT, PROJ, "assets", "audio", "master.wav")
 BUNDLED = os.path.join(ROOT, "..", "..", ".claude", "skills", "media-use", "audio", "assets", "sfx")
 os.makedirs(SFX_DIR, exist_ok=True)
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
@@ -64,9 +67,9 @@ def make_sfx():
 
 
 def mix():
-    data = json.load(open(os.path.join(ROOT, "build", "sfx_cues.json")))
+    data = json.load(open(CUES))
     total, cues = data["total"], data["cues"]
-    inputs = ["-i", os.path.join(ROOT, "edit", "assets", "cut.mp4")]
+    inputs = ["-i", os.path.join(ROOT, PROJ, "assets", "cut.mp4")]
     parts = [f"[0:a]aresample={SR},apad=whole_len={int(total * SR)},atrim=0:{total}[v]"]
     labels = ["[v]"]
     for i, c in enumerate(cues):

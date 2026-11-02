@@ -3,9 +3,14 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 SRC=assets/source_1080.mp4
-OUT=edit/assets/cut.mp4
-TMP=build/segs; rm -rf $TMP; mkdir -p $TMP
-RANGES="0.00-5.95 12.75-40.45 42.05-86.40 93.85-109.75 111.25-112.10 117.32-120.20 122.75-138.95"
+if [ "${VARIANT:-long}" = short ]; then
+  OUT=edit-short/assets/cut.mp4; TMP=build/segs-short
+  RANGES="0.00-5.95 12.75-15.53 34.72-40.45 42.05-63.30 93.80-108.12 122.75-126.22 133.45-138.95"
+else
+  OUT=edit/assets/cut.mp4; TMP=build/segs
+  RANGES="0.00-5.95 12.75-40.45 42.05-86.40 93.85-109.75 111.25-112.10 117.32-120.20 122.75-138.95"
+fi
+rm -rf $TMP; mkdir -p $TMP $(dirname $OUT)
 i=0; : > $TMP/list.txt
 for r in $RANGES; do
   a=${r%-*}; b=${r#*-}; d=$(python3 -c "print(round($b-$a,3))"); fo=$(python3 -c "print(round($b-$a-0.03,3))")
