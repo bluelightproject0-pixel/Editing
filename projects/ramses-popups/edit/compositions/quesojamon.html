@@ -1,0 +1,38 @@
+<template>
+  <style>
+
+@font-face { font-family: "Anton"; src: url("assets/fonts/Anton.woff2"); }
+@font-face { font-family: "Permanent Marker"; src: url("assets/fonts/PermanentMarker.woff2"); }
+.pc { position: absolute; }
+.paper { background: #F7F4EC url("assets/img/paper_tile.png"); color: #121212; }
+.anton { font-family: "Anton", sans-serif; text-transform: uppercase; line-height: 1; letter-spacing: 0.01em; }
+.marker { font-family: "Permanent Marker", cursive; line-height: 1.05; }
+.serif { font-family: "EB Garamond", serif; }
+.lbl { padding: 16px 24px 12px; white-space: nowrap; }
+.tape { position: absolute; width: 132px; height: 38px; background: rgba(233, 222, 190, 0.86); }
+.red { color: #E3261C; }
+.cobalt { color: #2B3FE0; }
+svg { overflow: visible; }
+.dr { stroke-dasharray: 1; stroke-dashoffset: 1; }
+
+#quesojamon { position: absolute; inset: 0; }
+
+  </style>
+  <div id="quesojamon" data-composition-id="quesojamon" data-width="1080" data-height="1920">
+
+    <div id="qj" class="pc paper marker lbl" style="left:120px;top:300px;font-size:58px;transform:rotate(-3deg);clip-path:polygon(0.00% 0.50%, 4.17% 1.03%, 8.33% 4.10%, 12.50% 0.97%, 16.67% 5.70%, 20.83% 5.07%, 25.00% 4.45%, 29.17% 2.79%, 33.33% 4.96%, 37.50% 1.46%, 41.67% 3.62%, 45.83% 2.22%, 50.00% 2.94%, 54.17% 5.78%, 58.33% 1.30%, 62.50% 4.53%, 66.67% 4.60%, 70.83% 0.52%, 75.00% 5.96%, 79.17% 2.69%, 83.33% 3.26%, 87.50% 1.81%, 91.67% 3.34%, 95.83% 5.76%, 100.00% 2.09%, 100.00% 95.60%, 95.83% 95.29%, 91.67% 94.79%, 87.50% 95.85%, 83.33% 97.41%, 79.17% 97.97%, 75.00% 97.69%, 70.83% 97.76%, 66.67% 94.68%, 62.50% 95.03%, 58.33% 98.71%, 54.17% 98.41%, 50.00% 99.73%, 45.83% 94.41%, 41.67% 99.64%, 37.50% 97.65%, 33.33% 98.90%, 29.17% 98.82%, 25.00% 94.35%, 20.83% 97.38%, 16.67% 96.20%, 12.50% 95.02%, 8.33% 96.86%, 4.17% 95.08%, 0.00% 95.38%);">
+      mucho <span style="color:#C61F17">queso</span> + mucho <span style="color:#C61F17">jamón</span></div>
+    <div class="tape" id="qj-t" style="left:470px;top:282px;transform:rotate(4deg);"></div>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#qj", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 0.000);
+    tl.fromTo("#qj", { scale: 1.16, rotation: 6, y: -18 }, { scale: 1, rotation: -3, y: 0, duration: 0.42, ease: "expo.out" }, 0.000);
+    tl.fromTo("#qj-t", { opacity: 0 }, { opacity: 1, duration: 0.08 }, 0.22);
+    tl.to("#qj, #qj-t", { x: "+=-900", y: "+=-260", rotation: -8, scale: 0.7, duration: 0.42, ease: "power3.in" }, 2.100);
+    tl.to("#qj, #qj-t", { opacity: 0, duration: 0.189, ease: "power2.in" }, 2.331);
+
+    window.__timelines["quesojamon"] = tl;
+  </script>
+</template>

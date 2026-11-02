@@ -39,6 +39,7 @@ svg { overflow: visible; }
     tl.fromTo("#truco .rl0", { opacity: 0, y: -26, scale: 1.25 }, { opacity: 1, y: 0, scale: 1, duration: 0.24, ease: "power4.out", stagger: 0.05 }, 0.06);
     tl.fromTo("#truco .rl1", { opacity: 0, y: -26, scale: 1.25 }, { opacity: 1, y: 0, scale: 1, duration: 0.24, ease: "power4.out", stagger: 0.045 }, 0.600);
     tl.to("#truco .rl", { x: "+=600", y: "+=-670", rotation: 0, scale: 0.7, duration: 0.45, ease: "power3.in" }, 2.200);
+    tl.to("#truco .rl", { opacity: 0, duration: 0.203, ease: "power2.in" }, 2.448);
 
     window.__timelines["truco"] = tl;
   </script>

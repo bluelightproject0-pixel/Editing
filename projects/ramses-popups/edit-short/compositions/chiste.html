@@ -33,7 +33,8 @@ svg { overflow: visible; }
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#ch-strip", { opacity: 0, scale: 1.16, rotation: -3, y: -18 }, { opacity: 1, scale: 1, rotation: -1.2, y: 0, duration: 0.4, ease: "expo.out" }, 0.000);
+    tl.fromTo("#ch-strip", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 0.000);
+    tl.fromTo("#ch-strip", { scale: 1.16, rotation: -3, y: -18 }, { scale: 1, rotation: -1.2, y: 0, duration: 0.4, ease: "expo.out" }, 0.000);
     tl.fromTo("#cw0", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.2, ease: "power1.out" }, 0.120);
     tl.fromTo("#cw1", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.2, ease: "power1.out" }, 0.190);
     tl.fromTo("#cw2", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.2, ease: "power1.out" }, 0.550);
@@ -43,6 +44,7 @@ svg { overflow: visible; }
     tl.fromTo("#cw6", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.2, ease: "power1.out" }, 1.560);
     tl.fromTo("#ch-u", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.45, ease: "power1.inOut", stagger: 0.0 }, 1.960);
     tl.to("#ch-all", { x: "+=0", y: "+=-560", rotation: -2, scale: 0.85, duration: 0.42, ease: "power3.in" }, 4.730);
+    tl.to("#ch-all", { opacity: 0, duration: 0.189, ease: "power2.in" }, 4.961);
 
     window.__timelines["chiste"] = tl;
   </script>

@@ -41,8 +41,10 @@ svg { overflow: visible; }
     tl.fromTo("#q-flash", { opacity: 0.85 }, { opacity: 0, duration: 0.16, ease: "power2.out" }, 0);
     tl.fromTo("#q-c1", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.38, ease: "power1.inOut", stagger: 0.0 }, 0.180);
     tl.fromTo("#q-c2", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.34, ease: "power1.inOut", stagger: 0.0 }, 0.480);
-    tl.fromTo("#q-emp", { opacity: 0, scale: 1.16, rotation: -6, y: -18 }, { opacity: 1, scale: 1, rotation: -3, y: 0, duration: 0.4, ease: "expo.out" }, 0.360);
-    tl.fromTo("#q-barra", { opacity: 0, scale: 1.16, rotation: 6, y: -18 }, { opacity: 1, scale: 1, rotation: 2, y: 0, duration: 0.4, ease: "expo.out" }, 0.900);
+    tl.fromTo("#q-emp", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 0.360);
+    tl.fromTo("#q-emp", { scale: 1.16, rotation: -6, y: -18 }, { scale: 1, rotation: -3, y: 0, duration: 0.4, ease: "expo.out" }, 0.360);
+    tl.fromTo("#q-barra", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 0.900);
+    tl.fromTo("#q-barra", { scale: 1.16, rotation: 6, y: -18 }, { scale: 1, rotation: 2, y: 0, duration: 0.4, ease: "expo.out" }, 0.900);
     tl.fromTo("#q-arrow", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.28, ease: "power1.inOut", stagger: 0.0 }, 1.050);
     tl.fromTo("#q-head", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.16, ease: "power1.inOut", stagger: 0.0 }, 1.300);
     tl.to("#q-emp, #q-barra, #q-svg", { opacity: 0, duration: 0.14, ease: "power2.in" }, 2.130);

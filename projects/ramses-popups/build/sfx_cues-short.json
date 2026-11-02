@@ -1,6 +1,6 @@
 {
- "total": 59.42,
- "video_end": 57.424,
+ "total": 59.12,
+ "video_end": 57.124,
  "cues": [
   {
    "key": "paper-slap",
@@ -84,7 +84,7 @@
   },
   {
    "key": "marker",
-   "t": 56.689,
+   "t": 56.388,
    "vol": 0.18
   }
  ]

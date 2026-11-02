@@ -38,6 +38,7 @@ svg { overflow: visible; }
     tl.fromTo("#hook-u", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.3, ease: "power1.inOut", stagger: 0.0 }, 0.350);
     tl.to("#hook-l1, #hook-l2", { opacity: 0, scale: 0.96, filter: "blur(6px)", duration: 0.22, ease: "power2.in", stagger: 0.05 }, 3.450);
     tl.to("#hook-fresa, #hook-tape", { x: "+=-1166", y: "+=-571", rotation: -8, scale: 0.9, duration: 0.42, ease: "power3.in" }, 3.550);
+    tl.to("#hook-fresa, #hook-tape", { opacity: 0, duration: 0.189, ease: "power2.in" }, 3.781);
 
     window.__timelines["hook"] = tl;
   </script>

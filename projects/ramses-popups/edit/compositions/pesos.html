@@ -38,17 +38,22 @@ svg { overflow: visible; }
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#p-tag", { opacity: 0, scale: 1.16, rotation: -8, y: -18 }, { opacity: 1, scale: 1, rotation: -3, y: 0, duration: 0.45, ease: "expo.out" }, 0.000);
+    tl.fromTo("#p-tag", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 0.000);
+    tl.fromTo("#p-tag", { scale: 1.16, rotation: -8, y: -18 }, { scale: 1, rotation: -3, y: 0, duration: 0.45, ease: "expo.out" }, 0.000);
     const num = { v: 1000 };
     const fmt = () => { document.querySelector("#p-num").textContent = "$" + Math.round(num.v).toLocaleString("en-US"); };
     tl.fromTo(num, { v: 1000 }, { v: 2000, duration: 0.55, ease: "power2.out", onUpdate: fmt }, 1.560);
     tl.fromTo("#p-extra", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.25, ease: "power1.out" }, 2.010);
     tl.fromTo("#p-arrow", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.3, ease: "power1.inOut", stagger: 0.0 }, 5.880);
     tl.fromTo("#p-head", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.14, ease: "power1.inOut", stagger: 0.0 }, 6.160);
-    tl.fromTo("#p-libros", { opacity: 0, scale: 1.16, rotation: 10, y: -18 }, { opacity: 1, scale: 1, rotation: 3, y: 0, duration: 0.45, ease: "expo.out" }, 6.430);
-    tl.fromTo("#p-lbl", { opacity: 0, scale: 1.16, rotation: -6, y: -18 }, { opacity: 1, scale: 1, rotation: -2, y: 0, duration: 0.36, ease: "expo.out" }, 6.650);
+    tl.fromTo("#p-libros", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 6.430);
+    tl.fromTo("#p-libros", { scale: 1.16, rotation: 10, y: -18 }, { scale: 1, rotation: 3, y: 0, duration: 0.45, ease: "expo.out" }, 6.430);
+    tl.fromTo("#p-lbl", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 6.650);
+    tl.fromTo("#p-lbl", { scale: 1.16, rotation: -6, y: -18 }, { scale: 1, rotation: -2, y: 0, duration: 0.36, ease: "expo.out" }, 6.650);
     tl.to("#p-tag", { x: "+=900", y: "+=-200", rotation: 4, scale: 0.7, duration: 0.45, ease: "power3.in" }, 8.030);
+    tl.to("#p-tag", { opacity: 0, duration: 0.203, ease: "power2.in" }, 8.277);
     tl.to("#p-libros, #p-lbl, #p-svg", { x: "+=700", y: "+=0", rotation: -5, scale: 0.7, duration: 0.45, ease: "power3.in" }, 8.070);
+    tl.to("#p-libros, #p-lbl, #p-svg", { opacity: 0, duration: 0.203, ease: "power2.in" }, 8.317);
 
     window.__timelines["pesos"] = tl;
   </script>

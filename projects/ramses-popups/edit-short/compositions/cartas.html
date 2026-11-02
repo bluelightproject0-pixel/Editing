@@ -55,7 +55,9 @@ svg { overflow: visible; }
     tl.to("#c-emp", { opacity: 0.6, duration: 0.3, ease: "power2.out" }, 3.950);
     tl.to("#c-barra", { scale: 1.08, duration: 0.5, ease: "expo.out" }, 3.750);
     tl.to("#c-emp, #c-svg", { x: "+=-640", y: "+=260", rotation: -14, scale: 0.8, duration: 0.45, ease: "power3.in" }, 5.290);
+    tl.to("#c-emp, #c-svg", { opacity: 0, duration: 0.203, ease: "power2.in" }, 5.537);
     tl.to("#c-barra", { x: "+=-1100", y: "+=300", rotation: -10, scale: 0.8, duration: 0.45, ease: "power3.in" }, 5.330);
+    tl.to("#c-barra", { opacity: 0, duration: 0.203, ease: "power2.in" }, 5.577);
 
     window.__timelines["cartas"] = tl;
   </script>
