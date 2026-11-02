@@ -1,0 +1,62 @@
+<template>
+  <style>
+
+@font-face { font-family: "Anton"; src: url("assets/fonts/Anton.woff2"); }
+@font-face { font-family: "Permanent Marker"; src: url("assets/fonts/PermanentMarker.woff2"); }
+.pc { position: absolute; }
+.paper { background: #F7F4EC url("assets/img/paper_tile.png"); color: #121212; }
+.anton { font-family: "Anton", sans-serif; text-transform: uppercase; line-height: 1; letter-spacing: 0.01em; }
+.marker { font-family: "Permanent Marker", cursive; line-height: 1.05; }
+.serif { font-family: "EB Garamond", serif; }
+.lbl { padding: 16px 24px 12px; white-space: nowrap; }
+.tape { position: absolute; width: 132px; height: 38px; background: rgba(233, 222, 190, 0.86); }
+.red { color: #E3261C; }
+.cobalt { color: #2B3FE0; }
+svg { overflow: visible; }
+.dr { stroke-dasharray: 1; stroke-dashoffset: 1; }
+
+#cartas { position: absolute; inset: 0; }
+
+.card { width: 424px; height: 262px; border-radius: 20px; background: #FBF8F1 url("assets/img/paper_tile.png");
+        border: 3px solid #121212; box-sizing: border-box; }
+.card .corner { position: absolute; display: flex; flex-direction: column; align-items: center; font-size: 30px; line-height: 1.12; gap: 2px; }
+.card .corner.tl { left: 14px; top: 10px; } .card .corner.br { right: 14px; bottom: 10px; transform: rotate(180deg); }
+.card .ct { position: absolute; left: 0; right: 0; top: 60px; text-align: center; font-size: 48px; }
+.card .cm { position: absolute; left: 0; right: 0; top: 130px; text-align: center; font-size: 72px; }
+
+  </style>
+  <div id="cartas" data-composition-id="cartas" data-width="1080" data-height="1920">
+
+    <div id="c-emp" class="pc card" style="left:70px;top:292px;">
+      <div class="corner tl" data-layout-allow-overlap data-layout-ignore><span class="anton" style="color:#E3261C">A</span><span style="color:#E3261C">&#9830;</span></div>
+      <div class="corner br" data-layout-allow-overlap data-layout-ignore><span class="anton" style="color:#E3261C">A</span><span style="color:#E3261C">&#9830;</span></div>
+      <div class="ct marker" style="color:#121212">EMPAQUETADO</div>
+      <div class="cm marker" style="color:#E3261C">$$$</div>
+    </div>
+    <div id="c-barra" class="pc card" style="left:588px;top:298px;">
+      <div class="corner tl" data-layout-allow-overlap data-layout-ignore><span class="anton" style="color:#2B3FE0">A</span><span style="color:#2B3FE0">&#9827;</span></div>
+      <div class="corner br" data-layout-allow-overlap data-layout-ignore><span class="anton" style="color:#2B3FE0">A</span><span style="color:#2B3FE0">&#9827;</span></div>
+      <div class="ct marker" style="color:#2B3FE0">LA BARRA</div>
+      <div class="cm marker" style="color:#2B3FE0">$</div>
+    </div>
+    <svg id="c-svg" class="pc" viewBox="0 0 1080 1920" style="left:0;top:0;width:1080px;height:1920px;">
+      <g fill="none" stroke="#E3261C" stroke-width="12" stroke-linecap="round">
+        <path id="c-x1" class="dr" pathLength="1" d="M96 320 C220 400 350 480 486 540"/>
+        <path id="c-x2" class="dr" pathLength="1" d="M478 306 C360 380 230 460 100 534"/>
+      </g></svg>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#c-emp", { x: -560, rotation: -24 }, { x: 0, rotation: -6, duration: 0.55, ease: "expo.out" }, 0.0);
+    tl.fromTo("#c-barra", { x: 560, rotation: 26 }, { x: 0, rotation: 5, duration: 0.55, ease: "expo.out" }, 3.301);
+    tl.fromTo("#c-x1", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.22, ease: "power1.inOut", stagger: 0.0 }, 3.731);
+    tl.fromTo("#c-x2", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.22, ease: "power1.inOut", stagger: 0.0 }, 3.931);
+    tl.to("#c-emp", { opacity: 0.6, duration: 0.3, ease: "power2.out" }, 3.951);
+    tl.to("#c-barra", { scale: 1.08, duration: 0.5, ease: "expo.out" }, 3.751);
+    tl.to("#c-emp, #c-svg", { x: "+=-640", y: "+=260", rotation: -14, scale: 0.8, duration: 0.45, ease: "power3.in" }, 5.291);
+    tl.to("#c-barra", { x: "+=-1100", y: "+=300", rotation: -10, scale: 0.8, duration: 0.45, ease: "power3.in" }, 5.331);
+
+    window.__timelines["cartas"] = tl;
+  </script>
+</template>

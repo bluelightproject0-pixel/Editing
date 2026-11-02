@@ -1,21 +1,16 @@
 {
- "total": 114.78,
+ "total": 115.98,
  "video_end": 113.981,
  "cues": [
   {
    "key": "paper-slap",
-   "t": 0.08,
-   "vol": 0.32
-  },
-  {
-   "key": "pop",
-   "t": 0.78,
+   "t": 0.02,
    "vol": 0.22
   },
   {
-   "key": "paper-slide",
-   "t": 1.25,
-   "vol": 0.3
+   "key": "marker",
+   "t": 0.35,
+   "vol": 0.14
   },
   {
    "key": "paper-slap",
@@ -73,9 +68,9 @@
    "vol": 0.16
   },
   {
-   "key": "tick",
-   "t": 69.07,
-   "vol": 0.2
+   "key": "paper-slap",
+   "t": 68.97,
+   "vol": 0.28
   },
   {
    "key": "tick",

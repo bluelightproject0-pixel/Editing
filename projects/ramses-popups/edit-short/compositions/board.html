@@ -1,0 +1,80 @@
+<template>
+  <style>
+
+@font-face { font-family: "Anton"; src: url("assets/fonts/Anton.woff2"); }
+@font-face { font-family: "Permanent Marker"; src: url("assets/fonts/PermanentMarker.woff2"); }
+.pc { position: absolute; }
+.paper { background: #F7F4EC url("assets/img/paper_tile.png"); color: #121212; }
+.anton { font-family: "Anton", sans-serif; text-transform: uppercase; line-height: 1; letter-spacing: 0.01em; }
+.marker { font-family: "Permanent Marker", cursive; line-height: 1.05; }
+.serif { font-family: "EB Garamond", serif; }
+.lbl { padding: 16px 24px 12px; white-space: nowrap; }
+.tape { position: absolute; width: 132px; height: 38px; background: rgba(233, 222, 190, 0.86); }
+.red { color: #E3261C; }
+.cobalt { color: #2B3FE0; }
+svg { overflow: visible; }
+.dr { stroke-dasharray: 1; stroke-dashoffset: 1; }
+
+#board { position: absolute; inset: 0; }
+
+.mcard { width: 252px; height: 150px; border-radius: 12px; background: #FBF8F1 url("assets/img/paper_tile.png");
+         border: 3px solid #121212; box-sizing: border-box; }
+.mcard .ct { position: absolute; left: 0; right: 0; top: 30px; text-align: center; font-size: 36px; }
+.mcard .cm { position: absolute; left: 0; right: 0; top: 78px; text-align: center; font-size: 46px; }
+.mcard .corner { position: absolute; left: 9px; top: 5px; font-size: 22px; line-height: 1; display: flex; flex-direction: column; align-items: center; }
+.mname { position: absolute; padding: 4px 12px 2px; font-size: 34px; white-space: nowrap; }
+
+  </style>
+  <div id="board" data-composition-id="board" data-width="1080" data-height="1920">
+    <div id="bw" class="pc" style="left:0;top:0;width:1080px;height:1920px;">
+
+      <img class="pc" src="assets/img/fresa.svg" style="left:70px;top:262px;width:170px;height:187px;transform:rotate(-8deg);" />
+      <svg id="b-x" class="pc" viewBox="0 0 200 200" style="left:56px;top:262px;width:200px;height:200px;">
+        <g fill="none" stroke="#E3261C" stroke-width="14" stroke-linecap="round">
+          <path class="dr" pathLength="1" d="M18 26 C70 80 130 140 182 182"/>
+          <path class="dr" pathLength="1" d="M182 20 C130 76 70 136 20 186"/></g></svg>
+
+      <div class="pc paper marker" style="left:236px;top:404px;width:608px;padding:12px 18px 10px;font-size:34px;line-height:1.1;text-align:center;transform:rotate(-2deg);clip-path:polygon(0.00% 4.58%, 4.17% 3.87%, 8.33% 2.46%, 12.50% 1.19%, 16.67% 4.06%, 20.83% 5.82%, 25.00% 2.57%, 29.17% 5.11%, 33.33% 0.22%, 37.50% 3.17%, 41.67% 1.21%, 45.83% 2.97%, 50.00% 3.67%, 54.17% 5.14%, 58.33% 3.14%, 62.50% 5.21%, 66.67% 1.96%, 70.83% 0.77%, 75.00% 2.79%, 79.17% 4.29%, 83.33% 4.25%, 87.50% 0.22%, 91.67% 1.49%, 95.83% 1.53%, 100.00% 2.83%, 100.00% 94.83%, 95.83% 98.37%, 91.67% 99.72%, 87.50% 94.61%, 83.33% 94.78%, 79.17% 95.38%, 75.00% 99.77%, 70.83% 98.44%, 66.67% 98.94%, 62.50% 94.51%, 58.33% 99.25%, 54.17% 99.24%, 50.00% 98.68%, 45.83% 95.25%, 41.67% 98.81%, 37.50% 94.10%, 33.33% 98.15%, 29.17% 96.10%, 25.00% 98.85%, 20.83% 98.25%, 16.67% 94.81%, 12.50% 94.01%, 8.33% 98.55%, 4.17% 97.90%, 0.00% 99.66%);">
+        El chiste no es<br/><span style="color:#C61F17">ahorrar por ahorrar</span></div>
+      <div class="pc" style="left:40px;top:528px;width:212px;padding:12px 12px 44px;background:#FBF8F1;transform:rotate(-6deg);">
+        <img src="assets/img/cheese_36_bw.jpg" style="display:block;width:188px;height:220px;object-fit:cover;object-position:60% 52%;" />
+        <svg viewBox="0 0 188 220" style="position:absolute;left:12px;top:12px;width:188px;height:220px;">
+          <ellipse cx="132" cy="120" rx="34" ry="22" fill="none" stroke="#E3261C" stroke-width="5"/></svg>
+        <div class="marker" style="position:absolute;left:0;right:0;bottom:6px;text-align:center;font-size:30px;color:#C61F17;">empaquetado</div>
+      </div>
+      <div class="pc mcard" style="left:28px;top:856px;transform:rotate(8deg);">
+        <div class="corner anton" data-layout-ignore style="color:#C61F17">A<span>&#9830;</span></div>
+        <div class="ct anton">Empaquetado</div><div class="cm marker" style="color:#C61F17">$$$</div>
+        <svg viewBox="0 0 252 150" style="position:absolute;inset:0;width:252px;height:150px;"><g stroke="#E3261C" stroke-width="8" stroke-linecap="round">
+          <path d="M14 18 L238 132"/><path d="M238 16 L16 134"/></g></svg>
+      </div>
+      <div class="pc mcard" style="left:34px;top:1018px;transform:rotate(-4deg);">
+        <div class="corner anton" data-layout-ignore style="color:#2B3FE0">A<span>&#9827;</span></div>
+        <div class="ct anton cobalt">La barra</div><div class="cm marker cobalt">$</div>
+      </div>
+
+      <div class="pc" style="left:796px;top:520px;width:190px;height:290px;transform:rotate(3deg);">
+        <div class="paper anton" style="position:absolute;left:0;top:0;width:190px;text-align:center;font-size:30px;padding:8px 2px 6px;clip-path:polygon(0.00% 0.64%, 14.29% 0.14%, 28.57% 0.93%, 42.86% 0.21%, 57.14% 0.77%, 71.43% 0.53%, 85.71% 1.11%, 100.00% 0.25%, 98.45% 14.29%, 99.88% 28.57%, 99.89% 42.86%, 98.92% 57.14%, 98.43% 71.43%, 98.62% 85.71%, 98.68% 100.00%, 85.71% 99.76%, 71.43% 99.68%, 57.14% 99.53%, 42.86% 99.62%, 28.57% 99.73%, 14.29% 99.51%, 0.00% 99.40%, 0.52% 85.71%, 1.29% 71.43%, 1.33% 57.14%, 0.21% 42.86%, 0.83% 28.57%, 1.17% 14.29%);" data-layout-ignore>Automatización</div>
+        <div class="paper marker mname" style="left:0;top:58px;">Claude</div>
+        <div class="paper marker mname" style="left:10px;top:114px;">ChatGPT</div>
+        <div class="paper marker mname" style="left:0;top:170px;">Gemini</div>
+        <div class="paper marker mname" style="left:30px;top:226px;">Grok</div>
+      </div>
+
+      <div id="b-firma-p" class="pc paper" style="left:230px;top:1290px;width:640px;height:118px;transform:rotate(-3deg);clip-path:polygon(0.00% 0.06%, 4.17% 2.14%, 8.33% 5.15%, 12.50% 5.89%, 16.67% 6.27%, 20.83% 6.80%, 25.00% 1.29%, 29.17% 1.82%, 33.33% 3.69%, 37.50% 4.55%, 41.67% 1.35%, 45.83% 5.19%, 50.00% 1.92%, 54.17% 4.75%, 58.33% 4.51%, 62.50% 2.14%, 66.67% 2.97%, 70.83% 4.79%, 75.00% 3.87%, 79.17% 2.12%, 83.33% 6.57%, 87.50% 2.42%, 91.67% 2.22%, 95.83% 0.71%, 100.00% 6.64%, 100.00% 95.13%, 95.83% 95.34%, 91.67% 96.44%, 87.50% 98.67%, 83.33% 99.91%, 79.17% 96.09%, 75.00% 94.28%, 70.83% 93.07%, 66.67% 99.34%, 62.50% 99.55%, 58.33% 99.51%, 54.17% 98.92%, 50.00% 94.73%, 45.83% 95.27%, 41.67% 94.31%, 37.50% 97.30%, 33.33% 98.81%, 29.17% 93.93%, 25.00% 93.03%, 20.83% 99.17%, 16.67% 99.60%, 12.50% 99.24%, 8.33% 97.76%, 4.17% 95.40%, 0.00% 95.15%);"></div>
+      <div id="b-firma" class="pc marker" style="left:270px;top:1306px;font-size:70px;color:#C61F17;transform:rotate(-3deg);white-space:nowrap;">Dios te bendiga.</div>
+    </div>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#bw", { scale: 2, transformOrigin: "540px 960px" }, { scale: 1, duration: 1.2, ease: "power2.inOut" }, 0);
+    tl.fromTo("#b-x .dr", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.2, ease: "power1.inOut", stagger: 0.16 }, 2.310);
+    tl.to("#bw", { x: 30, y: 24, duration: 1.0, ease: "power2.inOut" }, 2.260);
+    tl.to("#bw", { x: 0, y: 0, duration: 1.6, ease: "power2.inOut" }, 3.360);
+    tl.fromTo("#b-firma-p", { opacity: 0, scale: 1.16, rotation: -6, y: -18 }, { opacity: 1, scale: 1, rotation: -3, y: 0, duration: 0.35, ease: "expo.out" }, 7.780);
+    tl.fromTo("#b-firma", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.9, ease: "power1.out" }, 7.980);
+
+    window.__timelines["board"] = tl;
+  </script>
+</template>

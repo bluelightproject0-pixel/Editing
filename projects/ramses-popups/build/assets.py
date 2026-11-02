@@ -62,9 +62,34 @@ def facets(w, h, n=420, seed=5):
     return shade - edge * 7 + r.normal(0, 1.6, (h, w)).astype(np.float32)
 
 
+def folds(w, h, n=260, seed=9):
+    """Papel arrugado de verdad: mapa de alturas con dobleces locales (líneas de pliegue con ventana
+    gaussiana) iluminado de lado. Devuelve un sombreado aditivo en niveles de gris."""
+    r = np.random.default_rng(seed)
+    yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+    hgt = np.zeros((h, w), np.float32)
+    for _ in range(n):
+        cx, cy = r.uniform(-100, w + 100), r.uniform(-100, h + 100)
+        ang = r.uniform(0, math.pi)
+        nx, ny = math.cos(ang), math.sin(ang)
+        d = (xx - cx) * nx + (yy - cy) * ny
+        along = -(xx - cx) * ny + (yy - cy) * nx
+        L = r.uniform(50, 200)           # largo del pliegue
+        Wd = r.uniform(70, 220)          # alcance a los lados
+        win = np.exp(-(along / L) ** 2 - (d / Wd) ** 2)
+        amp = r.uniform(4, 13) * (1 if r.random() < 0.5 else -1)
+        hgt += amp * np.abs(np.tanh(d / r.uniform(6, 18))) * win
+    gy, gx = np.gradient(hgt)
+    lx, ly, lz = -0.55, -0.65, 0.52      # luz desde arriba a la izquierda
+    nz = 1.0 / np.sqrt(gx ** 2 + gy ** 2 + 1)
+    shade = (-gx * lx - gy * ly + lz) * nz
+    shade = (shade - shade.mean()) * 46
+    return shade + r.normal(0, 1.4, (h, w)).astype(np.float32)
+
+
 def paper_grid(path, w=1080, h=1920):
     base = np.ones((h, w, 3), np.float32) * np.array(PAPER, np.float32)
-    s = facets(w, h) + crumple(w, h, 0.6)
+    s = folds(w, h) + crumple(w, h, 0.25)
     base += s[..., None]
     img = Image.fromarray(np.clip(base, 0, 255).astype(np.uint8))
     d = ImageDraw.Draw(img, "RGBA")

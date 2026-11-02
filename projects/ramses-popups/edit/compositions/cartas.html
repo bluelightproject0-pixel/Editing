@@ -13,6 +13,7 @@
 .red { color: #E3261C; }
 .cobalt { color: #2B3FE0; }
 svg { overflow: visible; }
+.dr { stroke-dasharray: 1; stroke-dashoffset: 1; }
 
 #cartas { position: absolute; inset: 0; }
 
@@ -22,24 +23,23 @@ svg { overflow: visible; }
 .card .corner.tl { left: 14px; top: 10px; } .card .corner.br { right: 14px; bottom: 10px; transform: rotate(180deg); }
 .card .ct { position: absolute; left: 0; right: 0; top: 60px; text-align: center; font-size: 48px; }
 .card .cm { position: absolute; left: 0; right: 0; top: 130px; text-align: center; font-size: 72px; }
-.dr { stroke-dasharray: 1; stroke-dashoffset: 1; }
 
   </style>
   <div id="cartas" data-composition-id="cartas" data-width="1080" data-height="1920">
 
-    <div id="c-emp" class="pc card" style="left:70px;top:292px;--rot:-6deg;">
+    <div id="c-emp" class="pc card" style="left:70px;top:292px;">
       <div class="corner tl" data-layout-allow-overlap data-layout-ignore><span class="anton" style="color:#E3261C">A</span><span style="color:#E3261C">&#9830;</span></div>
       <div class="corner br" data-layout-allow-overlap data-layout-ignore><span class="anton" style="color:#E3261C">A</span><span style="color:#E3261C">&#9830;</span></div>
       <div class="ct marker" style="color:#121212">EMPAQUETADO</div>
       <div class="cm marker" style="color:#E3261C">$$$</div>
     </div>
-    <div id="c-barra" class="pc card" style="left:588px;top:298px;--rot:5deg;">
+    <div id="c-barra" class="pc card" style="left:588px;top:298px;">
       <div class="corner tl" data-layout-allow-overlap data-layout-ignore><span class="anton" style="color:#2B3FE0">A</span><span style="color:#2B3FE0">&#9827;</span></div>
       <div class="corner br" data-layout-allow-overlap data-layout-ignore><span class="anton" style="color:#2B3FE0">A</span><span style="color:#2B3FE0">&#9827;</span></div>
       <div class="ct marker" style="color:#2B3FE0">LA BARRA</div>
       <div class="cm marker" style="color:#2B3FE0">$</div>
     </div>
-    <svg class="pc" viewBox="0 0 1080 1920" style="left:0;top:0;width:1080px;height:1920px;">
+    <svg id="c-svg" class="pc" viewBox="0 0 1080 1920" style="left:0;top:0;width:1080px;height:1920px;">
       <g fill="none" stroke="#E3261C" stroke-width="12" stroke-linecap="round">
         <path id="c-x1" class="dr" pathLength="1" d="M96 320 C220 400 350 480 486 540"/>
         <path id="c-x2" class="dr" pathLength="1" d="M478 306 C360 380 230 460 100 534"/>
@@ -48,15 +48,14 @@ svg { overflow: visible; }
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#c-emp", { x: -560, rotation: -24, opacity: 1 }, { x: 0, rotation: -6, duration: 0.55, ease: "expo.out" }, 0.0);
-    tl.fromTo("#c-barra", { x: 560, rotation: 26, opacity: 1 }, { x: 0, rotation: 5, duration: 0.55, ease: "expo.out" }, 3.300);
-    tl.fromTo("#c-x1", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.22, ease: "power1.inOut" }, 3.730);
-    tl.fromTo("#c-x2", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.22, ease: "power1.inOut" }, 3.930);
-    tl.to("#c-emp", { opacity: 0.55, duration: 0.3, ease: "power2.out" }, 3.950);
+    tl.fromTo("#c-emp", { x: -560, rotation: -24 }, { x: 0, rotation: -6, duration: 0.55, ease: "expo.out" }, 0.0);
+    tl.fromTo("#c-barra", { x: 560, rotation: 26 }, { x: 0, rotation: 5, duration: 0.55, ease: "expo.out" }, 3.300);
+    tl.fromTo("#c-x1", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.22, ease: "power1.inOut", stagger: 0.0 }, 3.730);
+    tl.fromTo("#c-x2", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.22, ease: "power1.inOut", stagger: 0.0 }, 3.930);
+    tl.to("#c-emp", { opacity: 0.6, duration: 0.3, ease: "power2.out" }, 3.950);
     tl.to("#c-barra", { scale: 1.08, duration: 0.5, ease: "expo.out" }, 3.750);
-    tl.to("#c-emp", { x: -560, rotation: -20, duration: 0.3, ease: "power3.in" }, 5.220);
-    tl.to("#c-barra", { x: 560, rotation: 20, duration: 0.3, ease: "power3.in" }, 5.240);
-    tl.to("#cartas svg", { opacity: 0, duration: 0.15 }, 5.220);
+    tl.to("#c-emp, #c-svg", { x: "+=-640", y: "+=260", rotation: -14, scale: 0.8, duration: 0.45, ease: "power3.in" }, 5.290);
+    tl.to("#c-barra", { x: "+=-1100", y: "+=300", rotation: -10, scale: 0.8, duration: 0.45, ease: "power3.in" }, 5.330);
 
     window.__timelines["cartas"] = tl;
   </script>
