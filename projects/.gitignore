@@ -19,3 +19,8 @@
 # Dependencias y renders intermedios de cada proyecto HyperFrames
 node_modules/
 renders/
+
+# QA: solo las hojas de contacto, no los PNG sueltos ni cachés
+**/qa/**/*.png
+**/.hyperframes/
+**/build/segs/

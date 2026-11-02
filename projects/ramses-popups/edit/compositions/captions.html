@@ -1,0 +1,653 @@
+<template>
+  <style>
+
+@font-face { font-family: "Anton"; src: url("assets/fonts/Anton.woff2"); }
+@font-face { font-family: "Permanent Marker"; src: url("assets/fonts/PermanentMarker.woff2"); }
+.pc { position: absolute; }
+.paper { background: #F7F4EC url("assets/img/paper_tile.png"); color: #121212; }
+.anton { font-family: "Anton", sans-serif; text-transform: uppercase; line-height: 1; letter-spacing: 0.01em; }
+.marker { font-family: "Permanent Marker", cursive; line-height: 1.05; }
+.serif { font-family: "EB Garamond", serif; }
+.lbl { padding: 16px 24px 12px; white-space: nowrap; }
+.tape { position: absolute; width: 132px; height: 38px; background: rgba(233, 222, 190, 0.86); }
+.red { color: #E3261C; }
+.cobalt { color: #2B3FE0; }
+svg { overflow: visible; }
+
+#captions { position: absolute; inset: 0; }
+
+.cg { position: absolute; left: 0; width: 1080px; text-align: center; opacity: 0; visibility: hidden; overflow: visible; }
+.cg .in { display: inline-block; max-width: 900px; padding: 6px 22px 10px; border-radius: 16px; background: rgba(18, 18, 18, 0.38);
+          font-family: "EB Garamond", serif; font-weight: 600; font-size: 62px; line-height: 1.08; color: #FFFFFF; }
+.cg em { font-style: italic; font-weight: 500; font-size: 1.1em; }
+
+  </style>
+  <div id="captions" data-composition-id="captions" data-width="1080" data-height="1920">
+    <div class="cg" id="cg0" style="top:1462px;"><span class="in">Yo he estado</span></div>
+    <div class="cg" id="cg1" style="top:1462px;"><span class="in">viendo que la</span></div>
+    <div class="cg" id="cg2" style="top:1462px;"><span class="in">mayoría de mis</span></div>
+    <div class="cg" id="cg3" style="top:1462px;"><span class="in">seguidores son bien</span></div>
+    <div class="cg" id="cg4" style="top:1462px;"><span class="in"><em>fresas</em></span></div>
+    <div class="cg" id="cg5" style="top:1462px;"><span class="in">la verdad</span></div>
+    <div class="cg" id="cg6" style="top:1462px;"><span class="in">o sea la</span></div>
+    <div class="cg" id="cg7" style="top:1462px;"><span class="in">mayoría</span></div>
+    <div class="cg" id="cg8" style="top:1462px;"><span class="in">entonces no saben</span></div>
+    <div class="cg" id="cg9" style="top:1462px;"><span class="in">varios trucos del</span></div>
+    <div class="cg" id="cg10" style="top:1462px;"><span class="in">súper que a</span></div>
+    <div class="cg" id="cg11" style="top:1462px;"><span class="in">mi por ejemplo</span></div>
+    <div class="cg" id="cg12" style="top:1462px;"><span class="in">mi mamá</span></div>
+    <div class="cg" id="cg13" style="top:1462px;"><span class="in">que mi mamá</span></div>
+    <div class="cg" id="cg14" style="top:1462px;"><span class="in">es del <em>rancho</em></span></div>
+    <div class="cg" id="cg15" style="top:1462px;"><span class="in">ella sabe muy</span></div>
+    <div class="cg" id="cg16" style="top:1462px;"><span class="in">bien y ella</span></div>
+    <div class="cg" id="cg17" style="top:1462px;"><span class="in">cocina increíble y</span></div>
+    <div class="cg" id="cg18" style="top:1462px;"><span class="in">ella siempre ha</span></div>
+    <div class="cg" id="cg19" style="top:1462px;"><span class="in">aprendido como a</span></div>
+    <div class="cg" id="cg20" style="top:1462px;"><span class="in">comprar bien las</span></div>
+    <div class="cg" id="cg21" style="top:1462px;"><span class="in">cosas</span></div>
+    <div class="cg" id="cg22" style="top:1462px;"><span class="in">truco del súper</span></div>
+    <div class="cg" id="cg23" style="top:1462px;"><span class="in">para la mayoría</span></div>
+    <div class="cg" id="cg24" style="top:1462px;"><span class="in">de ustedes porque</span></div>
+    <div class="cg" id="cg25" style="top:1462px;"><span class="in">se nota que</span></div>
+    <div class="cg" id="cg26" style="top:1462px;"><span class="in">no cocinan ni</span></div>
+    <div class="cg" id="cg27" style="top:1462px;"><span class="in">un <em>huevo</em></span></div>
+    <div class="cg" id="cg28" style="top:1462px;"><span class="in">cuando ustedes</span></div>
+    <div class="cg" id="cg29" style="top:1462px;"><span class="in">compran aquí ya</span></div>
+    <div class="cg" id="cg30" style="top:1462px;"><span class="in">sea jamón o</span></div>
+    <div class="cg" id="cg31" style="top:1462px;"><span class="in">queso les va</span></div>
+    <div class="cg" id="cg32" style="top:1462px;"><span class="in">a salir más</span></div>
+    <div class="cg" id="cg33" style="top:1462px;"><span class="in"><em>barato</em></span></div>
+    <div class="cg" id="cg34" style="top:1462px;"><span class="in">mucho más <em>barato</em></span></div>
+    <div class="cg" id="cg35" style="top:1462px;"><span class="in">ahorita les voy</span></div>
+    <div class="cg" id="cg36" style="top:1462px;"><span class="in">a hacer la</span></div>
+    <div class="cg" id="cg37" style="top:1462px;"><span class="in">comparación de</span></div>
+    <div class="cg" id="cg38" style="top:1462px;"><span class="in">precios para que</span></div>
+    <div class="cg" id="cg39" style="top:1462px;"><span class="in">vean que ya</span></div>
+    <div class="cg" id="cg40" style="top:1462px;"><span class="in">empaquetado y si</span></div>
+    <div class="cg" id="cg41" style="top:1462px;"><span class="in">tú vienes y</span></div>
+    <div class="cg" id="cg42" style="top:1462px;"><span class="in">lo pides nomás</span></div>
+    <div class="cg" id="cg43" style="top:1462px;"><span class="in">aquí a la</span></div>
+    <div class="cg" id="cg44" style="top:1462px;"><span class="in"><em>barra</em> te va</span></div>
+    <div class="cg" id="cg45" style="top:1462px;"><span class="in">a salir muchísimo</span></div>
+    <div class="cg" id="cg46" style="top:1462px;"><span class="in">más <em>barato</em> y</span></div>
+    <div class="cg" id="cg47" style="top:1462px;"><span class="in">sirve y te</span></div>
+    <div class="cg" id="cg48" style="top:1462px;"><span class="in">ayuda a cuidar</span></div>
+    <div class="cg" id="cg49" style="top:1462px;"><span class="in">un poquito más</span></div>
+    <div class="cg" id="cg50" style="top:1462px;"><span class="in">tu <em>dinero</em> y</span></div>
+    <div class="cg" id="cg51" style="top:1462px;"><span class="in">que ese <em>dinero</em></span></div>
+    <div class="cg" id="cg52" style="top:1462px;"><span class="in">lo puedes <em>invertir</em></span></div>
+    <div class="cg" id="cg53" style="top:1462px;"><span class="in">en algo que</span></div>
+    <div class="cg" id="cg54" style="top:1462px;"><span class="in">te añada más</span></div>
+    <div class="cg" id="cg55" style="top:1462px;"><span class="in"><em>dinero</em></span></div>
+    <div class="cg" id="cg56" style="top:1462px;"><span class="in">el <em>chiste</em> no</span></div>
+    <div class="cg" id="cg57" style="top:1462px;"><span class="in">es <em>ahorrar</em> por</span></div>
+    <div class="cg" id="cg58" style="top:1462px;"><span class="in"><em>ahorrar</em> y por</span></div>
+    <div class="cg" id="cg59" style="top:1462px;"><span class="in">tener ese <em>dinero</em></span></div>
+    <div class="cg" id="cg60" style="top:1462px;"><span class="in">ahí sentado</span></div>
+    <div class="cg" id="cg61" style="top:1462px;"><span class="in">sino para que</span></div>
+    <div class="cg" id="cg62" style="top:1462px;"><span class="in">tú puedas utilizar</span></div>
+    <div class="cg" id="cg63" style="top:1462px;"><span class="in">ese <em>dinero</em> y</span></div>
+    <div class="cg" id="cg64" style="top:1462px;"><span class="in">lo uses para</span></div>
+    <div class="cg" id="cg65" style="top:1462px;"><span class="in">algo más</span></div>
+    <div class="cg" id="cg66" style="top:1462px;"><span class="in">o sea</span></div>
+    <div class="cg" id="cg67" style="top:1462px;"><span class="in">que tengas</span></div>
+    <div class="cg" id="cg68" style="top:1462px;"><span class="in">o sea que</span></div>
+    <div class="cg" id="cg69" style="top:1462px;"><span class="in">te pongas a</span></div>
+    <div class="cg" id="cg70" style="top:1462px;"><span class="in"><em>ahorrar</em> en tus</span></div>
+    <div class="cg" id="cg71" style="top:1462px;"><span class="in">cosas</span></div>
+    <div class="cg" id="cg72" style="top:1462px;"><span class="in">por ejemplo yo</span></div>
+    <div class="cg" id="cg73" style="top:1462px;"><span class="in">que como mucho</span></div>
+    <div class="cg" id="cg74" style="top:1462px;"><span class="in">queso y mucho</span></div>
+    <div class="cg" id="cg75" style="top:1462px;"><span class="in">jamón y mucho</span></div>
+    <div class="cg" id="cg76" style="top:1462px;"><span class="in">este tipo de</span></div>
+    <div class="cg" id="cg77" style="top:1462px;"><span class="in">cosas</span></div>
+    <div class="cg" id="cg78" style="top:1462px;"><span class="in">si me ahorro</span></div>
+    <div class="cg" id="cg79" style="top:1462px;"><span class="in">yo unos mil</span></div>
+    <div class="cg" id="cg80" style="top:792px;"><span class="in">pesos extra</span></div>
+    <div class="cg" id="cg81" style="top:792px;"><span class="in">unos dos mil</span></div>
+    <div class="cg" id="cg82" style="top:792px;"><span class="in">pesos extra en</span></div>
+    <div class="cg" id="cg83" style="top:792px;"><span class="in">súper porque como</span></div>
+    <div class="cg" id="cg84" style="top:792px;"><span class="in">un chorro</span></div>
+    <div class="cg" id="cg85" style="top:792px;"><span class="in">ese <em>dinero</em> lo</span></div>
+    <div class="cg" id="cg86" style="top:792px;"><span class="in">puedo <em>invertir</em> en</span></div>
+    <div class="cg" id="cg87" style="top:792px;"><span class="in"><em>libros</em> que me</span></div>
+    <div class="cg" id="cg88" style="top:792px;"><span class="in">van a ayudar</span></div>
+    <div class="cg" id="cg89" style="top:792px;"><span class="in">en mi trabajo</span></div>
+    <div class="cg" id="cg90" style="top:792px;"><span class="in">a hacer más</span></div>
+    <div class="cg" id="cg91" style="top:792px;"><span class="in"><em>dinero</em></span></div>
+    <div class="cg" id="cg92" style="top:792px;"><span class="in">te recomiendo que</span></div>
+    <div class="cg" id="cg93" style="top:1462px;"><span class="in">te hagas alguna</span></div>
+    <div class="cg" id="cg94" style="top:792px;"><span class="in"><em>automatización</em> con</span></div>
+    <div class="cg" id="cg95" style="top:792px;"><span class="in"><em>Claude</em> o con</span></div>
+    <div class="cg" id="cg96" style="top:792px;"><span class="in"><em>ChatGPT</em> o con</span></div>
+    <div class="cg" id="cg97" style="top:792px;"><span class="in"><em>Gemini</em> o <em>Grok</em></span></div>
+    <div class="cg" id="cg98" style="top:792px;"><span class="in">algo que te</span></div>
+    <div class="cg" id="cg99" style="top:792px;"><span class="in">diga oye bro</span></div>
+    <div class="cg" id="cg100" style="top:792px;"><span class="in">tú puedes conseguir</span></div>
+    <div class="cg" id="cg101" style="top:792px;"><span class="in">estas cosas más</span></div>
+    <div class="cg" id="cg102" style="top:792px;"><span class="in"><em>baratas</em> aquí y</span></div>
+    <div class="cg" id="cg103" style="top:792px;"><span class="in">de esta</span></div>
+    <div class="cg" id="cg104" style="top:1462px;"><span class="in">yo tengo una</span></div>
+    <div class="cg" id="cg105" style="top:1462px;"><span class="in">ya si puedes</span></div>
+    <div class="cg" id="cg106" style="top:1462px;"><span class="in">mejorar la</span></div>
+    <div class="cg" id="cg107" style="top:1462px;"><span class="in">posibilidad de vivir</span></div>
+    <div class="cg" id="cg108" style="top:1462px;"><span class="in">una vida</span></div>
+    <div class="cg" id="cg109" style="top:1462px;"><span class="in">para todos mis</span></div>
+    <div class="cg" id="cg110" style="top:1462px;"><span class="in">seguidores que no</span></div>
+    <div class="cg" id="cg111" style="top:1462px;"><span class="in">son para nada</span></div>
+    <div class="cg" id="cg112" style="top:1462px;"><span class="in"><em>fresas</em></span></div>
+    <div class="cg" id="cg113" style="top:1462px;"><span class="in">o sea yo</span></div>
+    <div class="cg" id="cg114" style="top:1462px;"><span class="in">no me considero</span></div>
+    <div class="cg" id="cg115" style="top:1462px;"><span class="in">una persona <em>fresa</em></span></div>
+    <div class="cg" id="cg116" style="top:1462px;"><span class="in">la verdad y</span></div>
+    <div class="cg" id="cg117" style="top:1462px;"><span class="in">ayudarnos entre</span></div>
+    <div class="cg" id="cg118" style="top:1462px;"><span class="in">nosotros</span></div>
+    <div class="cg" id="cg119" style="top:1462px;"><span class="in">mucho <em>éxito</em> y</span></div>
+    <div class="cg" id="cg120" style="top:1462px;"><span class="in">ya sabes que</span></div>
+    <div class="cg" id="cg121" style="top:1462px;"><span class="in">cualquier cosa</span></div>
+    <div class="cg" id="cg122" style="top:1462px;"><span class="in">aquí están mis</span></div>
+    <div class="cg" id="cg123" style="top:1462px;"><span class="in">gems</span></div>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#cg0", { opacity: 1, visibility: "visible" }, 0.120);
+    tl.fromTo("#cg0 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 0.120);
+    tl.to("#cg0 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 0.440);
+    tl.set("#cg0", { opacity: 0, visibility: "hidden" }, 0.540);
+    tl.set("#cg1", { opacity: 1, visibility: "visible" }, 0.560);
+    tl.fromTo("#cg1 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 0.560);
+    tl.to("#cg1 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 1.140);
+    tl.set("#cg1", { opacity: 0, visibility: "hidden" }, 1.240);
+    tl.set("#cg2", { opacity: 1, visibility: "visible" }, 1.260);
+    tl.fromTo("#cg2 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 1.260);
+    tl.to("#cg2 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 1.840);
+    tl.set("#cg2", { opacity: 0, visibility: "hidden" }, 1.940);
+    tl.set("#cg3", { opacity: 1, visibility: "visible" }, 1.960);
+    tl.fromTo("#cg3 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 1.960);
+    tl.to("#cg3 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 3.200);
+    tl.set("#cg3", { opacity: 0, visibility: "hidden" }, 3.300);
+    tl.set("#cg4", { opacity: 1, visibility: "visible" }, 3.320);
+    tl.fromTo("#cg4 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 3.320);
+    tl.to("#cg4 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 4.030);
+    tl.set("#cg4", { opacity: 0, visibility: "hidden" }, 4.130);
+    tl.set("#cg5", { opacity: 1, visibility: "visible" }, 4.150);
+    tl.fromTo("#cg5 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 4.150);
+    tl.to("#cg5 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 5.090);
+    tl.set("#cg5", { opacity: 0, visibility: "hidden" }, 5.190);
+    tl.set("#cg6", { opacity: 1, visibility: "visible" }, 5.210);
+    tl.fromTo("#cg6 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 5.210);
+    tl.to("#cg6 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 5.480);
+    tl.set("#cg6", { opacity: 0, visibility: "hidden" }, 5.580);
+    tl.set("#cg7", { opacity: 1, visibility: "visible" }, 5.600);
+    tl.fromTo("#cg7 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 5.600);
+    tl.to("#cg7 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 6.003);
+    tl.set("#cg7", { opacity: 0, visibility: "hidden" }, 6.103);
+    tl.set("#cg8", { opacity: 1, visibility: "visible" }, 6.123);
+    tl.fromTo("#cg8 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 6.123);
+    tl.to("#cg8 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 7.143);
+    tl.set("#cg8", { opacity: 0, visibility: "hidden" }, 7.243);
+    tl.set("#cg9", { opacity: 1, visibility: "visible" }, 7.263);
+    tl.fromTo("#cg9 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 7.263);
+    tl.to("#cg9 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 8.213);
+    tl.set("#cg9", { opacity: 0, visibility: "hidden" }, 8.313);
+    tl.set("#cg10", { opacity: 1, visibility: "visible" }, 8.333);
+    tl.fromTo("#cg10 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 8.333);
+    tl.to("#cg10 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 8.853);
+    tl.set("#cg10", { opacity: 0, visibility: "hidden" }, 8.953);
+    tl.set("#cg11", { opacity: 1, visibility: "visible" }, 8.973);
+    tl.fromTo("#cg11 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 8.973);
+    tl.to("#cg11 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 9.833);
+    tl.set("#cg11", { opacity: 0, visibility: "hidden" }, 9.933);
+    tl.set("#cg12", { opacity: 1, visibility: "visible" }, 9.953);
+    tl.fromTo("#cg12 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 9.953);
+    tl.to("#cg12 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 10.403);
+    tl.set("#cg12", { opacity: 0, visibility: "hidden" }, 10.503);
+    tl.set("#cg13", { opacity: 1, visibility: "visible" }, 10.523);
+    tl.fromTo("#cg13 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 10.523);
+    tl.to("#cg13 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 11.033);
+    tl.set("#cg13", { opacity: 0, visibility: "hidden" }, 11.133);
+    tl.set("#cg14", { opacity: 1, visibility: "visible" }, 11.153);
+    tl.fromTo("#cg14 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 11.153);
+    tl.to("#cg14 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 11.953);
+    tl.set("#cg14", { opacity: 0, visibility: "hidden" }, 12.053);
+    tl.set("#cg15", { opacity: 1, visibility: "visible" }, 12.073);
+    tl.fromTo("#cg15 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 12.073);
+    tl.to("#cg15 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 13.123);
+    tl.set("#cg15", { opacity: 0, visibility: "hidden" }, 13.223);
+    tl.set("#cg16", { opacity: 1, visibility: "visible" }, 13.243);
+    tl.fromTo("#cg16 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 13.243);
+    tl.to("#cg16 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 14.063);
+    tl.set("#cg16", { opacity: 0, visibility: "hidden" }, 14.163);
+    tl.set("#cg17", { opacity: 1, visibility: "visible" }, 14.183);
+    tl.fromTo("#cg17 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 14.183);
+    tl.to("#cg17 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 15.733);
+    tl.set("#cg17", { opacity: 0, visibility: "hidden" }, 15.833);
+    tl.set("#cg18", { opacity: 1, visibility: "visible" }, 15.853);
+    tl.fromTo("#cg18 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 15.853);
+    tl.to("#cg18 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 17.103);
+    tl.set("#cg18", { opacity: 0, visibility: "hidden" }, 17.203);
+    tl.set("#cg19", { opacity: 1, visibility: "visible" }, 17.223);
+    tl.fromTo("#cg19 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 17.223);
+    tl.to("#cg19 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 18.563);
+    tl.set("#cg19", { opacity: 0, visibility: "hidden" }, 18.663);
+    tl.set("#cg20", { opacity: 1, visibility: "visible" }, 18.683);
+    tl.fromTo("#cg20 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 18.683);
+    tl.to("#cg20 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 20.063);
+    tl.set("#cg20", { opacity: 0, visibility: "hidden" }, 20.163);
+    tl.set("#cg21", { opacity: 1, visibility: "visible" }, 20.183);
+    tl.fromTo("#cg21 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 20.183);
+    tl.to("#cg21 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 20.623);
+    tl.set("#cg21", { opacity: 0, visibility: "hidden" }, 20.723);
+    tl.set("#cg22", { opacity: 1, visibility: "visible" }, 20.743);
+    tl.fromTo("#cg22 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 20.743);
+    tl.to("#cg22 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 21.663);
+    tl.set("#cg22", { opacity: 0, visibility: "hidden" }, 21.763);
+    tl.set("#cg23", { opacity: 1, visibility: "visible" }, 21.783);
+    tl.fromTo("#cg23 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 21.783);
+    tl.to("#cg23 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 22.693);
+    tl.set("#cg23", { opacity: 0, visibility: "hidden" }, 22.793);
+    tl.set("#cg24", { opacity: 1, visibility: "visible" }, 22.813);
+    tl.fromTo("#cg24 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 22.813);
+    tl.to("#cg24 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 23.903);
+    tl.set("#cg24", { opacity: 0, visibility: "hidden" }, 24.003);
+    tl.set("#cg25", { opacity: 1, visibility: "visible" }, 24.023);
+    tl.fromTo("#cg25 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 24.023);
+    tl.to("#cg25 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 24.623);
+    tl.set("#cg25", { opacity: 0, visibility: "hidden" }, 24.723);
+    tl.set("#cg26", { opacity: 1, visibility: "visible" }, 24.743);
+    tl.fromTo("#cg26 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 24.743);
+    tl.to("#cg26 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 25.663);
+    tl.set("#cg26", { opacity: 0, visibility: "hidden" }, 25.763);
+    tl.set("#cg27", { opacity: 1, visibility: "visible" }, 25.783);
+    tl.fromTo("#cg27 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 25.783);
+    tl.to("#cg27 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 26.653);
+    tl.set("#cg27", { opacity: 0, visibility: "hidden" }, 26.753);
+    tl.set("#cg28", { opacity: 1, visibility: "visible" }, 26.773);
+    tl.fromTo("#cg28 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 26.773);
+    tl.to("#cg28 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 28.103);
+    tl.set("#cg28", { opacity: 0, visibility: "hidden" }, 28.203);
+    tl.set("#cg29", { opacity: 1, visibility: "visible" }, 28.223);
+    tl.fromTo("#cg29 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 28.223);
+    tl.to("#cg29 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 29.553);
+    tl.set("#cg29", { opacity: 0, visibility: "hidden" }, 29.653);
+    tl.set("#cg30", { opacity: 1, visibility: "visible" }, 29.673);
+    tl.fromTo("#cg30 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 29.673);
+    tl.to("#cg30 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 30.543);
+    tl.set("#cg30", { opacity: 0, visibility: "hidden" }, 30.643);
+    tl.set("#cg31", { opacity: 1, visibility: "visible" }, 30.663);
+    tl.fromTo("#cg31 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 30.663);
+    tl.to("#cg31 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 31.653);
+    tl.set("#cg31", { opacity: 0, visibility: "hidden" }, 31.753);
+    tl.set("#cg32", { opacity: 1, visibility: "visible" }, 31.773);
+    tl.fromTo("#cg32 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 31.773);
+    tl.to("#cg32 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 32.643);
+    tl.set("#cg32", { opacity: 0, visibility: "hidden" }, 32.743);
+    tl.set("#cg33", { opacity: 1, visibility: "visible" }, 32.763);
+    tl.fromTo("#cg33 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 32.763);
+    tl.to("#cg33 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 33.823);
+    tl.set("#cg33", { opacity: 0, visibility: "hidden" }, 33.923);
+    tl.set("#cg34", { opacity: 1, visibility: "visible" }, 34.050);
+    tl.fromTo("#cg34 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 34.050);
+    tl.to("#cg34 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 34.900);
+    tl.set("#cg34", { opacity: 0, visibility: "hidden" }, 35.000);
+    tl.set("#cg35", { opacity: 1, visibility: "visible" }, 35.020);
+    tl.fromTo("#cg35 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 35.020);
+    tl.to("#cg35 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 35.680);
+    tl.set("#cg35", { opacity: 0, visibility: "hidden" }, 35.780);
+    tl.set("#cg36", { opacity: 1, visibility: "visible" }, 35.800);
+    tl.fromTo("#cg36 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 35.800);
+    tl.to("#cg36 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 36.170);
+    tl.set("#cg36", { opacity: 0, visibility: "hidden" }, 36.270);
+    tl.set("#cg37", { opacity: 1, visibility: "visible" }, 36.290);
+    tl.fromTo("#cg37 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 36.290);
+    tl.to("#cg37 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 36.970);
+    tl.set("#cg37", { opacity: 0, visibility: "hidden" }, 37.070);
+    tl.set("#cg38", { opacity: 1, visibility: "visible" }, 37.090);
+    tl.fromTo("#cg38 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 37.090);
+    tl.to("#cg38 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 37.800);
+    tl.set("#cg38", { opacity: 0, visibility: "hidden" }, 37.900);
+    tl.set("#cg39", { opacity: 1, visibility: "visible" }, 37.920);
+    tl.fromTo("#cg39 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 37.920);
+    tl.to("#cg39 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 38.680);
+    tl.set("#cg39", { opacity: 0, visibility: "hidden" }, 38.780);
+    tl.set("#cg40", { opacity: 1, visibility: "visible" }, 38.800);
+    tl.fromTo("#cg40 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 38.800);
+    tl.to("#cg40 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 39.430);
+    tl.set("#cg40", { opacity: 0, visibility: "hidden" }, 39.530);
+    tl.set("#cg41", { opacity: 1, visibility: "visible" }, 39.550);
+    tl.fromTo("#cg41 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 39.550);
+    tl.to("#cg41 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 39.910);
+    tl.set("#cg41", { opacity: 0, visibility: "hidden" }, 40.010);
+    tl.set("#cg42", { opacity: 1, visibility: "visible" }, 40.030);
+    tl.fromTo("#cg42 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 40.030);
+    tl.to("#cg42 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 40.560);
+    tl.set("#cg42", { opacity: 0, visibility: "hidden" }, 40.660);
+    tl.set("#cg43", { opacity: 1, visibility: "visible" }, 40.680);
+    tl.fromTo("#cg43 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 40.680);
+    tl.to("#cg43 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 40.940);
+    tl.set("#cg43", { opacity: 0, visibility: "hidden" }, 41.040);
+    tl.set("#cg44", { opacity: 1, visibility: "visible" }, 41.060);
+    tl.fromTo("#cg44 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 41.060);
+    tl.to("#cg44 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 41.430);
+    tl.set("#cg44", { opacity: 0, visibility: "hidden" }, 41.530);
+    tl.set("#cg45", { opacity: 1, visibility: "visible" }, 41.550);
+    tl.fromTo("#cg45 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 41.550);
+    tl.to("#cg45 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 42.330);
+    tl.set("#cg45", { opacity: 0, visibility: "hidden" }, 42.430);
+    tl.set("#cg46", { opacity: 1, visibility: "visible" }, 42.450);
+    tl.fromTo("#cg46 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 42.450);
+    tl.to("#cg46 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 43.030);
+    tl.set("#cg46", { opacity: 0, visibility: "hidden" }, 43.130);
+    tl.set("#cg47", { opacity: 1, visibility: "visible" }, 43.150);
+    tl.fromTo("#cg47 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 43.150);
+    tl.to("#cg47 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 43.630);
+    tl.set("#cg47", { opacity: 0, visibility: "hidden" }, 43.730);
+    tl.set("#cg48", { opacity: 1, visibility: "visible" }, 43.750);
+    tl.fromTo("#cg48 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 43.750);
+    tl.to("#cg48 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 44.440);
+    tl.set("#cg48", { opacity: 0, visibility: "hidden" }, 44.540);
+    tl.set("#cg49", { opacity: 1, visibility: "visible" }, 44.560);
+    tl.fromTo("#cg49 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 44.560);
+    tl.to("#cg49 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 45.290);
+    tl.set("#cg49", { opacity: 0, visibility: "hidden" }, 45.390);
+    tl.set("#cg50", { opacity: 1, visibility: "visible" }, 45.410);
+    tl.fromTo("#cg50 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 45.410);
+    tl.to("#cg50 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 45.930);
+    tl.set("#cg50", { opacity: 0, visibility: "hidden" }, 46.030);
+    tl.set("#cg51", { opacity: 1, visibility: "visible" }, 46.050);
+    tl.fromTo("#cg51 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 46.050);
+    tl.to("#cg51 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 46.890);
+    tl.set("#cg51", { opacity: 0, visibility: "hidden" }, 46.990);
+    tl.set("#cg52", { opacity: 1, visibility: "visible" }, 47.010);
+    tl.fromTo("#cg52 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 47.010);
+    tl.to("#cg52 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 48.030);
+    tl.set("#cg52", { opacity: 0, visibility: "hidden" }, 48.130);
+    tl.set("#cg53", { opacity: 1, visibility: "visible" }, 48.150);
+    tl.fromTo("#cg53 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 48.150);
+    tl.to("#cg53 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 48.680);
+    tl.set("#cg53", { opacity: 0, visibility: "hidden" }, 48.780);
+    tl.set("#cg54", { opacity: 1, visibility: "visible" }, 48.800);
+    tl.fromTo("#cg54 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 48.800);
+    tl.to("#cg54 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 49.400);
+    tl.set("#cg54", { opacity: 0, visibility: "hidden" }, 49.500);
+    tl.set("#cg55", { opacity: 1, visibility: "visible" }, 49.520);
+    tl.fromTo("#cg55 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 49.520);
+    tl.to("#cg55 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 49.980);
+    tl.set("#cg55", { opacity: 0, visibility: "hidden" }, 50.080);
+    tl.set("#cg56", { opacity: 1, visibility: "visible" }, 50.100);
+    tl.fromTo("#cg56 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 50.100);
+    tl.to("#cg56 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 50.620);
+    tl.set("#cg56", { opacity: 0, visibility: "hidden" }, 50.720);
+    tl.set("#cg57", { opacity: 1, visibility: "visible" }, 50.740);
+    tl.fromTo("#cg57 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 50.740);
+    tl.to("#cg57 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 51.490);
+    tl.set("#cg57", { opacity: 0, visibility: "hidden" }, 51.590);
+    tl.set("#cg58", { opacity: 1, visibility: "visible" }, 51.610);
+    tl.fromTo("#cg58 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 51.610);
+    tl.to("#cg58 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 52.510);
+    tl.set("#cg58", { opacity: 0, visibility: "hidden" }, 52.610);
+    tl.set("#cg59", { opacity: 1, visibility: "visible" }, 52.630);
+    tl.fromTo("#cg59 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 52.630);
+    tl.to("#cg59 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 53.720);
+    tl.set("#cg59", { opacity: 0, visibility: "hidden" }, 53.820);
+    tl.set("#cg60", { opacity: 1, visibility: "visible" }, 53.840);
+    tl.fromTo("#cg60 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 53.840);
+    tl.to("#cg60 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 54.760);
+    tl.set("#cg60", { opacity: 0, visibility: "hidden" }, 54.860);
+    tl.set("#cg61", { opacity: 1, visibility: "visible" }, 54.880);
+    tl.fromTo("#cg61 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 54.880);
+    tl.to("#cg61 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 55.720);
+    tl.set("#cg61", { opacity: 0, visibility: "hidden" }, 55.820);
+    tl.set("#cg62", { opacity: 1, visibility: "visible" }, 55.840);
+    tl.fromTo("#cg62 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 55.840);
+    tl.to("#cg62 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 57.110);
+    tl.set("#cg62", { opacity: 0, visibility: "hidden" }, 57.210);
+    tl.set("#cg63", { opacity: 1, visibility: "visible" }, 57.230);
+    tl.fromTo("#cg63 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 57.230);
+    tl.to("#cg63 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 58.050);
+    tl.set("#cg63", { opacity: 0, visibility: "hidden" }, 58.150);
+    tl.set("#cg64", { opacity: 1, visibility: "visible" }, 58.170);
+    tl.fromTo("#cg64 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 58.170);
+    tl.to("#cg64 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 58.820);
+    tl.set("#cg64", { opacity: 0, visibility: "hidden" }, 58.920);
+    tl.set("#cg65", { opacity: 1, visibility: "visible" }, 58.940);
+    tl.fromTo("#cg65 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 58.940);
+    tl.to("#cg65 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 59.530);
+    tl.set("#cg65", { opacity: 0, visibility: "hidden" }, 59.630);
+    tl.set("#cg66", { opacity: 1, visibility: "visible" }, 59.650);
+    tl.fromTo("#cg66 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 59.650);
+    tl.to("#cg66 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 59.960);
+    tl.set("#cg66", { opacity: 0, visibility: "hidden" }, 60.060);
+    tl.set("#cg67", { opacity: 1, visibility: "visible" }, 60.080);
+    tl.fromTo("#cg67 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 60.080);
+    tl.to("#cg67 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 60.800);
+    tl.set("#cg67", { opacity: 0, visibility: "hidden" }, 60.900);
+    tl.set("#cg68", { opacity: 1, visibility: "visible" }, 60.920);
+    tl.fromTo("#cg68 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 60.920);
+    tl.to("#cg68 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 61.330);
+    tl.set("#cg68", { opacity: 0, visibility: "hidden" }, 61.430);
+    tl.set("#cg69", { opacity: 1, visibility: "visible" }, 61.450);
+    tl.fromTo("#cg69 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 61.450);
+    tl.to("#cg69 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 62.010);
+    tl.set("#cg69", { opacity: 0, visibility: "hidden" }, 62.110);
+    tl.set("#cg70", { opacity: 1, visibility: "visible" }, 62.130);
+    tl.fromTo("#cg70 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 62.130);
+    tl.to("#cg70 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 62.930);
+    tl.set("#cg70", { opacity: 0, visibility: "hidden" }, 63.030);
+    tl.set("#cg71", { opacity: 1, visibility: "visible" }, 63.050);
+    tl.fromTo("#cg71 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 63.050);
+    tl.to("#cg71 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 63.530);
+    tl.set("#cg71", { opacity: 0, visibility: "hidden" }, 63.630);
+    tl.set("#cg72", { opacity: 1, visibility: "visible" }, 63.650);
+    tl.fromTo("#cg72 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 63.650);
+    tl.to("#cg72 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 64.320);
+    tl.set("#cg72", { opacity: 0, visibility: "hidden" }, 64.420);
+    tl.set("#cg73", { opacity: 1, visibility: "visible" }, 64.440);
+    tl.fromTo("#cg73 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 64.440);
+    tl.to("#cg73 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 65.110);
+    tl.set("#cg73", { opacity: 0, visibility: "hidden" }, 65.210);
+    tl.set("#cg74", { opacity: 1, visibility: "visible" }, 65.230);
+    tl.fromTo("#cg74 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 65.230);
+    tl.to("#cg74 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 65.830);
+    tl.set("#cg74", { opacity: 0, visibility: "hidden" }, 65.930);
+    tl.set("#cg75", { opacity: 1, visibility: "visible" }, 65.950);
+    tl.fromTo("#cg75 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 65.950);
+    tl.to("#cg75 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 66.550);
+    tl.set("#cg75", { opacity: 0, visibility: "hidden" }, 66.650);
+    tl.set("#cg76", { opacity: 1, visibility: "visible" }, 66.670);
+    tl.fromTo("#cg76 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 66.670);
+    tl.to("#cg76 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 67.200);
+    tl.set("#cg76", { opacity: 0, visibility: "hidden" }, 67.300);
+    tl.set("#cg77", { opacity: 1, visibility: "visible" }, 67.320);
+    tl.fromTo("#cg77 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 67.320);
+    tl.to("#cg77 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 67.660);
+    tl.set("#cg77", { opacity: 0, visibility: "hidden" }, 67.760);
+    tl.set("#cg78", { opacity: 1, visibility: "visible" }, 67.780);
+    tl.fromTo("#cg78 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 67.780);
+    tl.to("#cg78 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 68.410);
+    tl.set("#cg78", { opacity: 0, visibility: "hidden" }, 68.510);
+    tl.set("#cg79", { opacity: 1, visibility: "visible" }, 68.530);
+    tl.fromTo("#cg79 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 68.530);
+    tl.to("#cg79 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 69.130);
+    tl.set("#cg79", { opacity: 0, visibility: "hidden" }, 69.230);
+    tl.set("#cg80", { opacity: 1, visibility: "visible" }, 69.250);
+    tl.fromTo("#cg80 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 69.250);
+    tl.to("#cg80 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 70.060);
+    tl.set("#cg80", { opacity: 0, visibility: "hidden" }, 70.160);
+    tl.set("#cg81", { opacity: 1, visibility: "visible" }, 70.180);
+    tl.fromTo("#cg81 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 70.180);
+    tl.to("#cg81 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 70.860);
+    tl.set("#cg81", { opacity: 0, visibility: "hidden" }, 70.960);
+    tl.set("#cg82", { opacity: 1, visibility: "visible" }, 70.980);
+    tl.fromTo("#cg82 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 70.980);
+    tl.to("#cg82 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 71.800);
+    tl.set("#cg82", { opacity: 0, visibility: "hidden" }, 71.900);
+    tl.set("#cg83", { opacity: 1, visibility: "visible" }, 71.920);
+    tl.fromTo("#cg83 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 71.920);
+    tl.to("#cg83 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 72.980);
+    tl.set("#cg83", { opacity: 0, visibility: "hidden" }, 73.080);
+    tl.set("#cg84", { opacity: 1, visibility: "visible" }, 73.100);
+    tl.fromTo("#cg84 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 73.100);
+    tl.to("#cg84 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 73.760);
+    tl.set("#cg84", { opacity: 0, visibility: "hidden" }, 73.860);
+    tl.set("#cg85", { opacity: 1, visibility: "visible" }, 73.880);
+    tl.fromTo("#cg85 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 73.880);
+    tl.to("#cg85 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 74.420);
+    tl.set("#cg85", { opacity: 0, visibility: "hidden" }, 74.520);
+    tl.set("#cg86", { opacity: 1, visibility: "visible" }, 74.540);
+    tl.fromTo("#cg86 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 74.540);
+    tl.to("#cg86 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 75.240);
+    tl.set("#cg86", { opacity: 0, visibility: "hidden" }, 75.340);
+    tl.set("#cg87", { opacity: 1, visibility: "visible" }, 75.360);
+    tl.fromTo("#cg87 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 75.360);
+    tl.to("#cg87 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 75.840);
+    tl.set("#cg87", { opacity: 0, visibility: "hidden" }, 75.940);
+    tl.set("#cg88", { opacity: 1, visibility: "visible" }, 75.960);
+    tl.fromTo("#cg88 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 75.960);
+    tl.to("#cg88 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 76.380);
+    tl.set("#cg88", { opacity: 0, visibility: "hidden" }, 76.480);
+    tl.set("#cg89", { opacity: 1, visibility: "visible" }, 76.500);
+    tl.fromTo("#cg89 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 76.500);
+    tl.to("#cg89 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 76.980);
+    tl.set("#cg89", { opacity: 0, visibility: "hidden" }, 77.080);
+    tl.set("#cg90", { opacity: 1, visibility: "visible" }, 77.100);
+    tl.fromTo("#cg90 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 77.100);
+    tl.to("#cg90 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 77.460);
+    tl.set("#cg90", { opacity: 0, visibility: "hidden" }, 77.560);
+    tl.set("#cg91", { opacity: 1, visibility: "visible" }, 77.580);
+    tl.fromTo("#cg91 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 77.580);
+    tl.to("#cg91 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 78.108);
+    tl.set("#cg91", { opacity: 0, visibility: "hidden" }, 78.208);
+    tl.set("#cg92", { opacity: 1, visibility: "visible" }, 78.228);
+    tl.fromTo("#cg92 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 78.228);
+    tl.to("#cg92 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 79.758);
+    tl.set("#cg92", { opacity: 0, visibility: "hidden" }, 79.858);
+    tl.set("#cg93", { opacity: 1, visibility: "visible" }, 79.878);
+    tl.fromTo("#cg93 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 79.878);
+    tl.to("#cg93 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 81.188);
+    tl.set("#cg93", { opacity: 0, visibility: "hidden" }, 81.288);
+    tl.set("#cg94", { opacity: 1, visibility: "visible" }, 81.308);
+    tl.fromTo("#cg94 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 81.308);
+    tl.to("#cg94 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 83.078);
+    tl.set("#cg94", { opacity: 0, visibility: "hidden" }, 83.178);
+    tl.set("#cg95", { opacity: 1, visibility: "visible" }, 83.198);
+    tl.fromTo("#cg95 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 83.198);
+    tl.to("#cg95 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 83.958);
+    tl.set("#cg95", { opacity: 0, visibility: "hidden" }, 84.058);
+    tl.set("#cg96", { opacity: 1, visibility: "visible" }, 84.078);
+    tl.fromTo("#cg96 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 84.078);
+    tl.to("#cg96 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 85.438);
+    tl.set("#cg96", { opacity: 0, visibility: "hidden" }, 85.538);
+    tl.set("#cg97", { opacity: 1, visibility: "visible" }, 85.558);
+    tl.fromTo("#cg97 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 85.558);
+    tl.to("#cg97 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 87.108);
+    tl.set("#cg97", { opacity: 0, visibility: "hidden" }, 87.208);
+    tl.set("#cg98", { opacity: 1, visibility: "visible" }, 87.228);
+    tl.fromTo("#cg98 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 87.228);
+    tl.to("#cg98 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 87.828);
+    tl.set("#cg98", { opacity: 0, visibility: "hidden" }, 87.928);
+    tl.set("#cg99", { opacity: 1, visibility: "visible" }, 87.948);
+    tl.fromTo("#cg99 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 87.948);
+    tl.to("#cg99 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 88.788);
+    tl.set("#cg99", { opacity: 0, visibility: "hidden" }, 88.888);
+    tl.set("#cg100", { opacity: 1, visibility: "visible" }, 88.908);
+    tl.fromTo("#cg100 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 88.908);
+    tl.to("#cg100 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 90.168);
+    tl.set("#cg100", { opacity: 0, visibility: "hidden" }, 90.268);
+    tl.set("#cg101", { opacity: 1, visibility: "visible" }, 90.288);
+    tl.fromTo("#cg101 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 90.288);
+    tl.to("#cg101 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 91.208);
+    tl.set("#cg101", { opacity: 0, visibility: "hidden" }, 91.308);
+    tl.set("#cg102", { opacity: 1, visibility: "visible" }, 91.328);
+    tl.fromTo("#cg102 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 91.328);
+    tl.to("#cg102 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 92.388);
+    tl.set("#cg102", { opacity: 0, visibility: "hidden" }, 92.488);
+    tl.set("#cg103", { opacity: 1, visibility: "visible" }, 92.508);
+    tl.fromTo("#cg103 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 92.508);
+    tl.to("#cg103 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 94.128);
+    tl.set("#cg103", { opacity: 0, visibility: "hidden" }, 94.228);
+    tl.set("#cg104", { opacity: 1, visibility: "visible" }, 95.181);
+    tl.fromTo("#cg104 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 95.181);
+    tl.to("#cg104 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 95.431);
+    tl.set("#cg104", { opacity: 0, visibility: "hidden" }, 95.531);
+    tl.set("#cg105", { opacity: 1, visibility: "visible" }, 95.551);
+    tl.fromTo("#cg105 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 95.551);
+    tl.to("#cg105 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 95.741);
+    tl.set("#cg105", { opacity: 0, visibility: "hidden" }, 95.841);
+    tl.set("#cg106", { opacity: 1, visibility: "visible" }, 95.861);
+    tl.fromTo("#cg106 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 95.861);
+    tl.to("#cg106 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 96.021);
+    tl.set("#cg106", { opacity: 0, visibility: "hidden" }, 96.121);
+    tl.set("#cg107", { opacity: 1, visibility: "visible" }, 96.141);
+    tl.fromTo("#cg107 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 96.141);
+    tl.to("#cg107 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 96.661);
+    tl.set("#cg107", { opacity: 0, visibility: "hidden" }, 96.761);
+    tl.set("#cg108", { opacity: 1, visibility: "visible" }, 96.781);
+    tl.fromTo("#cg108 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 96.781);
+    tl.to("#cg108 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 97.891);
+    tl.set("#cg108", { opacity: 0, visibility: "hidden" }, 97.991);
+    tl.set("#cg109", { opacity: 1, visibility: "visible" }, 98.104);
+    tl.fromTo("#cg109 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 98.104);
+    tl.to("#cg109 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 98.764);
+    tl.set("#cg109", { opacity: 0, visibility: "hidden" }, 98.864);
+    tl.set("#cg110", { opacity: 1, visibility: "visible" }, 98.884);
+    tl.fromTo("#cg110 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 98.884);
+    tl.to("#cg110 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 99.734);
+    tl.set("#cg110", { opacity: 0, visibility: "hidden" }, 99.834);
+    tl.set("#cg111", { opacity: 1, visibility: "visible" }, 99.854);
+    tl.fromTo("#cg111 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 99.854);
+    tl.to("#cg111 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 100.444);
+    tl.set("#cg111", { opacity: 0, visibility: "hidden" }, 100.544);
+    tl.set("#cg112", { opacity: 1, visibility: "visible" }, 100.564);
+    tl.fromTo("#cg112 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 100.564);
+    tl.to("#cg112 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 100.964);
+    tl.set("#cg112", { opacity: 0, visibility: "hidden" }, 101.064);
+    tl.set("#cg113", { opacity: 1, visibility: "visible" }, 101.084);
+    tl.fromTo("#cg113 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 101.084);
+    tl.to("#cg113 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 101.354);
+    tl.set("#cg113", { opacity: 0, visibility: "hidden" }, 101.454);
+    tl.set("#cg114", { opacity: 1, visibility: "visible" }, 101.474);
+    tl.fromTo("#cg114 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 101.474);
+    tl.to("#cg114 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 103.234);
+    tl.set("#cg114", { opacity: 0, visibility: "hidden" }, 103.334);
+    tl.set("#cg115", { opacity: 1, visibility: "visible" }, 103.354);
+    tl.fromTo("#cg115 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 103.354);
+    tl.to("#cg115 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 105.054);
+    tl.set("#cg115", { opacity: 0, visibility: "hidden" }, 105.154);
+    tl.set("#cg116", { opacity: 1, visibility: "visible" }, 105.174);
+    tl.fromTo("#cg116 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 105.174);
+    tl.to("#cg116 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 106.214);
+    tl.set("#cg116", { opacity: 0, visibility: "hidden" }, 106.314);
+    tl.set("#cg117", { opacity: 1, visibility: "visible" }, 106.334);
+    tl.fromTo("#cg117 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 106.334);
+    tl.to("#cg117 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 107.334);
+    tl.set("#cg117", { opacity: 0, visibility: "hidden" }, 107.434);
+    tl.set("#cg118", { opacity: 1, visibility: "visible" }, 107.454);
+    tl.fromTo("#cg118 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 107.454);
+    tl.to("#cg118 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 108.284);
+    tl.set("#cg118", { opacity: 0, visibility: "hidden" }, 108.384);
+    tl.set("#cg119", { opacity: 1, visibility: "visible" }, 108.404);
+    tl.fromTo("#cg119 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 108.404);
+    tl.to("#cg119 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 109.754);
+    tl.set("#cg119", { opacity: 0, visibility: "hidden" }, 109.854);
+    tl.set("#cg120", { opacity: 1, visibility: "visible" }, 109.874);
+    tl.fromTo("#cg120 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 109.874);
+    tl.to("#cg120 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 110.134);
+    tl.set("#cg120", { opacity: 0, visibility: "hidden" }, 110.234);
+    tl.set("#cg121", { opacity: 1, visibility: "visible" }, 110.254);
+    tl.fromTo("#cg121 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 110.254);
+    tl.to("#cg121 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 111.084);
+    tl.set("#cg121", { opacity: 0, visibility: "hidden" }, 111.184);
+    tl.set("#cg122", { opacity: 1, visibility: "visible" }, 111.204);
+    tl.fromTo("#cg122 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 111.204);
+    tl.to("#cg122 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 111.844);
+    tl.set("#cg122", { opacity: 0, visibility: "hidden" }, 111.944);
+    tl.set("#cg123", { opacity: 1, visibility: "visible" }, 111.964);
+    tl.fromTo("#cg123 .in", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 111.964);
+    tl.to("#cg123 .in", { opacity: 0, duration: 0.1, ease: "power2.in" }, 113.404);
+    tl.set("#cg123", { opacity: 0, visibility: "hidden" }, 113.504);
+
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

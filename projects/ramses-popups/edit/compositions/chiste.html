@@ -1,0 +1,47 @@
+<template>
+  <style>
+
+@font-face { font-family: "Anton"; src: url("assets/fonts/Anton.woff2"); }
+@font-face { font-family: "Permanent Marker"; src: url("assets/fonts/PermanentMarker.woff2"); }
+.pc { position: absolute; }
+.paper { background: #F7F4EC url("assets/img/paper_tile.png"); color: #121212; }
+.anton { font-family: "Anton", sans-serif; text-transform: uppercase; line-height: 1; letter-spacing: 0.01em; }
+.marker { font-family: "Permanent Marker", cursive; line-height: 1.05; }
+.serif { font-family: "EB Garamond", serif; }
+.lbl { padding: 16px 24px 12px; white-space: nowrap; }
+.tape { position: absolute; width: 132px; height: 38px; background: rgba(233, 222, 190, 0.86); }
+.red { color: #E3261C; }
+.cobalt { color: #2B3FE0; }
+svg { overflow: visible; }
+
+#chiste { position: absolute; inset: 0; }
+.cw { display: inline-block; }
+.dr { stroke-dasharray: 1; stroke-dashoffset: 1; }
+
+  </style>
+  <div id="chiste" data-composition-id="chiste" data-width="1080" data-height="1920">
+
+    <div id="ch-strip" class="pc paper" style="left:70px;top:292px;width:940px;height:250px;clip-path:polygon(0.00% 3.46%, 4.17% 3.90%, 8.33% 5.67%, 12.50% 2.24%, 16.67% 2.25%, 20.83% 4.85%, 25.00% 3.40%, 29.17% 2.52%, 33.33% 2.84%, 37.50% 2.31%, 41.67% 1.17%, 45.83% 4.42%, 50.00% 6.26%, 54.17% 4.82%, 58.33% 4.44%, 62.50% 2.36%, 66.67% 3.03%, 70.83% 1.01%, 75.00% 5.10%, 79.17% 2.08%, 83.33% 2.04%, 87.50% 6.87%, 91.67% 2.38%, 95.83% 6.85%, 100.00% 4.33%, 100.00% 94.67%, 95.83% 95.60%, 91.67% 98.75%, 87.50% 95.01%, 83.33% 98.19%, 79.17% 97.15%, 75.00% 99.09%, 70.83% 99.59%, 66.67% 97.43%, 62.50% 99.90%, 58.33% 97.30%, 54.17% 94.05%, 50.00% 93.01%, 45.83% 97.04%, 41.67% 99.24%, 37.50% 97.58%, 33.33% 99.55%, 29.17% 98.48%, 25.00% 95.65%, 20.83% 95.68%, 16.67% 99.78%, 12.50% 96.59%, 8.33% 97.04%, 4.17% 97.21%, 0.00% 99.06%);"></div>
+    <div id="ch-l1" class="pc marker" style="left:110px;top:322px;font-size:56px;white-space:nowrap;color:#121212;"><span class="cw" id="cw0">El</span> <span class="cw" id="cw1">chiste</span> <span class="cw" id="cw2">no</span> <span class="cw" id="cw3">es</span></div>
+    <div id="ch-l2" class="pc marker" style="left:110px;top:404px;font-size:66px;white-space:nowrap;color:#121212;"><span class="cw" id="cw4">AHORRAR</span> <span class="cw" id="cw5">POR</span> <span class="cw" id="cw6">AHORRAR</span></div>
+    <svg id="ch-svg" class="pc" viewBox="0 0 1080 1920" style="left:0;top:0;width:1080px;height:1920px;">
+      <path id="ch-u" class="dr" pathLength="1" d="M112 492 C330 482 600 488 900 476" fill="none" stroke="#E3261C" stroke-width="10" stroke-linecap="round"/>
+    </svg>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#ch-strip", { opacity: 0, scale: 1.16, rotation: -3, y: -18 }, { opacity: 1, scale: 1, rotation: -1.2, y: 0, duration: 0.4, ease: "expo.out" }, 0.000);
+    tl.fromTo("#cw0", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.2, ease: "power1.out", stagger: 0.0 }, 0.120);
+    tl.fromTo("#cw1", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.2, ease: "power1.out", stagger: 0.0 }, 0.190);
+    tl.fromTo("#cw2", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.2, ease: "power1.out", stagger: 0.0 }, 0.550);
+    tl.fromTo("#cw3", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.2, ease: "power1.out", stagger: 0.0 }, 0.690);
+    tl.fromTo("#cw4", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.2, ease: "power1.out", stagger: 0.0 }, 0.830);
+    tl.fromTo("#cw5", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.2, ease: "power1.out", stagger: 0.0 }, 1.340);
+    tl.fromTo("#cw6", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.2, ease: "power1.out", stagger: 0.0 }, 1.560);
+    tl.fromTo("#ch-u", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.45, ease: "power1.inOut" }, 1.960);
+    tl.to("#ch-strip, #ch-l1, #ch-l2, #ch-svg", { opacity: 0, scale: 0.96, filter: "blur(6px)", duration: 0.22, ease: "power2.in", stagger: 0.02 }, 4.830);
+
+    window.__timelines["chiste"] = tl;
+  </script>
+</template>

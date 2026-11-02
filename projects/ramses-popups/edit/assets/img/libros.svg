@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 260" width="340" height="260">
+  <defs>
+    <pattern id="ht" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <rect width="9" height="9" fill="#fff"/>
+      <circle cx="4.5" cy="4.5" r="3" fill="#2B3FE0"/>
+    </pattern>
+    <pattern id="ht2" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <rect width="9" height="9" fill="#2B3FE0"/>
+      <circle cx="4.5" cy="4.5" r="2" fill="#fff"/>
+    </pattern>
+  </defs>
+  <g stroke="#2B3FE0" stroke-width="6" stroke-linejoin="round">
+    <g stroke="#fff" stroke-width="30" fill="#fff">
+      <rect x="40" y="168" width="270" height="62" rx="6"/>
+      <rect x="58" y="106" width="236" height="62" rx="6" transform="rotate(-4 176 137)"/>
+      <rect x="30" y="46" width="250" height="60" rx="6" transform="rotate(3 155 76)"/>
+    </g>
+    <rect x="40" y="168" width="270" height="62" rx="6" fill="url(#ht)"/>
+    <rect x="40" y="168" width="38" height="62" fill="#2B3FE0"/>
+    <rect x="58" y="106" width="236" height="62" rx="6" fill="url(#ht2)" transform="rotate(-4 176 137)"/>
+    <rect x="30" y="46" width="250" height="60" rx="6" fill="url(#ht)" transform="rotate(3 155 76)"/>
+    <rect x="232" y="46" width="30" height="60" fill="#2B3FE0" transform="rotate(3 155 76)"/>
+  </g>
+</svg>

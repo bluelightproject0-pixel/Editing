@@ -1,0 +1,45 @@
+<template>
+  <style>
+
+@font-face { font-family: "Anton"; src: url("assets/fonts/Anton.woff2"); }
+@font-face { font-family: "Permanent Marker"; src: url("assets/fonts/PermanentMarker.woff2"); }
+.pc { position: absolute; }
+.paper { background: #F7F4EC url("assets/img/paper_tile.png"); color: #121212; }
+.anton { font-family: "Anton", sans-serif; text-transform: uppercase; line-height: 1; letter-spacing: 0.01em; }
+.marker { font-family: "Permanent Marker", cursive; line-height: 1.05; }
+.serif { font-family: "EB Garamond", serif; }
+.lbl { padding: 16px 24px 12px; white-space: nowrap; }
+.tape { position: absolute; width: 132px; height: 38px; background: rgba(233, 222, 190, 0.86); }
+.red { color: #E3261C; }
+.cobalt { color: #2B3FE0; }
+svg { overflow: visible; }
+
+#mama { position: absolute; inset: 0; }
+.dr { stroke-dasharray: 1; stroke-dashoffset: 1; }
+
+  </style>
+  <div id="mama" data-composition-id="mama" data-width="1080" data-height="1920">
+
+    <div id="mama-tag" class="pc paper lbl marker" style="left:610px;top:376px;font-size:50px;clip-path:polygon(0.00% 0.26%, 14.29% 1.10%, 28.57% 1.02%, 42.86% 0.77%, 57.14% 0.35%, 71.43% 1.27%, 85.71% 1.29%, 100.00% 0.82%, 99.19% 14.29%, 99.62% 28.57%, 99.99% 42.86%, 99.41% 57.14%, 99.06% 71.43%, 99.89% 85.71%, 98.73% 100.00%, 85.71% 99.63%, 71.43% 99.63%, 57.14% 99.93%, 42.86% 98.40%, 28.57% 98.82%, 14.29% 98.60%, 0.00% 99.01%, 0.05% 85.71%, 0.53% 71.43%, 0.80% 57.14%, 0.19% 42.86%, 1.52% 28.57%, 0.59% 14.29%);">
+      Mamá del rancho</div>
+    <div class="tape" id="mama-tape" style="left:760px;top:358px;transform:rotate(6deg);"></div>
+    <svg id="mama-hat" class="pc" viewBox="0 0 240 150" style="left:700px;top:252px;width:210px;height:131px;">
+      <g fill="none" stroke="#E3261C" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+        <path class="dr" pathLength="1" d="M10 92 C24 118 60 128 120 128 C180 128 216 118 230 92 C214 104 190 108 166 106"/>
+        <path class="dr" pathLength="1" d="M74 106 C50 108 26 104 10 92"/>
+        <path class="dr" pathLength="1" d="M70 104 C66 70 70 34 92 22 C104 16 112 30 120 30 C128 30 136 16 148 22 C170 34 174 70 170 104"/>
+        <path class="dr" pathLength="1" d="M74 86 C104 94 136 94 166 86"/>
+      </g></svg>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#mama-tag", { opacity: 0, scale: 1.16, rotation: 7, y: -18 }, { opacity: 1, scale: 1, rotation: -4, y: 0, duration: 0.42, ease: "expo.out" }, 0.000);
+    tl.fromTo("#mama-tape", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 0.25);
+    tl.set("#mama-hat", { opacity: 1 }, 0);
+    tl.fromTo("#mama-hat .dr", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.26, ease: "power1.inOut", stagger: 0.18 }, 1.330);
+    tl.to("#mama-tag, #mama-tape, #mama-hat", { opacity: 0, scale: 0.96, filter: "blur(6px)", duration: 0.22, ease: "power2.in", stagger: 0.03 }, 3.150);
+
+    window.__timelines["mama"] = tl;
+  </script>
+</template>

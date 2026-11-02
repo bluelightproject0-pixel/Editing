@@ -1,0 +1,47 @@
+<template>
+  <style>
+
+@font-face { font-family: "Anton"; src: url("assets/fonts/Anton.woff2"); }
+@font-face { font-family: "Permanent Marker"; src: url("assets/fonts/PermanentMarker.woff2"); }
+.pc { position: absolute; }
+.paper { background: #F7F4EC url("assets/img/paper_tile.png"); color: #121212; }
+.anton { font-family: "Anton", sans-serif; text-transform: uppercase; line-height: 1; letter-spacing: 0.01em; }
+.marker { font-family: "Permanent Marker", cursive; line-height: 1.05; }
+.serif { font-family: "EB Garamond", serif; }
+.lbl { padding: 16px 24px 12px; white-space: nowrap; }
+.tape { position: absolute; width: 132px; height: 38px; background: rgba(233, 222, 190, 0.86); }
+.red { color: #E3261C; }
+.cobalt { color: #2B3FE0; }
+svg { overflow: visible; }
+
+#hook { position: absolute; inset: 0; }
+
+  </style>
+  <div id="hook" data-composition-id="hook" data-width="1080" data-height="1920">
+
+    <img id="hook-paper" class="pc" src="assets/img/paper_grid.jpg" style="left:0;top:0;width:1080px;height:1920px;" />
+    <div id="hook-l1" class="pc paper anton lbl" style="left:84px;top:296px;font-size:80px;clip-path:polygon(0.00% 0.72%, 14.29% 0.90%, 28.57% 1.48%, 42.86% 0.75%, 57.14% 0.81%, 71.43% 0.94%, 85.71% 0.30%, 100.00% 0.82%, 98.99% 14.29%, 98.73% 28.57%, 99.85% 42.86%, 99.51% 57.14%, 99.85% 71.43%, 98.70% 85.71%, 98.89% 100.00%, 85.71% 99.93%, 71.43% 98.43%, 57.14% 98.46%, 42.86% 98.95%, 28.57% 99.02%, 14.29% 99.75%, 0.00% 99.98%, 0.85% 85.71%, 0.10% 71.43%, 0.30% 57.14%, 0.39% 42.86%, 0.05% 28.57%, 0.74% 14.29%);">
+      <span class="w">El</span> <span class="w">truco</span> <span class="w">del</span> <span class="w">súper</span></div>
+    <div id="hook-l2" class="pc paper lbl" style="left:110px;top:410px;clip-path:polygon(0.00% 0.76%, 14.29% 1.05%, 28.57% 1.07%, 42.86% 0.23%, 57.14% 0.02%, 71.43% 0.60%, 85.71% 0.44%, 100.00% 1.30%, 98.90% 14.29%, 99.04% 28.57%, 99.11% 42.86%, 98.94% 57.14%, 99.77% 71.43%, 99.30% 85.71%, 99.74% 100.00%, 85.71% 98.55%, 71.43% 99.91%, 57.14% 98.69%, 42.86% 99.88%, 28.57% 98.90%, 14.29% 99.46%, 0.00% 99.35%, 1.35% 85.71%, 0.03% 71.43%, 0.10% 57.14%, 1.46% 42.86%, 0.81% 28.57%, 0.15% 14.29%);display:flex;align-items:baseline;gap:18px;">
+      <span id="hook-que" class="serif" style="font-size:54px;font-style:italic;">que los</span>
+      <span id="hook-fresas" class="marker red" style="font-size:92px;">FRESAS</span>
+      <span id="hook-nosaben" class="serif" style="font-size:54px;font-style:italic;">no saben</span></div>
+    <img id="hook-fresa" class="pc" src="assets/img/fresa.svg" style="left:842px;top:282px;width:176px;height:194px;" />
+    <div id="hook-tape" class="tape" style="left:880px;top:270px;transform:rotate(-12deg);"></div>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#hook-l1", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 0.08);
+    tl.fromTo("#hook-l1 .w", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, ease: "power2.out", stagger: 0.07 }, 0.1);
+    tl.fromTo("#hook-l2", { opacity: 0, scale: 1.16, rotation: 6, y: -18 }, { opacity: 1, scale: 1, rotation: -1.5, y: 0, duration: 0.38, ease: "expo.out" }, 0.420);
+    tl.fromTo("#hook-fresas", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.32, ease: "power1.out", stagger: 0.0 }, 0.560);
+    tl.fromTo("#hook-fresa", { opacity: 0, scale: 1.16, rotation: 14, y: -18 }, { opacity: 1, scale: 1, rotation: -7, y: 0, duration: 0.45, ease: "expo.out" }, 0.780);
+    tl.fromTo("#hook-tape", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 0.98);
+    tl.fromTo("#hook-paper", { y: 0 }, { y: -1920, duration: 0.6, ease: "power2.inOut" }, 1.250);
+    tl.to("#hook-l1, #hook-l2", { opacity: 0, scale: 0.96, filter: "blur(6px)", duration: 0.22, ease: "power2.in", stagger: 0.05 }, 3.500);
+    tl.to("#hook-fresa, #hook-tape", { opacity: 0, scale: 0.96, filter: "blur(6px)", duration: 0.2, ease: "power2.in", stagger: 0.0 }, 3.620);
+
+    window.__timelines["hook"] = tl;
+  </script>
+</template>

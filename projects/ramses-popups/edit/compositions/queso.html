@@ -1,0 +1,54 @@
+<template>
+  <style>
+
+@font-face { font-family: "Anton"; src: url("assets/fonts/Anton.woff2"); }
+@font-face { font-family: "Permanent Marker"; src: url("assets/fonts/PermanentMarker.woff2"); }
+.pc { position: absolute; }
+.paper { background: #F7F4EC url("assets/img/paper_tile.png"); color: #121212; }
+.anton { font-family: "Anton", sans-serif; text-transform: uppercase; line-height: 1; letter-spacing: 0.01em; }
+.marker { font-family: "Permanent Marker", cursive; line-height: 1.05; }
+.serif { font-family: "EB Garamond", serif; }
+.lbl { padding: 16px 24px 12px; white-space: nowrap; }
+.tape { position: absolute; width: 132px; height: 38px; background: rgba(233, 222, 190, 0.86); }
+.red { color: #E3261C; }
+.cobalt { color: #2B3FE0; }
+svg { overflow: visible; }
+
+#queso { position: absolute; inset: 0; }
+.dr { stroke-dasharray: 1; stroke-dashoffset: 1; }
+
+  </style>
+  <div id="queso" data-composition-id="queso" data-width="1080" data-height="1920">
+
+    <img id="q-still" class="pc" src="assets/img/cheese_36_bw.jpg" style="left:0;top:0;width:1080px;height:1920px;" data-layout-allow-overflow />
+    <div id="q-flash" class="pc" style="inset:0;background:#fff;opacity:0;"></div>
+    <svg class="pc" viewBox="0 0 1080 1920" style="left:0;top:0;width:1080px;height:1920px;">
+      <g fill="none" stroke="#E3261C" stroke-width="9" stroke-linecap="round">
+        <path id="q-c1" class="dr" pathLength="1" d="M930 975 C1030 970 1050 1050 1010 1100 C960 1150 840 1130 828 1062 C818 1000 880 972 950 980"/>
+        <path id="q-c2" class="dr" pathLength="1" d="M486 858 C580 852 590 930 548 962 C500 990 404 972 400 920 C396 870 450 852 506 862"/>
+      </g>
+      <g fill="none" stroke="#2B3FE0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+        <path id="q-arrow" class="dr" pathLength="1" d="M730 300 C740 250 742 210 735 168"/>
+        <path id="q-head" class="dr" pathLength="1" d="M708 196 L735 160 L764 192"/>
+      </g>
+    </svg>
+    <div id="q-emp" class="pc paper anton lbl red" style="left:96px;top:458px;font-size:64px;clip-path:polygon(0.00% 0.61%, 14.29% 0.37%, 28.57% 0.27%, 42.86% 1.46%, 57.14% 0.92%, 71.43% 1.10%, 85.71% 0.88%, 100.00% 0.61%, 98.83% 14.29%, 99.08% 28.57%, 98.75% 42.86%, 98.94% 57.14%, 98.66% 71.43%, 99.30% 85.71%, 99.75% 100.00%, 85.71% 99.76%, 71.43% 98.84%, 57.14% 99.73%, 42.86% 98.95%, 28.57% 99.01%, 14.29% 99.90%, 0.00% 98.75%, 0.05% 85.71%, 1.39% 71.43%, 1.35% 57.14%, 0.35% 42.86%, 1.16% 28.57%, 1.17% 14.29%);">Empaquetado</div>
+    <div id="q-barra" class="pc anton lbl" style="left:560px;top:304px;font-size:64px;background:#2B3FE0;color:#F7F4EC;clip-path:polygon(0.00% 1.02%, 14.29% 0.04%, 28.57% 0.44%, 42.86% 0.36%, 57.14% 1.18%, 71.43% 1.08%, 85.71% 1.43%, 100.00% 0.14%, 99.32% 14.29%, 99.95% 28.57%, 99.65% 42.86%, 99.19% 57.14%, 99.96% 71.43%, 99.68% 85.71%, 98.96% 100.00%, 85.71% 99.13%, 71.43% 99.65%, 57.14% 99.06%, 42.86% 98.70%, 28.57% 99.99%, 14.29% 98.71%, 0.00% 98.88%, 0.54% 85.71%, 0.25% 71.43%, 1.53% 57.14%, 0.54% 42.86%, 0.15% 28.57%, 0.15% 14.29%);">La barra</div>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#q-flash", { opacity: 0.85 }, { opacity: 0, duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#q-still", { scale: 1 }, { scale: 1.03, duration: 2.7, ease: "sine.inOut" }, 0);
+    tl.fromTo("#q-c1", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.38, ease: "power1.inOut" }, 0.180);
+    tl.fromTo("#q-c2", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.34, ease: "power1.inOut" }, 0.480);
+    tl.fromTo("#q-emp", { opacity: 0, scale: 1.16, rotation: -6, y: -18 }, { opacity: 1, scale: 1, rotation: -3, y: 0, duration: 0.4, ease: "expo.out" }, 0.360);
+    tl.fromTo("#q-barra", { opacity: 0, scale: 1.16, rotation: 6, y: -18 }, { opacity: 1, scale: 1, rotation: 2, y: 0, duration: 0.4, ease: "expo.out" }, 0.900);
+    tl.fromTo("#q-arrow", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.28, ease: "power1.inOut" }, 1.050);
+    tl.fromTo("#q-head", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.16, ease: "power1.inOut" }, 1.300);
+    tl.to("#q-emp, #q-barra", { opacity: 0, scale: 0.96, filter: "blur(6px)", duration: 0.2, ease: "power2.in", stagger: 0.03 }, 2.380);
+    tl.to("#queso svg", { opacity: 0, duration: 0.2, ease: "power2.in" }, 2.400);
+
+    window.__timelines["queso"] = tl;
+  </script>
+</template>

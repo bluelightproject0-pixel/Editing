@@ -1,0 +1,131 @@
+{
+ "total": 114.78,
+ "video_end": 113.981,
+ "cues": [
+  {
+   "key": "paper-slap",
+   "t": 0.08,
+   "vol": 0.32
+  },
+  {
+   "key": "pop",
+   "t": 0.78,
+   "vol": 0.22
+  },
+  {
+   "key": "paper-slide",
+   "t": 1.25,
+   "vol": 0.3
+  },
+  {
+   "key": "paper-slap",
+   "t": 10.093,
+   "vol": 0.3
+  },
+  {
+   "key": "marker",
+   "t": 11.443,
+   "vol": 0.2
+  },
+  {
+   "key": "paper-slap",
+   "t": 20.783,
+   "vol": 0.3
+  },
+  {
+   "key": "click",
+   "t": 29.223,
+   "vol": 0.38
+  },
+  {
+   "key": "marker",
+   "t": 29.403,
+   "vol": 0.2
+  },
+  {
+   "key": "marker",
+   "t": 30.273,
+   "vol": 0.16
+  },
+  {
+   "key": "card",
+   "t": 37.9,
+   "vol": 0.34
+  },
+  {
+   "key": "card",
+   "t": 41.2,
+   "vol": 0.34
+  },
+  {
+   "key": "marker",
+   "t": 41.63,
+   "vol": 0.2
+  },
+  {
+   "key": "marker",
+   "t": 50.19,
+   "vol": 0.18
+  },
+  {
+   "key": "marker",
+   "t": 52.05,
+   "vol": 0.16
+  },
+  {
+   "key": "tick",
+   "t": 69.07,
+   "vol": 0.2
+  },
+  {
+   "key": "tick",
+   "t": 70.53,
+   "vol": 0.2
+  },
+  {
+   "key": "paper-slap",
+   "t": 75.4,
+   "vol": 0.3
+  },
+  {
+   "key": "paper-slap",
+   "t": 81.268,
+   "vol": 0.28
+  },
+  {
+   "key": "pop",
+   "t": 83.238,
+   "vol": 0.2
+  },
+  {
+   "key": "paper-slap",
+   "t": 88.348,
+   "vol": 0.3
+  },
+  {
+   "key": "paper-slide",
+   "t": 98.024,
+   "vol": 0.3
+  },
+  {
+   "key": "marker",
+   "t": 100.334,
+   "vol": 0.22
+  },
+  {
+   "key": "chime",
+   "t": 100.784,
+   "vol": 0.22
+  },
+  {
+   "key": "paper-slap",
+   "t": 106.374,
+   "vol": 0.28
+  },
+  {
+   "key": "marker",
+   "t": 113.234,
+   "vol": 0.18
+  }
+ ]
+}

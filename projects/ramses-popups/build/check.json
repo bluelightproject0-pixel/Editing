@@ -1,0 +1,245 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 631 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Editing/projects/ramses-popups/edit/compositions/captions.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split this sub-composition further into smaller .html files, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      }
+    ],
+    "filesScanned": 11
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 3,
+    "findings": [
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 6.377,
+        "selector": "#cam",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -54,
+          "top": -86.4,
+          "right": 1134,
+          "bottom": 2025.6,
+          "width": 1188,
+          "height": 2112
+        },
+        "containerSelector": "#layout",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 54,
+          "right": 54,
+          "top": 86.4,
+          "bottom": 105.6
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -54,
+          "y": -86.4,
+          "width": 1188,
+          "height": 2112
+        },
+        "firstSeen": 6.377,
+        "lastSeen": 95.65,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          6.377,
+          44.637,
+          57.39,
+          70.143,
+          82.897,
+          95.65
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 70.143,
+        "selector": "#p-tag > div:nth-of-type(3)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 158.31,
+          "top": 312.03,
+          "right": 473.34,
+          "bottom": 388.29,
+          "width": 315.02,
+          "height": 76.26
+        },
+        "containerSelector": "#p-tag > div:nth-of-type(2)",
+        "text": "Ahorro en el súper",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.3,
+        "dataAttributes": {},
+        "sourceFile": "compositions/pesos.html",
+        "bbox": {
+          "x": 158.31,
+          "y": 312.03,
+          "width": 315.02,
+          "height": 76.26
+        },
+        "firstSeen": 70.143,
+        "lastSeen": 70.143,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          70.143
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 108.403,
+        "selector": "#bw > div:nth-of-type(4) > div:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 134.22,
+          "top": 664.91,
+          "right": 313.3,
+          "bottom": 723.07,
+          "width": 179.08,
+          "height": 58.16
+        },
+        "containerSelector": "#bw > div:nth-of-type(4) > img:nth-of-type(1)",
+        "text": "empaquetado",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.15,
+        "dataAttributes": {},
+        "sourceFile": "compositions/board.html",
+        "bbox": {
+          "x": 134.22,
+          "y": 664.91,
+          "width": 179.08,
+          "height": 58.16
+        },
+        "firstSeen": 108.403,
+        "lastSeen": 108.403,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          108.403
+        ]
+      }
+    ],
+    "duration": 114.78,
+    "samples": [
+      6.377,
+      19.13,
+      31.883,
+      44.637,
+      57.39,
+      70.143,
+      82.897,
+      95.65,
+      108.403
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 3,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      6.377,
+      31.883,
+      57.39,
+      82.897,
+      108.403
+    ],
+    "checked": 33,
+    "passed": 33
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "step": 0.19199999999999307,
+    "samples": 599
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "saved": {
+    "id": "9f491ef8-d54f-4643-b345-97fb04b4081e",
+    "revision": "6fe399e7-dd3a-4d45-b197-7c9bfe201c54",
+    "report": "/home/user/Editing/projects/ramses-popups/edit/.hyperframes/artifacts/checks/9f491ef8-d54f-4643-b345-97fb04b4081e.json",
+    "attribution": "recorded-revision"
+  },
+  "_meta": {
+    "version": "0.9.5",
+    "latestVersion": "0.9.5",
+    "updateAvailable": false
+  }
+}
