@@ -735,8 +735,8 @@ grade:
   tool: none
   note: el color de la toma está bien; solo el congelado del queso va en B/N
 cover:
-  t: 2.4
-  why: título del gancho + cara centrada
+  t: 3.4
+  why: cara nítida a cámara + título del gancho + subtítulo "fresas" en rojo
 cost:
   free:
   - SFX sintetizados
