@@ -467,7 +467,7 @@ def build_ia(end_src, bubble_until=None):
 BOARD_CSS = """
 .mcard { width: 252px; height: 150px; border-radius: 12px; background: #FBF8F1 url("assets/img/paper_tile.png");
          border: 3px solid #121212; box-sizing: border-box; }
-.mcard .ct { position: absolute; left: 0; right: 0; top: 30px; text-align: center; font-size: 36px; }
+.mcard .ct { position: absolute; left: 22px; right: 4px; top: 34px; text-align: center; font-size: 34px; }
 .mcard .cm { position: absolute; left: 0; right: 0; top: 78px; text-align: center; font-size: 46px; }
 .mcard .corner { position: absolute; left: 9px; top: 5px; font-size: 22px; line-height: 1; display: flex; flex-direction: column; align-items: center; }
 .mname { position: absolute; padding: 4px 12px 2px; font-size: 34px; white-space: nowrap; }
@@ -528,7 +528,7 @@ def build_board(t_start, pans):
         ry += 312
     body += f"""
       <div class="pc" style="left:796px;top:{ry}px;width:190px;height:290px;transform:rotate(3deg);">
-        <div class="paper anton" style="position:absolute;left:0;top:0;width:190px;text-align:center;font-size:30px;padding:8px 2px 6px;clip-path:{ragged(204)};" data-layout-ignore>Automatización</div>
+        <div class="paper anton" style="position:absolute;left:-6px;top:0;width:200px;text-align:center;font-size:26px;letter-spacing:0;padding:9px 2px 7px;clip-path:{ragged(204)};" data-layout-ignore>Automatización</div>
         <div class="paper marker mname" style="left:0;top:58px;">Claude</div>
         <div class="paper marker mname" style="left:10px;top:114px;">ChatGPT</div>
         <div class="paper marker mname" style="left:0;top:170px;">Gemini</div>
