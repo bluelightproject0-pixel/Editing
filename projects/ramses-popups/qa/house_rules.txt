@@ -1,0 +1,238 @@
+# effective director settings  platform=instagram_reels  profile=talking_head_edu  brand=ramses
+
+## preferences
+checkpoints: plan_keyframes_final
+paid_generation: always_ask
+paid_cap_usd: 0
+language_for_chat: es
+versioning: never_overwrite
+hyperframes: latest
+checkpoints_note: 'A: plan; K: key-frame stills before every full render; B: final file + feedback'
+taste: dials + dealt direction per job (scripts/taste.py, references/taste.md)
+feedback_scope: every note is generic (all clients) or client-specific; ask the user when unclear, default client
+
+## platform
+canvas:
+- 1080
+- 1920
+fps: 30
+max_recommended_s: 180
+target_length_s:
+- 30
+- 60
+safe_zone:
+  top: 270
+  bottom: 670
+  left: 65
+  right: 65
+  right_rail:
+    x_min: 850
+    y_min: 1150
+caption_band:
+  y_min: 1080
+  y_max: 1250
+  max_width: 620
+hook_text_band:
+  y_min: 300
+  y_max: 520
+cover_safe:
+  x: 0
+  y: 240
+  w: 1080
+  h: 1440
+export:
+  codec: h264
+  profile: high
+  pix_fmt: yuv420p
+  video_mbps: 10
+  max_mbps: 25
+  audio: aac
+  audio_khz: 48
+  audio_kbps: 192
+loudness:
+  lufs: -14
+  true_peak: -1
+
+## profile
+description: expert/teacher speaking to camera, explaining a topic
+max_static_s: 5
+hook_change_by_s: 2.5
+taste:
+  energy: 6
+  motion: 7
+  density: 5
+first_15s_change_every_s: 3
+punch_in:
+  normal:
+  - 1.08
+  - 1.2
+  emphasis:
+  - 1.3
+  - 1.5
+  per_30s_max: 4
+drift:
+- 1.0
+- 1.05
+remove_silence_over_s: 0.4
+broll_every_s:
+- 8
+- 15
+broll_len_s:
+- 2
+- 4
+ai_clips_per_min:
+- 1
+- 3
+captions:
+  style: word_pop
+  words_per_chunk:
+  - 2
+  - 4
+  highlight_ratio_max: 0.1
+  size_px:
+  - 64
+  - 78
+graphics:
+- section_titles
+- step_lists
+- data_build_zoom
+- keyword_callouts
+- progress_bar
+music_bed_db_under_voice:
+- -24
+- -18
+sfx_density: medium
+
+## caps
+light_leak: 2
+glitch: 1
+flash: 2
+whip_transition: 4
+same_sfx_in_a_row: 3
+sfx_per_10s: 4
+emoji_per_10s: 1
+
+## sfx_map
+cut_or_card_entry: whoosh-short
+section_change:
+- riser
+- impact-bass-1
+big_transition: whoosh-cinematic
+text_pop: pop
+ui_click: click-soft
+checkmark_or_correct: chime
+notification_sticker: ping
+typing_text: typing
+highlight_shine: sparkle
+glitch_moment: glitch-1
+sfx_volume:
+- 0.25
+- 0.45
+
+## brand
+name: ramses
+client: Ramsés Ramos
+aliases:
+- Ramsés
+- Ramses
+- ramsesramossa
+description: Creador que habla a cámara de dinero, trucos del día a día e IA, en tono casual mexicano.
+handles:
+  instagram: ramsesramossa
+platform: instagram_reels
+profile: talking_head_edu
+language:
+  speech: es
+  captions: es
+  ui: es
+palette:
+  primary: '#2b3fe0'
+  secondary: '#e3261c'
+  light: '#f1eee6'
+  accent: '#e3261c'
+  ink: '#121212'
+fonts:
+  display: Anton
+  body: Permanent Marker
+logo:
+  placement: none
+voice:
+  tone:
+  - casual
+  - directo
+  - chido
+  use:
+  - bro
+  - súper
+  - la barra
+visual:
+  do:
+  - collage tipo zine con recortes de papel de borde blanco
+  - halftone en un solo color (azul cobalto)
+  - garabatos de marcador rojo sobre foto en blanco y negro
+  - letra a mano de marcador, en mayúsculas e imperfecta
+  - papel crema o cuadriculado arrugado como fondo
+  dont:
+  - emojis y stickers genéricos
+  - degradados y brillos
+  - sombras suaves de plantilla
+taste:
+  energy: 6
+  motion: 5
+  density: 6
+ai_media_style: cut-out paper collage, single-colour cobalt halftone print, white paper border, flat light, no text
+footage_notes: Selfie vertical en súper; la cara ocupa x 60-880, y 480-1450. El techo (y 270-560) queda libre.
+font_files:
+- Anton.woff2
+- PermanentMarker.woff2
+kit: brands/ramses
+
+## tooling
+whisper: Set the path to your whisper-cli build here (GPU build recommended); the agent records what it finds on first run.
+codex: 'Optional: path to the Codex CLI for free image generation on a ChatGPT plan.'
+fal: 'Optional: fal MCP for paid image/video generation; image-to-video at 9:16 needs a 9:16 start image.'
+silence_detect: 'analyze_media silence list is unreliable on quiet phone sources (around -36 LUFS): verify every cut point
+  with cut_check.py (50 ms energy envelope) before cutting.'
+dialect_transcribe: For dialects / code-switched speech the hyperframes wrapper can normalise into the standard language;
+  use whisper-cli -l <lang> -ml 1 -sow with a dialect + domain-terms --prompt, re-run the second language on code-switched
+  spans, snap chunk starts to energy onsets.
+fal_negative_prompts: image-to-video models may ignore negative prompts ('no text', 'no blood') after ~1 s; use only the first
+  ~1.5 s of a sensitive shot or keep it small.
+
+## bans (never violate)
+- [R-never-cover-face] Never place overlays over faces, burned-in text or important action; change layout instead.
+
+## rules (apply; candidates should be mentioned at checkpoint A)
+- [R-before-any-full-render-first-build-or-re] (candidate, 0.99, global) Before any full render (first build or revision), show the user the key frames (hook, each new layout/graphic peak, ending) as stills and wait for approval; render only after OK.
+- [R-split-screen-for-graphics-full-width-hal] (candidate, 0.95, global) Split screen for graphics = full-width halves (graphic top, speaker footage bottom), not a boxed card; the speaker's whole face stays visible.
+- [R-chart-labels-never-cross-lines-markers-o] (candidate, 0.95, global) Chart labels never cross lines, markers or other labels at any moment, including zoom peaks; anchor zooms on the chart's bottom edge so content grows away from takeaways/captions; snapshot every zoom peak in QA.
+- [R-keep-soundtrack] (default, 0.9, global) When editing existing footage keep its soundtrack (voice) and sync every edit to it; added music/SFX sit under it.
+- [R-preserve-ending] (default, 0.9, global) Preserve the full ending of the source; extend after it (hold/CTA) rather than trimming it.
+- [R-zoom-into-graphics] (default, 0.9, global) Include data/diagram graphics that build up, then move the camera into the key part (zoom-in), and zoom back out to the speaker.
+- [R-before-delivering-measure-the-render-s-a] (candidate, 0.9, global) Before delivering, measure the render's audio level per second over the whole timeline; no unintended silence, voice audible from frame 0.
+- [R-during-data-graphics-use-an-animated-spl] (candidate, 0.9, global) During graphics keep the speaker visible with an animated layout chosen per beat (split for data with reactions, PiP bubble for full-width visuals, overlay for keywords); captions sit just below the speaker's head in whatever layout is active.
+- [R-captions-follow-the-speaker-always-direc] (candidate, 0.9, global) Captions follow the speaker: always directly below the head/chin, centered on the face, never over the face and never parked in a fixed band that ignores the framing.
+- [R-after-every-render-backtest-the-file-reg] (candidate, 0.9, global) After every render, backtest the file: regress the final audio against each stem (voice, music, SFX) to confirm presence and level, measure per-second loudness, and snapshot key frames to confirm every visual layer; report the numbers before delivering.
+- [R-before-every-checkpoint-run-an-independe] (candidate, 0.9, global) Before every checkpoint, run an independent high-effort critic (subagent) on dense frame strips of every transition and every text element; fix its findings before showing the user. Never present a pass you have not reviewed frame by frame.
+- [R-ai-disclosure] (default, 0.8, global) Realistic AI-generated scenes get an 'AI info' disclosure note in post.md; never generate the speaker's likeness.
+- [R-data-graphics-must-be-readable-each-grap] (candidate, 0.8, global) Data graphics must be readable: each graph runs >=5 s when the speech allows, reveals one element per spoken beat (>=0.5 s each), zooms in slowly (>=1 s) and holds the key point >=1.5 s.
+- [R-every-graph-states-one-plain-takeaway-in] (candidate, 0.8, global) Every graph states one plain takeaway in big text (>=40 px) and uses labels >=32 px; concrete, meaningful encodings beat abstract decoration. Never invent statistics: use qualitative labels unless the user gives numbers.
+- [R-factual-claims-in-graphics-are-checked] (candidate, 0.8, global) Factual claims in graphics (statistics, legal, financial, scientific) are checked against what the presenter actually said and against both directions of a risk (e.g. too early AND too late); when unsure, ask the presenter.
+- [R-low-res-source-footage-1080-wide-offer-a] (candidate, 0.75, global) Low-res source footage (<1080 wide): offer an AI video upscale (with cost) before building.
+- [R-captions-muted] (default, 0.7, global) Add word-synced captions for any speech (most viewers watch muted); highlight at most 1 word in 10.
+- [R-music-bed] (default, 0.65, profile:talking_head_edu) Add a low music bed (-18 to -24 dB under voice) with ducking during speech.
+- [R-hook-text-frame0] (default, 0.6, global) Show a 4-7 word text hook from frame 0 in the hook band; it complements the spoken line.
+- [R-first-change-by-3s] (default, 0.6, global) First visual change (punch-in, cut, graphic) by ~2.5-3 s.
+- [R-motivated-motion] (default, 0.6, global) Tie punch-ins and SFX to claims, punchlines and section changes; cap repeats (caps). Over-editing becomes its own pattern.
+- [R-safe-zones] (default, 0.6, platform:instagram_reels) Keep all text and key graphics inside the platform safe zone; captions in caption_band; nothing under the right rail.
+- [R-save-send-cta] (default, 0.6, platform:instagram_reels) End with a save or send CTA in the last 2-4 s; loop back to the hook when natural.
+- [R-ramses-ending-signoff] (candidate, 0.6, brand:ramses) Sin CTA de seguir/guardar: el video termina en su despedida hablada ('Dios te bendiga'), como cierre escrito a mano
+- [R-ramses-captions-chin] (candidate, 0.6, brand:ramses) Subtítulos siempre, justo bajo la barbilla (su cara llena la zona segura en selfies), 1-3 palabras, estilo editorial: serif con la palabra clave en itálica
+- [R-ramses-references] (candidate, 0.6, brand:ramses) Referencias de edición: @iamsarahsnow (etiquetas de papel, texto serif mixto arriba de la cabeza), @its.sammywu (páginas recortadas sobre el torso), @joshguvi (tipografía cinética, firma escrita a mano), @artzenmedia (video que se encoge a tarjeta con esquinas redondas)
+- [R-change-cadence] (default, 0.55, global) Never leave the frame visually static longer than profile.max_static_s; densest changes in the first 15 s.
+- [R-light-leak-limit] (default, 0.55, global) Light leaks/flashes at most 1-2 per minute; hard cuts are the default transition.
+
+## recent feedback
+- fb-0001 2026-11-02 ramses-popups 1: "dios te bendiga" -> []
+- fb-0002 2026-11-02 ramses-popups 1: "si abajo de la barbilla" -> []
+- fb-0003 2026-11-02 ramses-popups 1: "los videos de esta persona: reels de @iamsarahsnow, @its.sammywu, @joshguvi, @artzenmedia" -> []
